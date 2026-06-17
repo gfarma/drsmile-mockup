@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.7.0/dist/tabler-icons.min.css">
 <style>
 :root{
-  --cream:#F4ECDC; --cream-2:#EBE0CB; --paper:#F8F2E6;
+  --cream:#ECE1D9; --cream-2:#E4D8CE; --paper:#F3ECE4;
   --espresso:#1B1510; --espresso-2:#241B13; --ink:#26201A;
   --gold:#C2A05B; --gold-2:#DCC288; --gold-deep:#9A772F; --gold-soft:#E7D5AC;
   --muted:#7C6E58; --muted-d:#A8997C;
@@ -19,10 +19,17 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:var(--sans);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  background-color:var(--cream);
+  background-image:
+    radial-gradient(900px 720px at 18% 10%,rgba(224,206,202,.55),transparent 60%),
+    radial-gradient(820px 640px at 86% 22%,rgba(214,198,184,.50),transparent 56%),
+    radial-gradient(1050px 820px at 64% 76%,rgba(222,204,201,.45),transparent 60%),
+    radial-gradient(720px 640px at 6% 90%,rgba(210,194,184,.42),transparent 55%);
+  background-attachment:fixed}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-.grain{position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.05;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.grain{position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.07;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .wrap{max-width:1280px;margin:0 auto;padding:0 40px}
 .label{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-deep)}
 .fs{font-family:var(--fs)}
