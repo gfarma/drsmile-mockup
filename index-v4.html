@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DrSmile · Δρ. Αναστασία Παρχαρίδου — Πολυοδοντιατρείο Εύοσμος</title>
+<meta name="description" content="Πολυοδοντιατρείο DrSmile στον Εύοσμο Θεσσαλονίκης. Δρ. Αναστασία Παρχαρίδου — αισθητική οδοντιατρική, Fastbraces®, εμφυτεύματα, λεύκανση, παιδοδοντία, αισθητική προσώπου.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.7.0/dist/tabler-icons.min.css">
+<style>
+:root{
+  --bg:#0F0B07; --bg-alt:#14100A; --bg-deep:#0A0704; --bg-card:#1C150D; --bg-card-2:#231A10;
+  --gold-deep:#A9813F; --gold:#D4AF6A; --gold-light:#E8C77A; --gold-pale:#F4E4B2;
+  --cream:#EDE3D0; --cream-dim:#BBAD92; --cream-faint:#8C8170;
+  --line:rgba(212,175,106,.22); --line-soft:rgba(212,175,106,.12); --line-bright:rgba(232,199,122,.45);
+  --glow:rgba(212,175,106,.38);
+  --shadow:0 30px 80px -36px rgba(0,0,0,.7);
+  --serif:'Cormorant',Georgia,serif; --sans:'Albert Sans',system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--gold);color:var(--bg-deep)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+h1,h2,h3{line-height:1.08;font-weight:500;letter-spacing:-.01em;color:var(--cream)}
+.serif{font-family:var(--serif)}
+.foil{
+  font-family:var(--serif);font-style:italic;color:var(--gold-light);
+  background-image:linear-gradient(100deg,var(--gold-deep) 0%,var(--gold) 16%,var(--gold-pale) 36%,var(--gold-light) 54%,var(--gold) 70%,var(--gold-deep) 100%);
+  background-size:240% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  animation:shimmer 7s linear infinite;
+}
+@keyframes shimmer{0%{background-position:0% 50%}100%{background-position:-240% 50%}}
+@keyframes twinkle{0%,100%{opacity:.25;transform:scale(.8)}50%{opacity:1;transform:scale(1.18)}}
+@keyframes floaty{50%{transform:translateY(-10px)}}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:600;font-size:14px;letter-spacing:.03em;padding:16px 32px;border-radius:999px;cursor:pointer;transition:.35s cubic-bezier(.2,.8,.2,1);white-space:nowrap;border:1px solid transparent}
+.btn-gold{background:linear-gradient(135deg,var(--gold-light),var(--gold-deep));color:#1A1208;box-shadow:0 0 0 1px rgba(212,175,106,.4) inset,0 18px 40px -16px var(--glow)}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 0 0 1px rgba(232,199,122,.6) inset,0 26px 60px -16px rgba(212,175,106,.6)}
+.btn-ghost{border-color:var(--line-bright);color:var(--cream);background:transparent}
+.btn-ghost:hover{border-color:var(--gold-light);color:var(--gold-light);box-shadow:0 0 34px -12px var(--glow);transform:translateY(-3px)}
+
+.eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:12px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-light)}
+.eyebrow .ln{width:36px;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+.eyebrow i{font-size:15px;color:var(--gold)}
+
+.sec{padding:130px 0}
+.sec-head{max-width:640px}
+.sec-head h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,4.4vw,58px);margin-top:18px}
+.sec-head p{color:var(--cream-dim);font-size:17px;margin-top:18px;max-width:520px;line-height:1.75}
+.center{text-align:center;margin-left:auto;margin-right:auto}
+.mt54{margin-top:54px}
+
+/* nav */
+.topnav{position:sticky;top:0;z-index:100;background:rgba(15,11,7,.7);backdrop-filter:blur(16px);border-bottom:1px solid var(--line-soft);transition:.35s}
+.topnav.scrolled{background:rgba(15,11,7,.94);border-bottom-color:var(--line)}
+.topnav .wrap{display:flex;align-items:center;justify-content:space-between;height:88px;gap:24px}
+.brand img{height:44px;width:auto;display:block}
+.nav-links{display:flex;gap:34px}
+.nav-links a{font-size:14px;font-weight:500;color:var(--cream-dim);position:relative;padding:6px 0;letter-spacing:.01em}
+.nav-links a:hover{color:var(--gold-light)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:.3s}
+.nav-links a:hover::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:22px}
+.nav-phone{font-family:var(--serif);font-size:19px;color:var(--gold-light);display:inline-flex;align-items:center;gap:8px}
+.nav-phone:hover{color:var(--gold-pale)}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:10px;width:42px;height:42px;color:var(--cream);font-size:20px;cursor:pointer}
+
+/* hero */
+.hero{position:relative;min-height:94vh;display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1800&auto=format&fit=crop');background-size:cover;background-position:center 28%;transform:scale(1.07)}
+.hero-overlay{position:absolute;inset:0;
+  background:
+    linear-gradient(180deg,rgba(15,11,7,.4) 0%,rgba(15,11,7,.58) 42%,var(--bg) 96%),
+    radial-gradient(ellipse 72% 56% at 50% 26%,rgba(15,11,7,0) 0%,rgba(15,11,7,.62) 100%)}
+.corner{position:absolute;width:44px;height:44px;border-color:var(--line-bright);opacity:.75;z-index:2}
+.corner.tl{top:30px;left:30px;border-top:1px solid;border-left:1px solid}
+.corner.tr{top:30px;right:30px;border-top:1px solid;border-right:1px solid}
+.spark{position:absolute;color:var(--gold);animation:twinkle 3.2s ease-in-out infinite;z-index:2}
+.hero-content{position:relative;z-index:3;padding-bottom:88px;width:100%}
+.hero-content .inner{max-width:880px}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(46px,7.4vw,104px);line-height:.98;margin-top:26px}
+.hero .sub{font-size:18px;color:var(--cream-dim);max-width:520px;margin:26px 0 38px;line-height:1.75}
+.hero-cta{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:56px}
+.hero-stats{display:flex;flex-wrap:wrap}
+.hero-stats .s{padding:0 32px;border-left:1px solid var(--line)}
+.hero-stats .s:first-child{padding-left:0;border-left:0}
+.hero-stats .n{font-family:var(--serif);font-size:32px;color:var(--gold-light);font-weight:500;line-height:1}
+.hero-stats .l{font-size:12.5px;color:var(--cream-faint);letter-spacing:.05em;margin-top:6px}
+
+/* services */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.svc{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:var(--bg-card);transition:.45s cubic-bezier(.2,.8,.2,1)}
+.svc:hover{transform:translateY(-8px);border-color:var(--line-bright);box-shadow:var(--shadow),0 0 50px -20px var(--glow)}
+.svc-img{position:relative;aspect-ratio:5/4;overflow:hidden}
+.svc-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1);filter:saturate(.9) brightness(.82)}
+.svc:hover .svc-img img{transform:scale(1.09)}
+.svc-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,11,7,0) 35%,rgba(15,11,7,.95) 100%)}
+.svc-ic{position:absolute;left:18px;bottom:18px;z-index:2;width:48px;height:48px;border-radius:14px;background:rgba(15,11,7,.55);border:1px solid var(--line-bright);backdrop-filter:blur(6px);display:grid;place-items:center;color:var(--gold-light);font-size:21px}
+.svc-body{padding:26px 26px 30px}
+.svc-body h3{font-family:var(--serif);font-size:23px;font-weight:500;margin-bottom:10px}
+.svc-body p{color:var(--cream-dim);font-size:14.5px;margin-bottom:16px;line-height:1.65}
+.svc-body a{color:var(--gold-light);font-weight:600;font-size:13.5px;display:inline-flex;align-items:center;gap:7px;letter-spacing:.02em;transition:.25s}
+.svc-body a:hover{gap:11px;color:var(--gold-pale)}
+
+/* doctor */
+.doc{background:var(--bg-alt)}
+.doc .wrap{display:grid;grid-template-columns:.82fr 1.18fr;gap:70px;align-items:center}
+.doc-img-wrap{position:relative}
+.doc-img-wrap::before{content:"";position:absolute;inset:-14px;border:1px solid var(--line);border-radius:4px;pointer-events:none}
+.doc-img{aspect-ratio:4/5;border-radius:4px;overflow:hidden;border:1px solid var(--line-bright);position:relative}
+.doc-img img{width:100%;height:100%;object-fit:cover;filter:saturate(.92) brightness(.9)}
+.doc-quote{font-family:var(--serif);font-style:italic;font-size:clamp(24px,2.6vw,34px);font-weight:500;line-height:1.35;margin:22px 0 26px;color:var(--gold-light)}
+.doc-bio{color:var(--cream-dim);font-size:16px;max-width:540px;line-height:1.8}
+.doc-creds{display:flex;flex-wrap:wrap;gap:12px;margin:30px 0}
+.chip{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:999px;padding:10px 18px;font-size:13px;color:var(--cream-dim)}
+.chip i{color:var(--gold)}
+.sign{font-family:var(--serif);font-style:italic;font-size:30px;color:var(--gold-light);margin-top:6px}
+
+/* before/after */
+.ba{position:relative;display:grid;grid-template-columns:1fr 1fr;border-radius:4px;overflow:hidden;border:1px solid var(--line-bright);min-height:440px}
+.ba .pane{position:relative;overflow:hidden}
+.ba .pane img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;filter:grayscale(.35) brightness(.58)}
+.ba .pane:last-child img{filter:saturate(1.05) brightness(.86)}
+.ba .pane::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,11,7,.08),rgba(15,11,7,.72))}
+.ba .tag{position:absolute;left:24px;bottom:24px;z-index:2;font-size:12px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--bg-deep);background:var(--gold-light);padding:9px 18px;border-radius:999px}
+.ba .divider{position:absolute;top:0;bottom:0;left:50%;width:1px;background:var(--gold);transform:translateX(-.5px);z-index:3}
+.ba .divider i{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:var(--bg-deep);border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold-light);font-size:18px}
+
+/* philosophy */
+.philo{background:var(--bg-alt)}
+.philo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:54px}
+.philo .p{background:var(--bg-alt);padding:38px 30px}
+.philo .p i{font-size:26px;color:var(--gold)}
+.philo .p h3{font-family:var(--serif);font-size:21px;font-weight:500;margin:18px 0 10px}
+.philo .p p{color:var(--cream-dim);font-size:14px;line-height:1.7}
+
+/* testimonials */
+.testi-feature{text-align:center;max-width:820px;margin:0 auto}
+.testi-feature .stars{color:var(--gold);letter-spacing:5px;font-size:16px;margin-bottom:24px}
+.testi-feature blockquote{font-family:var(--serif);font-weight:500;font-style:italic;font-size:clamp(24px,3vw,38px);line-height:1.4}
+.testi-feature .who{margin-top:24px;color:var(--cream-faint);font-size:14px;letter-spacing:.03em}
+.testi-feature .who b{color:var(--cream);font-weight:600}
+.tgrid2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:54px;max-width:920px;margin-left:auto;margin-right:auto}
+.tcard{border:1px solid var(--line);border-radius:18px;padding:28px;background:var(--bg-card);transition:.3s}
+.tcard:hover{border-color:var(--line-bright);transform:translateY(-4px)}
+.tcard .stars{color:var(--gold);font-size:14px;letter-spacing:3px;margin-bottom:14px}
+.tcard p{font-size:14.5px;color:var(--cream-dim);margin-bottom:18px;line-height:1.7}
+.tperson{display:flex;align-items:center;gap:12px}
+.tperson .av{width:40px;height:40px;border-radius:50%;background:var(--bg-card-2);border:1px solid var(--line);color:var(--gold-light);display:grid;place-items:center;font-size:13px;font-weight:600;flex-shrink:0}
+.tperson b{font-size:13.5px;display:block;color:var(--cream)}
+.tperson span{font-size:12px;color:var(--cream-faint)}
+
+/* cta band */
+.cta-band{position:relative;border-radius:4px;overflow:hidden;border:1px solid var(--line-bright);padding:70px 60px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;
+  background:radial-gradient(120% 140% at 14% 8%,rgba(212,175,106,.16),transparent 60%),var(--bg-card)}
+.cta-band h2{font-family:var(--serif);font-size:clamp(28px,3.4vw,44px);font-weight:500}
+.cta-band p{color:var(--cream-dim);margin-top:10px;font-size:16px}
+.cta-right{display:flex;flex-direction:column;gap:16px;align-items:flex-end}
+.cta-phone{font-family:var(--serif);font-size:30px;color:var(--gold-light);display:inline-flex;align-items:center;gap:12px;transition:.25s}
+.cta-phone:hover{color:var(--gold-pale)}
+
+/* contact */
+.contact .wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:start}
+.cinfo{display:flex;flex-direction:column}
+.crow{display:flex;gap:16px;padding:22px 0;border-top:1px solid var(--line)}
+.crow:first-child{border-top:0}
+.crow .ci{width:46px;height:46px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;color:var(--gold-light);font-size:19px;flex-shrink:0}
+.crow b{font-size:15.5px;display:block;color:var(--cream);font-weight:600;margin-bottom:2px}
+.crow span{color:var(--cream-dim);font-size:14px}
+.map-frame{border-radius:4px;overflow:hidden;border:1px solid var(--line-bright);min-height:420px;position:relative}
+.map-frame iframe{width:100%;height:100%;border:0;min-height:420px;filter:invert(92%) hue-rotate(180deg) saturate(.55) brightness(.92) contrast(.92)}
+
+/* footer */
+footer{background:var(--bg-deep);border-top:1px solid var(--line-soft);padding:80px 0 32px}
+.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:50px;padding-bottom:48px;border-bottom:1px solid var(--line-soft)}
+footer .brand img{height:50px;margin-bottom:18px}
+footer .ftag{color:var(--cream-faint);font-size:14px;max-width:280px;line-height:1.7}
+.fsoc{display:flex;gap:12px;margin-top:22px}
+.fsoc a{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--gold-light);font-size:17px;transition:.3s}
+.fsoc a:hover{background:var(--gold);color:var(--bg-deep);border-color:var(--gold)}
+.fcol h4{font-family:var(--serif);font-weight:500;font-size:17px;color:var(--gold-light);margin-bottom:18px}
+.fcol a{display:block;color:var(--cream-faint);font-size:14px;padding:7px 0;transition:.25s}
+.fcol a:hover{color:var(--gold-light);padding-left:4px}
+.fbottom{padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--cream-faint)}
+
+@media(max-width:900px){
+  .wrap{padding:0 22px}
+  .nav-links,.nav-phone{display:none}
+  .burger{display:block}
+  .hero{min-height:auto;padding-top:120px}
+  .hero-content{padding-bottom:56px}
+  .grid3,.tgrid2,.doc .wrap,.contact .wrap{grid-template-columns:1fr}
+  .philo-grid{grid-template-columns:repeat(2,1fr)}
+  .fgrid{grid-template-columns:1fr 1fr;gap:36px}
+  .sec{padding:80px 0}
+  .cta-band{padding:40px 30px;justify-content:center;text-align:center}
+  .cta-right{align-items:center}
+  .corner{display:none}
+  .ba{min-height:300px}
+}
+@media(max-width:600px){
+  .hero-stats{flex-direction:column;gap:18px}
+  .hero-stats .s{border-left:0;border-top:1px solid var(--line);padding:18px 0 0}
+  .hero-stats .s:first-child{border-top:0;padding-top:0}
+  .philo-grid{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:1fr}
+  .fbottom{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<nav class="topnav" id="topnav">
+  <div class="wrap">
+    <a class="brand" href="#"><img src="assets/logo.png" alt="DrSmile Πολυοδοντιατρείο"></a>
+    <div class="nav-links">
+      <a href="#services">Υπηρεσίες</a>
+      <a href="#doctor">Η Ιατρός</a>
+      <a href="#results">Πριν / Μετά</a>
+      <a href="#philo">Φιλοσοφία</a>
+      <a href="#contact">Επικοινωνία</a>
+    </div>
+    <div class="nav-right">
+      <a class="nav-phone" href="tel:2310769674"><i class="ti ti-phone"></i> 2310 769 674</a>
+      <a class="btn btn-gold" href="#contact"><i class="ti ti-calendar-plus"></i> Ραντεβού</a>
+      <button class="burger"><i class="ti ti-menu-2"></i></button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
+  <span class="corner tl"></span>
+  <span class="corner tr"></span>
+  <i class="ti ti-sparkles spark" style="top:120px;left:8%;font-size:22px"></i>
+  <i class="ti ti-sparkles spark" style="top:200px;left:42%;font-size:14px;animation-delay:.8s"></i>
+  <div class="hero-content">
+    <div class="wrap">
+      <div class="inner">
+        <div class="eyebrow reveal"><span class="ln"></span> ΠΟΛΥΟΔΟΝΤΙΑΤΡΕΙΟ · ΕΥΟΣΜΟΣ ΘΕΣΣΑΛΟΝΙΚΗΣ <i class="ti ti-sparkles"></i></div>
+        <h1 class="reveal" style="transition-delay:.08s">Η πολυτέλεια ενός<br><span class="foil">τέλειου χαμόγελου.</span></h1>
+        <p class="sub reveal" style="transition-delay:.16s">Στον Εύοσμο Θεσσαλονίκης, η Δρ. Αναστασία Παρχαρίδου σχεδιάζει χαμόγελα με την ακρίβεια κοσμηματοποιού — προηγμένη τεχνολογία, αψεγάδιαστη αισθητική, αποτέλεσμα που διαρκεί.</p>
+        <div class="hero-cta reveal" style="transition-delay:.24s">
+          <a class="btn btn-gold" href="#contact"><i class="ti ti-calendar-plus"></i> Κλείστε Ραντεβού</a>
+          <a class="btn btn-ghost" href="#services"><i class="ti ti-stethoscope"></i> Οι Υπηρεσίες μας</a>
+        </div>
+        <div class="hero-stats reveal" style="transition-delay:.32s">
+          <div class="s"><div class="n">4.9★</div><div class="l">Βαθμολογία ασθενών</div></div>
+          <div class="s"><div class="n">5.000+</div><div class="l">Χαμόγελα φροντίδας</div></div>
+          <div class="s"><div class="n">20+</div><div class="l">Χρόνια εμπειρίας</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow"><span class="ln"></span> ΟΙ ΥΠΗΡΕΣΙΕΣ ΜΑΣ</div>
+      <h2>Έξι τέχνες,<br><span class="foil">ένα όραμα.</span></h2>
+      <p>Κάθε θεραπεία σχεδιασμένη με ακρίβεια — από την πρώτη εξέταση έως το τελικό αποτέλεσμα.</p>
+    </div>
+    <div class="grid3 mt54">
+      <div class="svc reveal">
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1559131397-f94da358f7ca?q=80&w=900&auto=format&fit=crop" alt="Αισθητική Οδοντιατρική"><div class="svc-ic"><i class="ti ti-sparkles"></i></div></div>
+        <div class="svc-body"><h3>Αισθητική Οδοντιατρική</h3><p>Όψεις ρητίνης &amp; πορσελάνης, σχεδιασμός χαμόγελου με ακρίβεια αρχιτέκτονα.</p><a href="#">Μάθετε περισσότερα <i class="ti ti-arrow-right"></i></a></div>
+      </div>
+      <div class="svc reveal" style="transition-delay:.06s">
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?q=80&w=900&auto=format&fit=crop" alt="Ορθοδοντική Fastbraces"><div class="svc-ic"><i class="ti ti-braces"></i></div></div>
+        <div class="svc-body"><h3>Ορθοδοντική Fastbraces®</h3><p>Ταχεία, άνετη ευθυγράμμιση δοντιών — για εφήβους και ενήλικες.</p><a href="#">Μάθετε περισσότερα <i class="ti ti-arrow-right"></i></a></div>
+      </div>
+      <div class="svc reveal" style="transition-delay:.12s">
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=900&auto=format&fit=crop" alt="Εμφυτεύματα"><div class="svc-ic"><i class="ti ti-dental-broken"></i></div></div>
+        <div class="svc-body"><h3>Εμφυτεύματα</h3><p>Μόνιμη αποκατάσταση δοντιών που λείπουν, με φυσικό αποτέλεσμα.</p><a href="#">Μάθετε περισσότερα <i class="ti ti-arrow-right"></i></a></div>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=900&auto=format&fit=crop" alt="Λεύκανση Δοντιών"><div class="svc-ic"><i class="ti ti-sun-high"></i></div></div>
+        <div class="svc-body"><h3>Λεύκανση Δοντιών</h3><p>Επαγγελματική λεύκανση για ένα λαμπερό, φωτεινό χαμόγελο.</p><a href="#">Μάθετε περισσότερα <i class="ti ti-arrow-right"></i></a></div>
+      </div>
+      <div class="svc reveal" style="transition-delay:.06s">
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=900&auto=format&fit=crop" alt="Παιδοδοντία"><div class="svc-ic"><i class="ti ti-mood-kid"></i></div></div>
+        <div class="svc-body"><h3>Παιδοδοντία</h3><p>Φιλική, ανώδυνη φροντίδα για τα μικρά χαμόγελα της οικογένειας.</p><a href="#">Μάθετε περισσότερα <i class="ti ti-arrow-right"></i></a></div>
+      </div>
+      <div class="svc reveal" style="transition-delay:.12s">
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=900&auto=format&fit=crop" alt="Αισθητική Προσώπου"><div class="svc-ic"><i class="ti ti-face-mask"></i></div></div>
+        <div class="svc-body"><h3>Αισθητική Προσώπου</h3><p>Botox &amp; υαλουρονικό οξύ για αρμονικά, φυσικά αποτελέσματα.</p><a href="#">Μάθετε περισσότερα <i class="ti ti-arrow-right"></i></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec doc" id="doctor">
+  <div class="wrap">
+    <div class="doc-img-wrap reveal">
+      <div class="doc-img"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=1000&auto=format&fit=crop" alt="Δρ. Αναστασία Παρχαρίδου"></div>
+    </div>
+    <div>
+      <div class="eyebrow reveal"><span class="ln"></span> Η ΙΑΤΡΟΣ</div>
+      <h2 class="reveal" style="transition-delay:.06s">Δρ. Αναστασία<br><span class="foil">Παρχαρίδου</span></h2>
+      <p class="doc-quote reveal" style="transition-delay:.12s">«Το χαμόγελο είναι το πολυτιμότερο κόσμημα ενός προσώπου — του αξίζει η ίδια προσοχή στη λεπτομέρεια.»</p>
+      <p class="doc-bio reveal" style="transition-delay:.18s">Με πάνω από 20 χρόνια εμπειρίας στη γενική και αισθητική οδοντιατρική, συνδυάζει επιστημονική ακρίβεια με προσωπική φροντίδα. Κάθε πλάνο θεραπείας σχεδιάζεται γύρω από εσάς — τις ανάγκες, τον ρυθμό και τους στόχους σας.</p>
+      <div class="doc-creds reveal" style="transition-delay:.24s">
+        <span class="chip"><i class="ti ti-award"></i> Fastbraces® Senior Master Provider</span>
+        <span class="chip"><i class="ti ti-certificate"></i> Γενική &amp; Αισθητική Οδοντιατρική</span>
+        <span class="chip"><i class="ti ti-clock-hour-4"></i> 20+ χρόνια εμπειρίας</span>
+        <span class="chip"><i class="ti ti-heart-handshake"></i> Εξατομικευμένη προσέγγιση</span>
+      </div>
+      <a class="btn btn-gold reveal" style="transition-delay:.3s" href="#contact"><i class="ti ti-calendar-plus"></i> Κλείστε το ραντεβού σας</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="results">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow"><span class="ln"></span> ΠΡΙΝ / ΜΕΤΑ</div>
+      <h2>Μεταμορφώσεις που<br><span class="foil">μιλούν.</span></h2>
+      <p>Δείτε την ποιότητα της δουλειάς μας μέσα από πραγματικά αποτελέσματα ασθενών.</p>
+    </div>
+    <div class="ba mt54 reveal">
+      <div class="pane"><img src="https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?q=80&w=1100&auto=format&fit=crop" alt="Πριν"><span class="tag">Πριν</span></div>
+      <div class="pane"><img src="https://images.unsplash.com/photo-1559131397-f94da358f7ca?q=80&w=1100&auto=format&fit=crop" alt="Μετά"><span class="tag">Μετά</span></div>
+      <div class="divider"><i class="ti ti-arrows-horizontal"></i></div>
+    </div>
+    <div class="center" style="margin-top:36px"><a class="btn btn-ghost" href="#"><i class="ti ti-photo"></i> Δείτε όλη τη συλλογή χαμόγελων</a></div>
+  </div>
+</section>
+
+<section class="sec philo" id="philo">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow"><span class="ln"></span> Η ΦΙΛΟΣΟΦΙΑ ΜΑΣ</div>
+      <h2>Γιατί να μας<br><span class="foil">εμπιστευτείτε.</span></h2>
+    </div>
+    <div class="philo-grid">
+      <div class="p reveal"><i class="ti ti-mood-smile"></i><h3>Ανώδυνη Εμπειρία</h3><p>Σύγχρονες τεχνικές αναισθησίας και ήρεμο περιβάλλον, για μηδέν άγχος.</p></div>
+      <div class="p reveal" style="transition-delay:.06s"><i class="ti ti-device-heart-monitor"></i><h3>Σύγχρονος Εξοπλισμός</h3><p>Ψηφιακή ακτινογραφία, laser &amp; αποστείρωση τελευταίας γενιάς.</p></div>
+      <div class="p reveal" style="transition-delay:.12s"><i class="ti ti-wallet"></i><h3>Διαφανές Κόστος</h3><p>Ξεκάθαρος τιμοκατάλογος &amp; ευέλικτοι τρόποι πληρωμής, χωρίς εκπλήξεις.</p></div>
+      <div class="p reveal" style="transition-delay:.18s"><i class="ti ti-users"></i><h3>Όλη η Οικογένεια</h3><p>Από παιδοδοντία έως εμφυτεύματα, κάτω από μία στέγη.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="testi-feature reveal">
+      <div class="stars">★★★★★</div>
+      <blockquote>«Φοβόμουν τον οδοντίατρο για χρόνια. Εδώ ένιωσα άνετα από το πρώτο λεπτό — επαγγελματισμός, υπομονή και ένα αποτέλεσμα που λατρεύω.»</blockquote>
+      <div class="who"><b>Μαρία Κ.</b> — Εύοσμος, Θεσσαλονίκη</div>
+    </div>
+    <div class="tgrid2">
+      <div class="tcard reveal"><div class="stars">★★★★★</div><p>«Έκανα Fastbraces και το αποτέλεσμα ξεπέρασε κάθε προσδοκία. Επαγγελματισμός σε κάθε λεπτομέρεια.»</p><div class="tperson"><div class="av">ΓΠ</div><div><b>Γιώργος Π.</b><span>Θεσσαλονίκη</span></div></div></div>
+      <div class="tcard reveal" style="transition-delay:.08s"><div class="stars">★★★★★</div><p>«Πάμε όλη η οικογένεια. Τα παιδιά μου αγαπούν τη Δρ. Παρχαρίδου — αυτό τα λέει όλα.»</p><div class="tperson"><div class="av">ΕΔ</div><div><b>Ελένη Δ.</b><span>Σταυρούπολη</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div>
+        <h2>Το ραντεβού σας<br><span class="foil">μας περιμένει.</span></h2>
+        <p>Κλείστε σήμερα το ραντεβού σας στο Πολυοδοντιατρείο DrSmile.</p>
+      </div>
+      <div class="cta-right">
+        <a class="cta-phone" href="tel:2310769674"><i class="ti ti-phone-call"></i> 2310 769 674</a>
+        <a class="btn btn-gold" href="#contact"><i class="ti ti-calendar-plus"></i> Κλείστε Ραντεβού</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec contact" id="contact">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow reveal"><span class="ln"></span> ΕΠΙΚΟΙΝΩΝΙΑ</div>
+      <h2 class="reveal" style="transition-delay:.06s">Θα χαρούμε να<br><span class="foil">σας υποδεχτούμε.</span></h2>
+      <div class="cinfo mt54">
+        <div class="crow reveal"><div class="ci"><i class="ti ti-map-pin"></i></div><div><b>Διεύθυνση</b><span>Καραολή &amp; Δημητρίου 92, Εύοσμος, 56224 Θεσσαλονίκη</span></div></div>
+        <div class="crow reveal" style="transition-delay:.06s"><div class="ci"><i class="ti ti-phone"></i></div><div><b>Τηλέφωνο</b><span>2310 769 674</span></div></div>
+        <div class="crow reveal" style="transition-delay:.12s"><div class="ci"><i class="ti ti-clock-hour-4"></i></div><div><b>Ωράριο</b><span>Δευτέρα – Παρασκευή: 09:00 – 21:00 · Σάββατο με ραντεβού</span></div></div>
+        <div class="crow reveal" style="transition-delay:.18s"><div class="ci"><i class="ti ti-brand-instagram"></i></div><div><b>Ακολουθήστε μας</b><span>Facebook · Instagram · YouTube · TikTok</span></div></div>
+      </div>
+      <a class="btn btn-gold reveal" style="margin-top:32px" href="tel:2310769674"><i class="ti ti-calendar-plus"></i> Κλείστε Ραντεβού</a>
+    </div>
+    <div class="map-frame reveal" style="transition-delay:.1s">
+      <iframe loading="lazy" src="https://maps.google.com/maps?q=Karaoli%20kai%20Dimitriou%2092%20Evosmos%20Thessaloniki&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="brand" href="#"><img src="assets/logo.png" alt="DrSmile Πολυοδοντιατρείο"></a>
+        <p class="ftag">Πολυτελής, σύγχρονη οδοντιατρική φροντίδα στον Εύοσμο Θεσσαλονίκης — για χαμόγελα που λάμπουν.</p>
+        <div class="fsoc">
+          <a href="#"><i class="ti ti-brand-facebook"></i></a>
+          <a href="#"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#"><i class="ti ti-brand-youtube"></i></a>
+          <a href="#"><i class="ti ti-brand-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="fcol"><h4>Υπηρεσίες</h4><a href="#">Αισθητική Οδοντιατρική</a><a href="#">Ορθοδοντική Fastbraces</a><a href="#">Εμφυτεύματα</a><a href="#">Λεύκανση Δοντιών</a><a href="#">Παιδοδοντία</a><a href="#">Αισθητική Προσώπου</a></div>
+      <div class="fcol"><h4>Εξερευνήστε</h4><a href="#doctor">Η Ιατρός</a><a href="#results">Πριν / Μετά</a><a href="#philo">Φιλοσοφία</a><a href="#contact">Επικοινωνία</a></div>
+      <div class="fcol"><h4>Επικοινωνία</h4><a href="tel:2310769674">2310 769 674</a><a href="#">Καραολή &amp; Δημητρίου 92</a><a href="#">Εύοσμος, Θεσσαλονίκη</a><a href="#contact">Κλείστε Ραντεβού</a></div>
+    </div>
+    <div class="fbottom">
+      <span>© 2026 DrSmile — Δρ. Αναστασία Παρχαρίδου. Με επιφύλαξη παντός δικαιώματος.</span>
+      <span>Πολιτική Απορρήτου · Όροι Χρήσης · Cookies</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('topnav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>30),{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const heroBg=document.getElementById('heroBg');
+let ticking=false;
+function parallax(){const y=window.scrollY;heroBg.style.transform=`scale(1.07) translateY(${(y*0.12).toFixed(1)}px)`;ticking=false;}
+addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(parallax);ticking=true;}},{passive:true});
+</script>
+</body>
+</html>
