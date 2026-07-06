@@ -64,15 +64,21 @@ a{color:inherit;text-decoration:none}
 .ub-mid{opacity:.85}
 
 .topnav{position:sticky;top:0;left:0;right:0;z-index:100;transition:.4s;background:rgba(251,248,242,0)}
-.topnav .wrap{display:flex;align-items:center;justify-content:space-between;height:96px}
+.topnav .wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
 .topnav.scrolled{background:rgba(251,248,242,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.topnav.scrolled .topnav-bar{height:76px}
-.brand{display:flex;align-items:center;gap:14px}
-.brand img{height:46px;width:auto;transition:.4s}
-.brand-stack{display:flex;flex-direction:column;gap:3px;line-height:1.1}
+.topnav.scrolled .topnav-bar{padding:10px 0}
+.brand{display:flex;flex-direction:column;align-items:center;gap:7px}
+.brand img{height:52px;width:auto;transition:.4s}
+.topnav.scrolled .brand img{height:36px}
+.brand-sub{display:flex;flex-direction:column;align-items:center;gap:4px;overflow:hidden;max-height:50px;opacity:1;transition:.4s}
+.topnav.scrolled .brand-sub{max-height:0;opacity:0}
 .brand-by{display:flex;align-items:center;gap:8px;font-size:9.5px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
 .brand-by .bl{width:22px;height:1px;background:var(--line)}
 .brand-name{font-family:var(--fs);font-style:italic;font-size:15px;color:var(--gold-deep);font-weight:500}
+footer .brand-sub{align-items:flex-start;max-height:none;opacity:1;margin:6px 0 16px}
+footer .brand-by{color:var(--muted-d)}
+footer .brand-by .bl{background:var(--line-soft)}
+footer .brand-name{color:var(--gold-soft)}
 .nav-links{display:flex;gap:36px}
 .nav-links a{font-size:14px;font-weight:500;letter-spacing:.02em;position:relative;padding:4px 0;color:var(--charcoal)}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;background:var(--gold-deep);transition:.35s}
@@ -216,7 +222,7 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
   .vlabel{display:none}
   .float-card{right:14px}
   .sec{padding:70px 0}
-  .brand-stack{display:none}
+  .brand-sub{display:none}
   .fab-stack{bottom:18px;right:18px}
   .fab .flyout{display:none}
   .why-grid,.serv-grid{grid-template-columns:1fr 1fr}
@@ -245,7 +251,7 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
   <div class="wrap topnav-bar">
     <a class="brand" href="#">
       <img src="assets/logo.png" alt="DrSmile Πολυοδοντιατρείο">
-      <span class="brand-stack">
+      <span class="brand-sub">
         <span class="brand-by"><span class="bl"></span>by<span class="bl"></span></span>
         <span class="brand-name">Αναστασία Παρχαρίδου</span>
       </span>
@@ -469,6 +475,10 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
     <div class="fgrid">
       <div class="fb-logo">
         <img src="assets/logo.png" alt="DrSmile Πολυοδοντιατρείο">
+        <span class="brand-sub">
+          <span class="brand-by"><span class="bl"></span>by<span class="bl"></span></span>
+          <span class="brand-name">Αναστασία Παρχαρίδου</span>
+        </span>
         <p>Πολυοδοντιατρείο — ομάδα εξειδικευμένων οδοντιάτρων, ολιστική φροντίδα για κάθε ηλικία, στον Εύοσμο Θεσσαλονίκης.</p>
         <div class="fsoc">
           <a href="#"><i class="ti ti-brand-facebook"></i></a>
