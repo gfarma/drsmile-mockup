@@ -87,8 +87,12 @@ footer .brand-name{color:var(--gold-soft)}
 .nav-phone{font-family:var(--fs);font-size:17px;color:var(--gold-deep);font-weight:500}
 .burger{display:none;font-size:26px;background:none;border:0;color:var(--charcoal)}
 
-.hero{position:relative;padding:64px 0 90px;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero{position:relative;overflow:hidden;min-height:84vh;display:flex;align-items:center;padding:90px 0}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:60% 45%}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,var(--ivory) 0%,var(--ivory) 26%,rgba(251,248,242,.88) 40%,rgba(251,248,242,.4) 58%,rgba(251,248,242,.06) 76%,transparent 92%)}
+.hero-content{position:relative;z-index:1;width:100%}
+.hero-text{max-width:620px}
 .eyebrow-en{display:inline-flex;align-items:center;gap:14px;margin-bottom:26px;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-deep)}
 .eyebrow-en .ln{width:44px;height:1px;background:var(--gold-deep)}
 .hero h1{font-family:var(--fs);font-weight:300;font-size:clamp(42px,6.2vw,84px);line-height:1.05;letter-spacing:-.02em;color:var(--charcoal)}
@@ -98,20 +102,6 @@ footer .brand-name{color:var(--gold-soft)}
 .triptych{display:flex;gap:28px;margin-top:50px;padding-top:28px;border-top:1px solid var(--line);flex-wrap:wrap;align-items:center}
 .triptych .t-item{font-family:var(--fs);font-style:italic;font-size:17px;color:var(--charcoal-2)}
 .triptych .t-dot{width:5px;height:5px;border-radius:50%;background:var(--gold)}
-.hero-art{position:relative}
-.hero-carve{position:absolute;left:-70px;top:-30px;width:300px;height:390px;pointer-events:none;z-index:0;filter:drop-shadow(-6px -6px 10px rgba(255,255,255,.85)) drop-shadow(8px 12px 18px rgba(154,119,47,.22))}
-.hero-frame{position:relative;z-index:1;border-radius:300px 300px 22px 22px;overflow:hidden;aspect-ratio:3/4;background:linear-gradient(165deg,#E9D9B8,#9C7A45);box-shadow:0 40px 90px -44px rgba(120,96,50,.35)}
-.hero-frame::after{content:"";position:absolute;inset:10px;border:1px solid rgba(255,255,255,.5);border-radius:290px 290px 14px 14px;pointer-events:none}
-.hero-frame img{width:100%;height:100%;object-fit:cover}
-.vlabel{position:absolute;left:-58px;top:50%;transform:rotate(-90deg);transform-origin:center;font-size:11px;font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
-.float-card{position:absolute;right:-26px;bottom:54px;background:var(--warm-white);border:1px solid var(--line);border-radius:16px;padding:18px 22px;box-shadow:0 24px 50px -28px rgba(120,96,50,.3);display:flex;align-items:center;gap:14px;animation:floaty 5s ease-in-out infinite}
-@keyframes floaty{50%{transform:translateY(-12px)}}
-.float-card .rate{font-family:var(--fs);font-size:26px;color:var(--gold-deep);line-height:1}
-.float-card .ft{font-size:12px;color:var(--muted);max-width:120px}
-.spark{position:absolute;color:var(--gold);opacity:.85;z-index:1}
-.s1{top:190px;left:135px;font-size:24px;animation:tw 3s infinite}
-.s2{top:222px;left:172px;font-size:14px;animation:tw 3s .8s infinite}
-@keyframes tw{0%,100%{opacity:.3;transform:scale(.85)}50%{opacity:.95;transform:scale(1.1)}}
 
 .marq{background:var(--charcoal);color:var(--gold-soft);padding:20px 0;overflow:hidden;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
 .marq-track{display:flex;gap:0;white-space:nowrap;animation:scroll 38s linear infinite;width:max-content}
@@ -218,10 +208,9 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
   .nav-links,.nav-phone{display:none}
   .burger{display:block}
   .utilbar .ub-mid{display:none}
-  .hero-grid{grid-template-columns:1fr;gap:44px}
-  .hero{padding:40px 0 60px}
-  .vlabel{display:none}
-  .float-card{right:14px}
+  .hero{min-height:600px;padding:60px 0}
+  .hero-bg::after{background:linear-gradient(180deg,rgba(251,248,242,.7) 0%,rgba(251,248,242,.94) 55%,var(--ivory) 85%)}
+  .hero-text{max-width:100%}
   .sec{padding:70px 0}
   .brand-sub{display:none}
   .fab-stack{bottom:18px;right:18px}
@@ -273,8 +262,11 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
 </nav>
 
 <header class="hero">
-  <div class="wrap hero-grid">
-    <div>
+  <div class="hero-bg">
+    <img src="assets/hero-banner.png" alt="Χαμόγελο DrSmile">
+  </div>
+  <div class="wrap hero-content">
+    <div class="hero-text">
       <div class="eyebrow-en reveal"><span class="ln"></span>Quiet Luxury Dentistry</div>
       <h1 class="reveal" style="transition-delay:.08s">Η ωραιότερη καμπύλη<br>πάνω σου<br><em>είναι το χαμόγελό σου.</em></h1>
       <p class="sub reveal" style="transition-delay:.16s">Στο DrSmile, η ομάδα εξειδικευμένων οδοντιάτρων μας αντιμετωπίζει κάθε περιστατικό ολιστικά — ένα πολυοδοντιατρείο, μία συνολική φροντίδα, για κάθε ηλικία, σε έναν χώρο σχεδιασμένο να σας εμπνέει ηρεμία και εμπιστοσύνη.</p>
@@ -288,29 +280,6 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
         <span class="t-item">Μία ομάδα</span>
         <span class="t-dot"></span>
         <span class="t-item">Σε έναν χώρο</span>
-      </div>
-    </div>
-    <div class="hero-art reveal" style="transition-delay:.2s">
-      <span class="vlabel">Πολυοδοντιατρείο DrSmile</span>
-      <svg class="hero-carve" viewBox="0 0 200 260" aria-hidden="true">
-        <defs>
-          <linearGradient id="carveGrad" x1="10%" y1="0%" x2="95%" y2="100%">
-            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
-            <stop offset="40%" stop-color="#EFE6D2" stop-opacity=".9"/>
-            <stop offset="75%" stop-color="#C9A567" stop-opacity=".55"/>
-            <stop offset="100%" stop-color="#9C7A45" stop-opacity=".5"/>
-          </linearGradient>
-        </defs>
-        <path d="M100,18 C56,18 16,52 16,104 C16,172 60,214 100,266 C140,214 184,172 184,104 C184,52 144,18 100,18 Z" fill="url(#carveGrad)" stroke="rgba(255,255,255,.7)" stroke-width="2"/>
-      </svg>
-      <i class="ti ti-sparkles spark s1"></i>
-      <i class="ti ti-sparkles spark s2"></i>
-      <div class="hero-frame">
-        <img src="https://images.unsplash.com/photo-1654373535457-383a0a4d00f9?q=80&w=1200&auto=format&fit=crop" alt="Κοντινό πλάνο χαμόγελου DrSmile">
-      </div>
-      <div class="float-card">
-        <div class="rate"><i class="ti ti-heart-handshake"></i></div>
-        <div><div class="ft">Ολιστική φροντίδα<br>για κάθε ηλικία</div></div>
       </div>
     </div>
   </div>
