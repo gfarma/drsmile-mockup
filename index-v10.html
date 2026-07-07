@@ -129,12 +129,17 @@ footer .brand-name{color:var(--gold-soft)}
 .why-card h3{font-family:var(--fs);font-weight:500;font-size:21px;margin-bottom:12px;line-height:1.3;color:var(--charcoal)}
 .why-card p{font-size:13.5px;color:var(--muted);line-height:1.7}
 
-.serv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:54px}
-.scard{background:var(--warm-white);border:1px solid var(--line);border-radius:20px 20px 20px 6px;padding:28px 24px;transition:.35s}
+.serv-banner{border-radius:24px 24px 24px 6px;overflow:hidden;aspect-ratio:21/7;margin-top:50px;box-shadow:0 30px 60px -38px rgba(120,96,50,.3)}
+.serv-banner img{width:100%;height:100%;object-fit:cover}
+.serv-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:40px}
+.scard{position:relative;background:var(--warm-white);border:1px solid var(--line);border-radius:20px 20px 20px 6px;aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;transition:.35s;-webkit-tap-highlight-color:transparent}
 .scard:hover{transform:translateY(-5px);box-shadow:0 22px 44px -28px rgba(120,96,50,.28);border-color:var(--gold-deep)}
-.scard .emboss-ic{width:52px;height:52px;font-size:21px;margin-bottom:18px}
-.scard h3{font-family:var(--sans);font-weight:600;font-size:15px;margin-bottom:8px;letter-spacing:.01em;color:var(--charcoal)}
-.scard p{font-size:12.5px;color:var(--muted);line-height:1.6}
+.scard .emboss-ic{width:52px;height:52px;font-size:21px;transition:.35s}
+.scard.open .emboss-ic{opacity:0;transform:scale(.6)}
+.scard-reveal{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:14px;opacity:0;transform:scale(.92);pointer-events:none;transition:.35s}
+.scard.open .scard-reveal{opacity:1;transform:scale(1);pointer-events:auto}
+.scard h3{font-family:var(--sans);font-weight:600;font-size:12.5px;margin-bottom:6px;letter-spacing:.01em;color:var(--charcoal);line-height:1.3}
+.scard p{font-size:11px;color:var(--muted);line-height:1.5}
 
 .team{background:var(--pearl);color:var(--charcoal)}
 .team .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
@@ -214,13 +219,16 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
   .sec{padding:70px 0}
   .fab-stack{bottom:18px;right:18px}
   .fab .flyout{display:none}
-  .why-grid,.serv-grid{grid-template-columns:1fr 1fr}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .serv-grid{grid-template-columns:repeat(4,1fr)}
   .philo-grid{grid-template-columns:1fr 1fr}
   .team .wrap,.contact .wrap{grid-template-columns:1fr;gap:44px}
   .team-values{grid-template-columns:1fr}
 }
 @media(max-width:560px){
-  .why-grid,.serv-grid,.philo-grid{grid-template-columns:1fr}
+  .why-grid,.philo-grid{grid-template-columns:1fr}
+  .serv-grid{grid-template-columns:repeat(3,1fr)}
+  .serv-banner{aspect-ratio:16/10}
   .ba-wrap{grid-template-columns:1fr}
   .addr-full{display:none}
   .addr-short{display:inline}
@@ -352,20 +360,23 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
   <div class="wrap">
     <div class="sec-label reveal"><span class="ln"></span><span class="label">Οι Υπηρεσίες μας</span></div>
     <h2 class="reveal" style="transition-delay:.06s">Οι ειδικότητές μας,<br><em>ένα πολυοδοντιατρείο.</em></h2>
-    <p class="intro reveal" style="transition-delay:.1s">Μία ματιά αρκεί — δείτε όλο το εύρος της φροντίδας που προσφέρουμε, κάτω από την ίδια στέγη.</p>
+    <p class="intro reveal" style="transition-delay:.1s">Μία ματιά αρκεί — δείτε όλο το εύρος της φροντίδας που προσφέρουμε, κάτω από την ίδια στέγη. Πατήστε σε μία υπηρεσία για να δείτε περισσότερα.</p>
+    <div class="serv-banner reveal" style="transition-delay:.12s">
+      <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1600&auto=format&fit=crop" alt="Ο χώρος του πολυοδοντιατρείου DrSmile">
+    </div>
     <div class="serv-grid">
-      <div class="scard reveal"><div class="emboss-ic"><i class="ti ti-checkup-list"></i></div><h3>Γενική Οδοντιατρική</h3><p>Πλήρης διαγνωστικός &amp; προληπτικός έλεγχος για όλη την οικογένεια.</p></div>
-      <div class="scard reveal" style="transition-delay:.04s"><div class="emboss-ic"><i class="ti ti-sparkles"></i></div><h3>Αισθητική Οδοντιατρική</h3><p>Λεύκανση, όψεις ρητίνης, όψεις &amp; θήκες πορσελάνης, οδοντικά strass, λευκά σφραγίσματα.</p></div>
-      <div class="scard reveal" style="transition-delay:.08s"><div class="emboss-ic"><i class="ti ti-align-box-center-middle"></i></div><h3>Ορθοδοντική Fastbraces®</h3><p>Ταχεία, άνετη ευθυγράμμιση δοντιών με πιστοποιημένη τεχνολογία.</p></div>
-      <div class="scard reveal" style="transition-delay:.12s"><div class="emboss-ic"><i class="ti ti-droplet-half-2"></i></div><h3>Περιοδοντολογία</h3><p>Καθαρισμός, θεραπεία ουλίτιδας, θεραπεία περιοδοντίτιδας, ουλεκτομή-ουλοπλαστική, επιμήκυνση μύλης.</p></div>
-      <div class="scard reveal" style="transition-delay:.16s"><div class="emboss-ic"><i class="ti ti-bolt"></i></div><h3>Εμφυτευματολογία</h3><p>Μόνιμη, φυσική αποκατάσταση δοντιών με οδοντικά εμφυτεύματα.</p></div>
-      <div class="scard reveal" style="transition-delay:.2s"><div class="emboss-ic"><i class="ti ti-mood-kid"></i></div><h3>Παιδοδοντία</h3><p>Φθορίωση, σφραγίσματα, sealants, πολφοτομή — φιλική εμπειρία για παιδιά.</p></div>
-      <div class="scard reveal" style="transition-delay:.24s"><div class="emboss-ic"><i class="ti ti-vector-triangle"></i></div><h3>Ενδοδοντία</h3><p>Απονευρώσεις με σύγχρονες, ανώδυνες τεχνικές.</p></div>
-      <div class="scard reveal" style="transition-delay:.28s"><div class="emboss-ic"><i class="ti ti-dental"></i></div><h3>Προσθετική (Κινητή &amp; Ακίνητη)</h3><p>Ολικές/μερικές οδοντοστοιχίες, θήκες, γέφυρες, επί εμφυτευμάτων, ολοκεραμικά.</p></div>
-      <div class="scard reveal" style="transition-delay:.32s"><div class="emboss-ic"><i class="ti ti-first-aid-kit"></i></div><h3>Χειρουργική Στόματος</h3><p>Εξαγωγή φρονιμιτών, ανύψωση ιγμορείου, ακρορριζεκτομές.</p></div>
-      <div class="scard reveal" style="transition-delay:.36s"><div class="emboss-ic"><i class="ti ti-hammer"></i></div><h3>Σφραγίσματα - Χτίσιμο Δοντιών</h3><p>Αποκατάσταση φθοράς &amp; μορφολογίας με ανθεκτικά υλικά.</p></div>
-      <div class="scard reveal" style="transition-delay:.4s"><div class="emboss-ic"><i class="ti ti-shield-check"></i></div><h3>Κατασκευή Ναρθήκων</h3><p>Νάρθηκες λεύκανσης, ορθοδοντικής, βρουξισμού.</p></div>
-      <div class="scard reveal" style="transition-delay:.48s"><div class="emboss-ic"><i class="ti ti-bulb"></i></div><h3>Λέιζερ (Laser)</h3><p>Λεύκανση, ουλεκτομή, ουλοπλαστική, θεραπεία περιοδοντίτιδας, μείωση οδοντικής ευαισθησίας.</p></div>
+      <div class="scard reveal" tabindex="0" role="button" aria-label="Γενική Οδοντιατρική"><div class="emboss-ic"><i class="ti ti-checkup-list"></i></div><div class="scard-reveal"><h3>Γενική Οδοντιατρική</h3><p>Πλήρης διαγνωστικός &amp; προληπτικός έλεγχος για όλη την οικογένεια.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.04s" tabindex="0" role="button" aria-label="Αισθητική Οδοντιατρική"><div class="emboss-ic"><i class="ti ti-sparkles"></i></div><div class="scard-reveal"><h3>Αισθητική Οδοντιατρική</h3><p>Λεύκανση, όψεις ρητίνης, όψεις &amp; θήκες πορσελάνης, οδοντικά strass, λευκά σφραγίσματα.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.08s" tabindex="0" role="button" aria-label="Ορθοδοντική Fastbraces"><div class="emboss-ic"><i class="ti ti-align-box-center-middle"></i></div><div class="scard-reveal"><h3>Ορθοδοντική Fastbraces®</h3><p>Ταχεία, άνετη ευθυγράμμιση δοντιών με πιστοποιημένη τεχνολογία.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.12s" tabindex="0" role="button" aria-label="Περιοδοντολογία"><div class="emboss-ic"><i class="ti ti-droplet-half-2"></i></div><div class="scard-reveal"><h3>Περιοδοντολογία</h3><p>Καθαρισμός, θεραπεία ουλίτιδας, θεραπεία περιοδοντίτιδας, ουλεκτομή-ουλοπλαστική, επιμήκυνση μύλης.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.16s" tabindex="0" role="button" aria-label="Εμφυτευματολογία"><div class="emboss-ic"><i class="ti ti-bolt"></i></div><div class="scard-reveal"><h3>Εμφυτευματολογία</h3><p>Μόνιμη, φυσική αποκατάσταση δοντιών με οδοντικά εμφυτεύματα.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.2s" tabindex="0" role="button" aria-label="Παιδοδοντία"><div class="emboss-ic"><i class="ti ti-mood-kid"></i></div><div class="scard-reveal"><h3>Παιδοδοντία</h3><p>Φθορίωση, σφραγίσματα, sealants, πολφοτομή — φιλική εμπειρία για παιδιά.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.24s" tabindex="0" role="button" aria-label="Ενδοδοντία"><div class="emboss-ic"><i class="ti ti-vector-triangle"></i></div><div class="scard-reveal"><h3>Ενδοδοντία</h3><p>Απονευρώσεις με σύγχρονες, ανώδυνες τεχνικές.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.28s" tabindex="0" role="button" aria-label="Προσθετική"><div class="emboss-ic"><i class="ti ti-dental"></i></div><div class="scard-reveal"><h3>Προσθετική (Κινητή &amp; Ακίνητη)</h3><p>Ολικές/μερικές οδοντοστοιχίες, θήκες, γέφυρες, επί εμφυτευμάτων, ολοκεραμικά.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.32s" tabindex="0" role="button" aria-label="Χειρουργική Στόματος"><div class="emboss-ic"><i class="ti ti-first-aid-kit"></i></div><div class="scard-reveal"><h3>Χειρουργική Στόματος</h3><p>Εξαγωγή φρονιμιτών, ανύψωση ιγμορείου, ακρορριζεκτομές.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.36s" tabindex="0" role="button" aria-label="Σφραγίσματα"><div class="emboss-ic"><i class="ti ti-hammer"></i></div><div class="scard-reveal"><h3>Σφραγίσματα - Χτίσιμο Δοντιών</h3><p>Αποκατάσταση φθοράς &amp; μορφολογίας με ανθεκτικά υλικά.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.4s" tabindex="0" role="button" aria-label="Κατασκευή Ναρθήκων"><div class="emboss-ic"><i class="ti ti-shield-check"></i></div><div class="scard-reveal"><h3>Κατασκευή Ναρθήκων</h3><p>Νάρθηκες λεύκανσης, ορθοδοντικής, βρουξισμού.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.48s" tabindex="0" role="button" aria-label="Λέιζερ"><div class="emboss-ic"><i class="ti ti-bulb"></i></div><div class="scard-reveal"><h3>Λέιζερ (Laser)</h3><p>Λεύκανση, ουλεκτομή, ουλοπλαστική, θεραπεία περιοδοντίτιδας, μείωση οδοντικής ευαισθησίας.</p></div></div>
     </div>
   </div>
 </section>
@@ -489,6 +500,10 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 const grain=document.querySelector('.grain');let tick=false;
 function px(){const y=window.scrollY;grain.style.backgroundPosition=`0px ${(-y*0.5).toFixed(1)}px, 0px ${(-y*0.3).toFixed(1)}px`;tick=false;}
 addEventListener('scroll',()=>{if(!tick){requestAnimationFrame(px);tick=true;}},{passive:true});
+document.querySelectorAll('.scard').forEach(card=>{
+  card.addEventListener('click',()=>card.classList.toggle('open'));
+  card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();card.classList.toggle('open')}});
+});
 </script>
 </body>
 </html>
