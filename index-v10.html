@@ -102,6 +102,17 @@ footer .brand-name{color:var(--gold-soft)}
 .triptych{display:flex;gap:28px;margin-top:50px;padding-top:28px;border-top:1px solid var(--line);flex-wrap:wrap;align-items:center}
 .triptych .t-item{font-family:var(--fs);font-style:italic;font-size:17px;color:var(--charcoal-2)}
 .triptych .t-dot{width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.hero-quote{position:absolute;right:110px;bottom:190px;z-index:1;display:flex;align-items:flex-start;gap:12px;max-width:230px}
+.hero-quote i{font-size:22px;color:var(--gold-deep);margin-top:2px;flex:none}
+.hero-quote p{font-family:var(--fs);font-style:italic;font-size:14px;color:var(--charcoal-2);line-height:1.5}
+
+.trustbar{background:var(--warm-white);border-bottom:1px solid var(--line)}
+.trustbar-grid{display:grid;grid-template-columns:repeat(4,1fr);padding:32px 0}
+.tb-item{display:flex;align-items:center;gap:14px;padding:0 26px;border-left:1px solid var(--line)}
+.tb-item:first-child{border-left:none;padding-left:0}
+.tb-ic{width:44px;height:44px;flex:none;border:1.5px solid var(--gold-deep);border-radius:14px 14px 6px 6px;display:grid;place-items:center;font-size:19px;color:var(--gold-deep)}
+.tb-item h4{font-family:var(--sans);font-weight:600;font-size:13px;color:var(--charcoal);margin-bottom:3px}
+.tb-item p{font-size:11.5px;color:var(--muted)}
 
 .marq{background:var(--charcoal);color:var(--gold-soft);padding:20px 0;overflow:hidden;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
 .marq-track{display:flex;gap:0;white-space:nowrap;animation:scroll 38s linear infinite;width:max-content}
@@ -216,9 +227,12 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
   .hero{min-height:600px;padding:210px 0 60px}
   .hero-bg::after{background:linear-gradient(180deg,rgba(251,248,242,.7) 0%,rgba(251,248,242,.94) 55%,var(--ivory) 85%)}
   .hero-text{max-width:100%}
+  .hero-quote{display:none}
   .sec{padding:70px 0}
   .fab-stack{bottom:18px;right:18px}
   .fab .flyout{display:none}
+  .trustbar-grid{grid-template-columns:1fr 1fr;row-gap:22px}
+  .tb-item:nth-child(3){border-left:none}
   .why-grid{grid-template-columns:1fr 1fr}
   .serv-grid{grid-template-columns:repeat(4,1fr)}
   .philo-grid{grid-template-columns:1fr 1fr}
@@ -227,6 +241,8 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
 }
 @media(max-width:560px){
   .why-grid,.philo-grid{grid-template-columns:1fr}
+  .trustbar-grid{grid-template-columns:1fr}
+  .tb-item{border-left:none;padding-left:0}
   .serv-grid{grid-template-columns:repeat(3,1fr)}
   .serv-banner{aspect-ratio:16/10}
   .ba-wrap{grid-template-columns:1fr}
@@ -293,7 +309,32 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
       </div>
     </div>
   </div>
+  <div class="hero-quote reveal" style="transition-delay:.4s">
+    <i class="ti ti-dental"></i>
+    <p>Με σεβασμό σε εσάς,<br>με αγάπη για το χαμόγελό σας.</p>
+  </div>
 </header>
+
+<section class="trustbar">
+  <div class="wrap trustbar-grid">
+    <div class="tb-item reveal">
+      <div class="tb-ic"><i class="ti ti-users-group"></i></div>
+      <div><h4>Έμπειρη Ομάδα</h4><p>Εξειδίκευση &amp; συνεχής εκπαίδευση</p></div>
+    </div>
+    <div class="tb-item reveal" style="transition-delay:.06s">
+      <div class="tb-ic"><i class="ti ti-device-laptop"></i></div>
+      <div><h4>Ψηφιακή Τεχνολογία</h4><p>Ακρίβεια, άνεση, ασφάλεια</p></div>
+    </div>
+    <div class="tb-item reveal" style="transition-delay:.12s">
+      <div class="tb-ic"><i class="ti ti-heart-handshake"></i></div>
+      <div><h4>Ολιστική Προσέγγιση</h4><p>Για τη συνολική σας ευεξία</p></div>
+    </div>
+    <div class="tb-item reveal" style="transition-delay:.18s">
+      <div class="tb-ic"><i class="ti ti-diamond"></i></div>
+      <div><h4>Ποιότητα &amp; Αισθητική</h4><p>Υψηλά πρότυπα σε κάθε λεπτομέρεια</p></div>
+    </div>
+  </div>
+</section>
 
 <div class="marq">
   <div class="marq-track">
