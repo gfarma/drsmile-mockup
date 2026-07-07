@@ -140,9 +140,8 @@ footer .brand-name{color:var(--gold-soft)}
 .why-card h3{font-family:var(--fs);font-weight:500;font-size:21px;margin-bottom:12px;line-height:1.3;color:var(--charcoal)}
 .why-card p{font-size:13.5px;color:var(--muted);line-height:1.7}
 
-.serv-banner{border-radius:24px 24px 24px 6px;overflow:hidden;aspect-ratio:21/7;margin-top:50px;box-shadow:0 30px 60px -38px rgba(120,96,50,.3)}
-.serv-banner img{width:100%;height:100%;object-fit:cover}
-.serv-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:40px}
+.serv-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:44px}
+.serv-more{display:flex;justify-content:center;margin-top:40px}
 .scard{position:relative;background:var(--warm-white);border:1px solid var(--line);border-radius:20px 20px 20px 6px;aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;transition:.35s;padding:16px 12px;-webkit-tap-highlight-color:transparent}
 .scard:hover{transform:translateY(-5px);box-shadow:0 22px 44px -28px rgba(120,96,50,.28);border-color:var(--gold-deep)}
 .scard h3{font-family:var(--sans);font-weight:600;font-size:12px;letter-spacing:.01em;color:var(--charcoal);line-height:1.3;text-align:center;margin-bottom:10px}
@@ -244,7 +243,6 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
   .trustbar-grid{grid-template-columns:1fr}
   .tb-item{border-left:none;padding-left:0}
   .serv-grid{grid-template-columns:repeat(3,1fr)}
-  .serv-banner{aspect-ratio:16/10}
   .ba-wrap{grid-template-columns:1fr}
   .addr-full{display:none}
   .addr-short{display:inline}
@@ -400,12 +398,9 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
 
 <section class="sec" id="services" style="padding-top:60px">
   <div class="wrap">
-    <div class="sec-label reveal"><span class="ln"></span><span class="label">Οι Υπηρεσίες μας</span></div>
-    <h2 class="reveal" style="transition-delay:.06s">Οι ειδικότητές μας,<br><em>ένα πολυοδοντιατρείο.</em></h2>
+    <div class="sec-label reveal"><span class="ln"></span><span class="label">Υπηρεσίες</span></div>
+    <h2 class="reveal" style="transition-delay:.06s">Ολοκληρωμένες λύσεις<br><em>για κάθε ανάγκη.</em></h2>
     <p class="intro reveal" style="transition-delay:.1s">Μία ματιά αρκεί — δείτε όλο το εύρος της φροντίδας που προσφέρουμε, κάτω από την ίδια στέγη. Πατήστε σε μία υπηρεσία για να δείτε περισσότερα.</p>
-    <div class="serv-banner reveal" style="transition-delay:.12s">
-      <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1600&auto=format&fit=crop" alt="Ο χώρος του πολυοδοντιατρείου DrSmile">
-    </div>
     <div class="serv-grid">
       <div class="scard reveal" tabindex="0" role="button" aria-label="Γενική Οδοντιατρική"><h3>Γενική Οδοντιατρική</h3><div class="scard-body"><div class="emboss-ic"><i class="ti ti-checkup-list"></i></div><p>Πλήρης διαγνωστικός &amp; προληπτικός έλεγχος για όλη την οικογένεια.</p></div></div>
       <div class="scard reveal" style="transition-delay:.04s" tabindex="0" role="button" aria-label="Αισθητική Οδοντιατρική"><h3>Αισθητική Οδοντιατρική</h3><div class="scard-body"><div class="emboss-ic"><i class="ti ti-sparkles"></i></div><p>Λεύκανση, όψεις ρητίνης, όψεις &amp; θήκες πορσελάνης, οδοντικά strass, λευκά σφραγίσματα.</p></div></div>
@@ -419,6 +414,9 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
       <div class="scard reveal" style="transition-delay:.36s" tabindex="0" role="button" aria-label="Σφραγίσματα"><h3>Σφραγίσματα - Χτίσιμο Δοντιών</h3><div class="scard-body"><div class="emboss-ic"><i class="ti ti-hammer"></i></div><p>Αποκατάσταση φθοράς &amp; μορφολογίας με ανθεκτικά υλικά.</p></div></div>
       <div class="scard reveal" style="transition-delay:.4s" tabindex="0" role="button" aria-label="Κατασκευή Ναρθήκων"><h3>Κατασκευή Ναρθήκων</h3><div class="scard-body"><div class="emboss-ic"><i class="ti ti-shield-check"></i></div><p>Νάρθηκες λεύκανσης, ορθοδοντικής, βρουξισμού.</p></div></div>
       <div class="scard reveal" style="transition-delay:.48s" tabindex="0" role="button" aria-label="Λέιζερ"><h3>Λέιζερ (Laser)</h3><div class="scard-body"><div class="emboss-ic"><i class="ti ti-bulb"></i></div><p>Λεύκανση, ουλεκτομή, ουλοπλαστική, θεραπεία περιοδοντίτιδας, μείωση οδοντικής ευαισθησίας.</p></div></div>
+    </div>
+    <div class="serv-more reveal">
+      <a class="btn btn-line" href="#services">Δείτε όλες τις υπηρεσίες <i class="ti ti-arrow-down-right"></i></a>
     </div>
   </div>
 </section>
