@@ -46,14 +46,12 @@ a{color:inherit;text-decoration:none}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
 
-.emboss-ic{width:64px;height:64px;border-radius:50%;background:linear-gradient(145deg,var(--warm-white),var(--pearl));display:grid;place-items:center;font-size:26px;color:var(--gold-deep);
-  box-shadow:inset 3px 3px 6px rgba(154,119,47,.18), inset -3px -3px 6px rgba(255,255,255,.9), 0 1px 0 rgba(255,255,255,.6);
+.emboss-ic{width:64px;height:64px;border-radius:50%;object-fit:cover;background:var(--warm-white);
+  box-shadow:0 1px 0 rgba(255,255,255,.6), 0 0 0 1px var(--line);
   transition:.4s cubic-bezier(.2,.7,.2,1)}
-.emboss-ic i{transition:.4s cubic-bezier(.2,.7,.2,1)}
 [class*="card"]:hover .emboss-ic,.scard:hover .emboss-ic{
-  box-shadow:0 10px 24px -10px rgba(176,141,87,.55), 0 0 0 1px var(--gold-soft), inset 0 0 12px rgba(255,255,255,.5);
-  background:radial-gradient(circle at 35% 30%,var(--gold-soft),var(--champagne))}
-[class*="card"]:hover .emboss-ic i,.scard:hover .emboss-ic i{transform:translateY(-3px);color:var(--charcoal-2)}
+  transform:translateY(-3px) scale(1.06);
+  box-shadow:0 10px 24px -10px rgba(176,141,87,.55), 0 0 0 2px var(--gold-soft)}
 
 .site-header{position:fixed;top:0;left:0;right:0;z-index:100;transition:.4s;background:transparent}
 .site-header.scrolled{background:rgba(251,248,242,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
@@ -364,32 +362,32 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
     <h2 class="reveal" style="transition-delay:.06s">Έξι λόγοι να μας <em>εμπιστευτείτε.</em></h2>
     <div class="why-grid">
       <div class="why-card reveal">
-        <div class="emboss-ic"><i class="ti ti-building-hospital"></i></div>
+        <img class="emboss-ic" src="assets/icons/why-1.jpg" alt="">
         <h3>Όλη η οδοντιατρική φροντίδα σου, σε έναν χώρο</h3>
         <p>Από την πρώτη διάγνωση και τις ψηφιακές ακτινογραφίες μέχρι τις εξειδικευμένες θεραπείες και την ολοκλήρωση του σχεδίου θεραπείας, η ομάδα του οδοντιατρείου - πολυοδοντιατρείου DrSmile βρίσκεται δίπλα σου σε κάθε στάδιο, προσφέροντας ολοκληρωμένη φροντίδα χωρίς περιττές μετακινήσεις.</p>
       </div>
       <div class="why-card reveal" style="transition-delay:.08s">
-        <div class="emboss-ic"><i class="ti ti-users-group"></i></div>
+        <img class="emboss-ic" src="assets/icons/why-2.jpg" alt="">
         <h3>Μία ομάδα ειδικών, με έναν άνθρωπο δίπλα σου</h3>
         <p>Στο οδοντιατρείο - πολυοδοντιατρείο DrSmile, έχεις πάντα τον δικό σου οδοντίατρο, που γνωρίζει την περίπτωσή σου και συντονίζει το σχέδιο θεραπείας σου. Δίπλα του βρίσκεται μια ομάδα εξειδικευμένων συνεργατών, που παρεμβαίνει όταν χρειάζεται, ώστε να απολαμβάνεις την ασφάλεια μιας προσωπικής σχέσης και ταυτόχρονα το πλεονέκτημα μιας ολοκληρωμένης επιστημονικής ομάδας.</p>
       </div>
       <div class="why-card reveal" style="transition-delay:.16s">
-        <div class="emboss-ic"><i class="ti ti-heart-handshake"></i></div>
+        <img class="emboss-ic" src="assets/icons/why-3.jpg" alt="">
         <h3>Οδοντιατρική φροντίδα για κάθε ηλικία</h3>
         <p>Από την οδοντιατρική για παιδιά (παιδοδοντία) μέχρι τις ανάγκες της τρίτης ηλικίας, στο οδοντιατρείο - πολυοδοντιατρείο DrSmile προσφέρουμε ολοκληρωμένη οδοντιατρική φροντίδα, ώστε το χαμόγελό σου να μας εμπιστεύεται σε κάθε ηλικία. Κάθε μέλος της οικογένειας μπορεί να απολαμβάνει εξατομικευμένη θεραπεία από την κατάλληλη ειδικότητα, στον ίδιο χώρο, με την ίδια φιλοσοφία φροντίδας και εμπιστοσύνης.</p>
       </div>
       <div class="why-card reveal" style="transition-delay:.24s">
-        <div class="emboss-ic"><i class="ti ti-award"></i></div>
+        <img class="emboss-ic" src="assets/icons/why-4.jpg" alt="">
         <h3>Οδοντιατρικές υπηρεσίες υψηλής ποιότητας — Ποιότητα που φαίνεται. Και αντέχει.</h3>
         <p>Στο οδοντιατρείο - πολυοδοντιατρείο DrSmile, κάθε θεραπεία σχεδιάζεται ώστε να προσφέρει αξία και στο μέλλον. Γι' αυτό επενδύουμε σε ποιοτικά υλικά, σύγχρονες τεχνικές και υψηλά επιστημονικά πρότυπα, ώστε κάθε αποτέλεσμα να είναι λειτουργικό, αισθητικά άρτιο και σχεδιασμένο να διαρκεί. Δεν επιλέγουμε υλικά με γνώμονα το χαμηλότερο κόστος, αλλά το καλύτερο αποτέλεσμα για τον ασθενή. Γιατί η ποιότητα δεν είναι μία επιπλέον παροχή· είναι η βάση κάθε υπηρεσίας που προσφέρουμε.</p>
       </div>
       <div class="why-card reveal" style="transition-delay:.32s">
-        <div class="emboss-ic"><i class="ti ti-scan"></i></div>
+        <img class="emboss-ic" src="assets/icons/why-5.jpg" alt="">
         <h3>Σύγχρονη οδοντιατρική τεχνολογία στην υπηρεσία του ασθενούς</h3>
         <p>Η τεχνολογία αποκτά αξία όταν κάνει τη φροντίδα καλύτερη. Με προηγμένο εξοπλισμό και ψηφιακά διαγνωστικά μέσα, προσφέρουμε μεγαλύτερη ακρίβεια, ασφάλεια και καλύτερη εμπειρία σε κάθε θεραπεία.</p>
       </div>
       <div class="why-card reveal" style="transition-delay:.4s">
-        <div class="emboss-ic"><i class="ti ti-armchair"></i></div>
+        <img class="emboss-ic" src="assets/icons/why-6.jpg" alt="">
         <h3>Ένας χώρος που αναβαθμίζει την εμπειρία του οδοντιάτρου</h3>
         <p>Το οδοντιατρείο - πολυοδοντιατρείο DrSmile στον Εύοσμο Θεσσαλονίκης αποτελεί σύγχρονο χώρο υψηλής αισθητικής, όπου η άνεση, η ηρεμία και η διακριτική πολυτέλεια συμβάλλουν ώστε κάθε επίσκεψη να είναι ευχάριστη για τον κάθε ηλικίας ασθενή.</p>
       </div>
@@ -403,18 +401,18 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
     <h2 class="reveal" style="transition-delay:.06s">Ολοκληρωμένες λύσεις<br><em>για κάθε ανάγκη.</em></h2>
     <p class="intro reveal" style="transition-delay:.1s">Μία ματιά αρκεί — δείτε όλο το εύρος της φροντίδας που προσφέρουμε, κάτω από την ίδια στέγη. Πατήστε σε μία υπηρεσία για να δείτε περισσότερα.</p>
     <div class="serv-grid">
-      <div class="scard reveal" tabindex="0" role="button" aria-label="Γενική Οδοντιατρική"><h3>Γενική Οδοντιατρική</h3><div class="scard-body"><div class="emboss-ic"><i class="ti ti-checkup-list"></i></div><p>Πλήρης διαγνωστικός &amp; προληπτικός έλεγχος για όλη την οικογένεια.</p></div></div>
-      <div class="scard reveal" style="transition-delay:.04s" tabindex="0" role="button" aria-label="Αισθητική Οδοντιατρική"><h3>Αισθητική Οδοντιατρική</h3><div class="scard-body"><div class="emboss-ic"><i class="ti ti-sparkles"></i></div><p>Λεύκανση, όψεις ρητίνης, όψεις &amp; θήκες πορσελάνης, οδοντικά strass, λευκά σφραγίσματα.</p></div></div>
-      <div class="scard reveal" style="transition-delay:.08s" tabindex="0" role="button" aria-label="Ορθοδοντική Fastbraces"><h3>Ορθοδοντική Fastbraces®</h3><div class="scard-body"><div class="emboss-ic"><i class="ti ti-align-box-center-middle"></i></div><p>Ταχεία, άνετη ευθυγράμμιση δοντιών με πιστοποιημένη τεχνολογία.</p></div></div>
-      <div class="scard reveal" style="transition-delay:.12s" tabindex="0" role="button" aria-label="Περιοδοντολογία"><h3>Περιοδοντολογία</h3><div class="scard-body"><div class="emboss-ic"><i class="ti ti-droplet-half-2"></i></div><p>Καθαρισμός, θεραπεία ουλίτιδας, θεραπεία περιοδοντίτιδας, ουλεκτομή-ουλοπλαστική, επιμήκυνση μύλης.</p></div></div>
-      <div class="scard reveal" style="transition-delay:.16s" tabindex="0" role="button" aria-label="Εμφυτευματολογία"><h3>Εμφυτευματολογία</h3><div class="scard-body"><div class="emboss-ic"><i class="ti ti-bolt"></i></div><p>Μόνιμη, φυσική αποκατάσταση δοντιών με οδοντικά εμφυτεύματα.</p></div></div>
-      <div class="scard reveal" style="transition-delay:.2s" tabindex="0" role="button" aria-label="Παιδοδοντία"><h3>Παιδοδοντία</h3><div class="scard-body"><div class="emboss-ic"><i class="ti ti-mood-kid"></i></div><p>Φθορίωση, σφραγίσματα, sealants, πολφοτομή — φιλική εμπειρία για παιδιά.</p></div></div>
-      <div class="scard reveal" style="transition-delay:.24s" tabindex="0" role="button" aria-label="Ενδοδοντία"><h3>Ενδοδοντία</h3><div class="scard-body"><div class="emboss-ic"><i class="ti ti-vector-triangle"></i></div><p>Απονευρώσεις με σύγχρονες, ανώδυνες τεχνικές.</p></div></div>
-      <div class="scard reveal" style="transition-delay:.28s" tabindex="0" role="button" aria-label="Προσθετική"><h3>Προσθετική (Κινητή &amp; Ακίνητη)</h3><div class="scard-body"><div class="emboss-ic"><i class="ti ti-dental"></i></div><p>Ολικές/μερικές οδοντοστοιχίες, θήκες, γέφυρες, επί εμφυτευμάτων, ολοκεραμικά.</p></div></div>
-      <div class="scard reveal" style="transition-delay:.32s" tabindex="0" role="button" aria-label="Χειρουργική Στόματος"><h3>Χειρουργική Στόματος</h3><div class="scard-body"><div class="emboss-ic"><i class="ti ti-first-aid-kit"></i></div><p>Εξαγωγή φρονιμιτών, ανύψωση ιγμορείου, ακρορριζεκτομές.</p></div></div>
-      <div class="scard reveal" style="transition-delay:.36s" tabindex="0" role="button" aria-label="Σφραγίσματα"><h3>Σφραγίσματα - Χτίσιμο Δοντιών</h3><div class="scard-body"><div class="emboss-ic"><i class="ti ti-hammer"></i></div><p>Αποκατάσταση φθοράς &amp; μορφολογίας με ανθεκτικά υλικά.</p></div></div>
-      <div class="scard reveal" style="transition-delay:.4s" tabindex="0" role="button" aria-label="Κατασκευή Ναρθήκων"><h3>Κατασκευή Ναρθήκων</h3><div class="scard-body"><div class="emboss-ic"><i class="ti ti-shield-check"></i></div><p>Νάρθηκες λεύκανσης, ορθοδοντικής, βρουξισμού.</p></div></div>
-      <div class="scard reveal" style="transition-delay:.48s" tabindex="0" role="button" aria-label="Λέιζερ"><h3>Λέιζερ (Laser)</h3><div class="scard-body"><div class="emboss-ic"><i class="ti ti-bulb"></i></div><p>Λεύκανση, ουλεκτομή, ουλοπλαστική, θεραπεία περιοδοντίτιδας, μείωση οδοντικής ευαισθησίας.</p></div></div>
+      <div class="scard reveal" tabindex="0" role="button" aria-label="Γενική Οδοντιατρική"><h3>Γενική Οδοντιατρική</h3><div class="scard-body"><img class="emboss-ic" src="assets/icons/serv-geniki.jpg" alt=""><p>Πλήρης διαγνωστικός &amp; προληπτικός έλεγχος για όλη την οικογένεια.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.04s" tabindex="0" role="button" aria-label="Αισθητική Οδοντιατρική"><h3>Αισθητική Οδοντιατρική</h3><div class="scard-body"><img class="emboss-ic" src="assets/icons/serv-aisthitiki.jpg" alt=""><p>Λεύκανση, όψεις ρητίνης, όψεις &amp; θήκες πορσελάνης, οδοντικά strass, λευκά σφραγίσματα.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.08s" tabindex="0" role="button" aria-label="Ορθοδοντική Fastbraces"><h3>Ορθοδοντική Fastbraces®</h3><div class="scard-body"><img class="emboss-ic" src="assets/icons/serv-fastbraces.jpg" alt=""><p>Ταχεία, άνετη ευθυγράμμιση δοντιών με πιστοποιημένη τεχνολογία.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.12s" tabindex="0" role="button" aria-label="Περιοδοντολογία"><h3>Περιοδοντολογία</h3><div class="scard-body"><img class="emboss-ic" src="assets/icons/serv-periodontologia.jpg" alt=""><p>Καθαρισμός, θεραπεία ουλίτιδας, θεραπεία περιοδοντίτιδας, ουλεκτομή-ουλοπλαστική, επιμήκυνση μύλης.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.16s" tabindex="0" role="button" aria-label="Εμφυτευματολογία"><h3>Εμφυτευματολογία</h3><div class="scard-body"><img class="emboss-ic" src="assets/icons/serv-emfyteumatologia.jpg" alt=""><p>Μόνιμη, φυσική αποκατάσταση δοντιών με οδοντικά εμφυτεύματα.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.2s" tabindex="0" role="button" aria-label="Παιδοδοντία"><h3>Παιδοδοντία</h3><div class="scard-body"><img class="emboss-ic" src="assets/icons/serv-paidodontia.jpg" alt=""><p>Φθορίωση, σφραγίσματα, sealants, πολφοτομή — φιλική εμπειρία για παιδιά.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.24s" tabindex="0" role="button" aria-label="Ενδοδοντία"><h3>Ενδοδοντία</h3><div class="scard-body"><img class="emboss-ic" src="assets/icons/serv-endodontia.jpg" alt=""><p>Απονευρώσεις με σύγχρονες, ανώδυνες τεχνικές.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.28s" tabindex="0" role="button" aria-label="Προσθετική"><h3>Προσθετική (Κινητή &amp; Ακίνητη)</h3><div class="scard-body"><img class="emboss-ic" src="assets/icons/serv-prosthetiki.jpg" alt=""><p>Ολικές/μερικές οδοντοστοιχίες, θήκες, γέφυρες, επί εμφυτευμάτων, ολοκεραμικά.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.32s" tabindex="0" role="button" aria-label="Χειρουργική Στόματος"><h3>Χειρουργική Στόματος</h3><div class="scard-body"><img class="emboss-ic" src="assets/icons/serv-xeirourgiki.jpg" alt=""><p>Εξαγωγή φρονιμιτών, ανύψωση ιγμορείου, ακρορριζεκτομές.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.36s" tabindex="0" role="button" aria-label="Σφραγίσματα"><h3>Σφραγίσματα - Χτίσιμο Δοντιών</h3><div class="scard-body"><img class="emboss-ic" src="assets/icons/serv-sfragismata.jpg" alt=""><p>Αποκατάσταση φθοράς &amp; μορφολογίας με ανθεκτικά υλικά.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.4s" tabindex="0" role="button" aria-label="Κατασκευή Ναρθήκων"><h3>Κατασκευή Ναρθήκων</h3><div class="scard-body"><img class="emboss-ic" src="assets/icons/serv-narthikes.jpg" alt=""><p>Νάρθηκες λεύκανσης, ορθοδοντικής, βρουξισμού.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.48s" tabindex="0" role="button" aria-label="Λέιζερ"><h3>Λέιζερ (Laser)</h3><div class="scard-body"><img class="emboss-ic" src="assets/icons/serv-laser.jpg" alt=""><p>Λεύκανση, ουλεκτομή, ουλοπλαστική, θεραπεία περιοδοντίτιδας, μείωση οδοντικής ευαισθησίας.</p></div></div>
     </div>
     <div class="serv-more reveal">
       <a class="btn btn-line" href="#services">Δείτε όλες τις υπηρεσίες <i class="ti ti-arrow-down-right"></i></a>
