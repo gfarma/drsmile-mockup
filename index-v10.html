@@ -154,6 +154,8 @@ footer .brand-name{color:var(--gold-soft)}
 .team-img{aspect-ratio:4/4.6;border-radius:300px 300px 22px 22px;overflow:hidden;background:linear-gradient(165deg,#E9D9B8,#9C7A45);position:relative;box-shadow:0 40px 90px -44px rgba(120,96,50,.35)}
 .team-img::after{content:"";position:absolute;inset:9px;border:1px solid rgba(255,255,255,.5);border-radius:290px 290px 14px 14px}
 .team-img img{width:100%;height:100%;object-fit:cover}
+.team-seal{position:absolute;right:-20px;bottom:34px;width:112px;height:112px;border-radius:50%;background:var(--warm-white);box-shadow:0 18px 40px -16px rgba(120,96,50,.45),0 0 0 1px var(--line);padding:9px;z-index:2}
+.team-seal img{width:100%;height:100%;border-radius:50%;object-fit:cover}
 .team h2{color:var(--charcoal)}
 .team .quote{font-family:var(--fs);font-style:italic;font-weight:300;font-size:clamp(24px,2.8vw,36px);line-height:1.3;color:var(--gold-deep);margin:8px 0 26px}
 .team p.bio{color:var(--muted);font-size:15.5px;max-width:540px;line-height:1.8}
@@ -164,6 +166,10 @@ footer .brand-name{color:var(--gold-soft)}
 .tv{display:flex;gap:12px;align-items:flex-start}
 .tv i{color:var(--gold-deep);font-size:18px;margin-top:2px}
 .tv span{font-size:13.5px;color:var(--muted);line-height:1.5}
+.cred-seals{display:flex;gap:28px;margin-top:30px;padding-top:28px;border-top:1px solid var(--line)}
+.seal{display:flex;align-items:center;gap:14px;max-width:230px}
+.seal img{width:58px;height:58px;border-radius:50%;object-fit:cover;flex:none;background:var(--warm-white);box-shadow:0 1px 0 rgba(255,255,255,.6),0 0 0 1px var(--line)}
+.seal span{font-size:12px;line-height:1.5;color:var(--muted);letter-spacing:.01em}
 .sign{font-family:var(--fs);font-style:italic;font-size:30px;color:var(--gold-deep);margin-top:26px}
 
 .ba-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:20px;overflow:hidden;position:relative}
@@ -192,6 +198,7 @@ footer .brand-name{color:var(--gold-soft)}
 .cinfo{display:flex;flex-direction:column;gap:2px;margin-bottom:26px}
 .cr{display:flex;gap:18px;align-items:flex-start;padding:20px 0;border-top:1px solid var(--line)}
 .cr i{color:var(--gold-deep);font-size:20px;margin-top:3px}
+.cr .cr-ic{width:34px;height:34px;border-radius:50%;object-fit:cover;flex:none;margin-top:0;background:var(--warm-white);box-shadow:0 1px 0 rgba(255,255,255,.6),0 0 0 1px var(--line)}
 .cr .k{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
 .cr .v{font-family:var(--fs);font-size:19px;color:var(--charcoal)}
 .cr .v.sm{font-size:15px;font-family:var(--sans)}
@@ -205,6 +212,7 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
 .fcol h4{font-family:var(--fs);font-style:italic;color:var(--gold-soft);font-size:18px;font-weight:400;margin-bottom:16px}
 .fcol a{display:block;font-size:13.5px;padding:6px 0;color:var(--muted-d);transition:.25s}
 .fcol a:hover{color:var(--gold-soft);padding-left:5px}
+.fb-logo .foot-seal{width:52px;height:52px;border-radius:50%;object-fit:cover;margin:18px 0 0;box-shadow:0 0 0 1px var(--line-soft)}
 .fsoc{display:flex;gap:12px;margin-top:18px}
 .fsoc a{width:42px;height:42px;border:1px solid var(--line-soft);border-radius:50%;display:grid;place-items:center;color:var(--gold-soft);font-size:18px;transition:.3s}
 .fsoc a:hover{background:var(--gold-deep);border-color:var(--gold-deep);color:#fff}
@@ -236,6 +244,7 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
   .philo-grid{grid-template-columns:1fr 1fr}
   .team .wrap,.contact .wrap{grid-template-columns:1fr;gap:44px}
   .team-values{grid-template-columns:1fr}
+  .team-seal{width:88px;height:88px;right:6px;bottom:20px}
 }
 @media(max-width:560px){
   .why-grid,.philo-grid{grid-template-columns:1fr}
@@ -245,6 +254,7 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
   .ba-wrap{grid-template-columns:1fr}
   .addr-full{display:none}
   .addr-short{display:inline}
+  .cred-seals{flex-direction:column;gap:20px}
 }
 </style>
 </head>
@@ -424,6 +434,7 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
   <div class="wrap">
     <div class="team-img reveal">
       <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=1200&auto=format&fit=crop" alt="Δρ. Αναστασία Παρχαρίδου και η ομάδα DrSmile">
+      <div class="team-seal"><img src="assets/icons/badge-doctor.jpg" alt="DrSmile — Αναστασία Παρχαρίδου, Χειρουργός Οδοντίατρος"></div>
     </div>
     <div>
       <div class="sec-label reveal"><span class="ln"></span><span class="label">Η Ομάδα μας</span></div>
@@ -441,6 +452,10 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
         <div class="tv"><i class="ti ti-heart-handshake"></i><span>Ανάληψη κάθε είδους περιστατικού</span></div>
         <div class="tv"><i class="ti ti-building-hospital"></i><span>Ένα οδοντιατρείο — μία συνολική αντιμετώπιση ασθενούς</span></div>
         <div class="tv"><i class="ti ti-star"></i><span>Οδοντιατρικές υπηρεσίες υψηλής ποιότητας</span></div>
+      </div>
+      <div class="cred-seals reveal" style="transition-delay:.3s">
+        <div class="seal"><img src="assets/icons/badge-cred-general.jpg" alt="Γενική &amp; Αισθητική Οδοντιατρική Ενηλίκων &amp; Παίδων"><span>Γενική &amp; Αισθητική Οδοντιατρική<br>ενηλίκων &amp; παίδων</span></div>
+        <div class="seal"><img src="assets/icons/badge-cred-fastbraces.jpg" alt="Πιστοποιημένη Senior Master Provider Fastbraces"><span>Πιστοποιημένη Senior Master Provider<br>Ορθοδοντικής Τεχνολογίας Fastbraces®</span></div>
       </div>
       <div class="sign reveal" style="transition-delay:.36s">Δρ. Α. Παρχαρίδου &amp; Ομάδα DrSmile</div>
     </div>
@@ -490,8 +505,8 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
       <h2 class="reveal" style="transition-delay:.06s">Ας χτίσουμε<br>το <em>χαμόγελό</em> σας.</h2>
       <p class="lead reveal" style="transition-delay:.12s">Κλείστε το ραντεβού σας — η ομάδα του DrSmile σας περιμένει στον Εύοσμο.</p>
       <div class="cinfo reveal" style="transition-delay:.1s">
-        <div class="cr"><i class="ti ti-map-pin"></i><div><div class="k">Διεύθυνση</div><div class="v sm">Καραολή και Δημητρίου 121, Εύοσμος Θεσσαλονίκη, ΤΚ. 56224</div></div></div>
-        <div class="cr"><i class="ti ti-phone"></i><div><div class="k">Τηλέφωνο</div><div class="v">2310 769 674</div></div></div>
+        <div class="cr"><img class="cr-ic" src="assets/icons/badge-address.jpg" alt=""><div><div class="k">Διεύθυνση</div><div class="v sm">Καραολή και Δημητρίου 121, Εύοσμος Θεσσαλονίκη, ΤΚ. 56224</div></div></div>
+        <div class="cr"><img class="cr-ic" src="assets/icons/badge-phone.jpg" alt=""><div><div class="k">Τηλέφωνο</div><div class="v">2310 769 674</div></div></div>
         <div class="cr"><i class="ti ti-clock-hour-4"></i><div><div class="k">Ωράριο</div><div class="v sm">Δευτέρα – Παρασκευή · 09:00 – 21:00<br>Σάββατο με ραντεβού</div></div></div>
         <div class="cr"><i class="ti ti-brand-instagram"></i><div><div class="k">Ακολουθήστε</div><div class="v sm">Facebook · Instagram · YouTube · TikTok</div></div></div>
       </div>
@@ -513,6 +528,7 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
           <span class="brand-name">Αναστασία Παρχαρίδου</span>
         </span>
         <p>Πολυοδοντιατρείο — ομάδα εξειδικευμένων οδοντιάτρων, ολιστική φροντίδα για κάθε ηλικία, στον Εύοσμο Θεσσαλονίκης.</p>
+        <img class="foot-seal" src="assets/icons/badge-clinic.jpg" alt="Οδοντιατρείο · Πολυοδοντιατρείο">
         <div class="fsoc">
           <a href="#"><i class="ti ti-brand-facebook"></i></a>
           <a href="#"><i class="ti ti-brand-instagram"></i></a>
