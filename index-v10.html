@@ -233,8 +233,8 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
   .sec{padding:70px 0}
   .fab-stack{bottom:18px;right:18px}
   .fab .flyout{display:none}
-  .trustbar-grid{grid-template-columns:1fr 1fr;row-gap:22px}
-  .tb-item:nth-child(3){border-left:none}
+  .trustbar-grid{grid-template-columns:1fr 1fr;gap:26px 20px}
+  .tb-item{flex-direction:column;align-items:flex-start;gap:10px;border-left:none;padding:0}
   .why-grid{grid-template-columns:1fr 1fr}
   .serv-grid{grid-template-columns:repeat(3,1fr);gap:32px 16px}
   .philo-grid{grid-template-columns:1fr 1fr}
@@ -244,8 +244,7 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
 }
 @media(max-width:560px){
   .why-grid,.philo-grid{grid-template-columns:1fr}
-  .trustbar-grid{grid-template-columns:1fr}
-  .tb-item{border-left:none;padding-left:0}
+  .trustbar-grid{gap:22px 14px}
   .serv-grid{grid-template-columns:repeat(3,1fr);gap:24px 10px}
   .scard{padding:0 4px}
   .scard .emboss-ic{width:56px;height:56px;margin-bottom:10px}
