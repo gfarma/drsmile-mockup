@@ -222,10 +222,13 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
   .nav-links{display:none}
   .burger{display:block}
   .utilbar .ub-mid{display:none}
-  .hero{min-height:600px;padding:210px 0 60px}
-  .hero-bg::after{background:linear-gradient(180deg,rgba(251,248,242,.4) 0%,rgba(251,248,242,.22) 30%,rgba(251,248,242,.5) 68%,var(--ivory) 96%)}
+  .hero{position:relative;overflow:visible;min-height:0;display:block;padding:100px 0 0}
+  .hero-bg{position:relative;inset:auto;width:100%;z-index:0}
+  .hero-bg img{width:100%;height:auto;object-fit:contain;display:block}
+  .hero-bg::after{display:none}
+  .hero-content{padding:32px 0 60px}
   .hero-text{max-width:100%}
-  .hero h1,.hero .sub,.eyebrow-en{text-shadow:0 2px 24px rgba(251,248,242,.9),0 1px 3px rgba(251,248,242,.8)}
+  .hero h1,.hero .sub,.eyebrow-en{text-shadow:none}
   .hero-quote{display:none}
   .sec{padding:70px 0}
   .fab-stack{bottom:18px;right:18px}
