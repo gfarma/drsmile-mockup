@@ -71,19 +71,25 @@ a{color:inherit;text-decoration:none}
 .site-header.scrolled .brand img{height:36px}
 .brand-sub{display:flex;flex-direction:column;align-items:center;gap:4px;overflow:hidden;max-height:50px;opacity:1;transition:.4s}
 .site-header.scrolled .brand-sub{max-height:0;opacity:0}
-.brand-by{display:flex;align-items:center;gap:8px;font-size:9.5px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
-.brand-by .bl{width:22px;height:1px;background:var(--line)}
 .brand-name{font-family:var(--fs);font-style:italic;font-size:15px;color:var(--gold-deep);font-weight:500}
 footer .brand-sub{align-items:flex-start;max-height:none;opacity:1;margin:6px 0 16px}
-footer .brand-by{color:var(--muted-d)}
-footer .brand-by .bl{background:var(--line-soft)}
 footer .brand-name{color:var(--gold-soft)}
 .nav-links{display:flex;gap:36px}
 .nav-links a{font-size:14px;font-weight:500;letter-spacing:.02em;position:relative;padding:4px 0;color:var(--charcoal)}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;background:var(--gold-deep);transition:.35s}
 .nav-links a:hover::after{width:100%}
 .nav-right{display:flex;align-items:center;gap:22px}
-.burger{display:none;font-size:26px;background:none;border:0;color:var(--charcoal)}
+.burger{display:none;font-size:26px;background:none;border:0;color:var(--charcoal);cursor:pointer}
+
+.mobile-nav{position:fixed;inset:0;z-index:300;background:var(--ivory);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;opacity:0;visibility:hidden;transform:translateY(-16px);transition:.4s cubic-bezier(.2,.7,.2,1)}
+.mobile-nav.open{opacity:1;visibility:visible;transform:none}
+.mobile-nav-close{position:absolute;top:26px;right:22px;font-size:28px;background:none;border:0;color:var(--charcoal);cursor:pointer}
+.mobile-nav-links{display:flex;flex-direction:column;align-items:center;gap:30px}
+.mobile-nav-links a{font-family:var(--fs);font-size:28px;font-weight:500;color:var(--charcoal)}
+.mobile-nav-contact{display:flex;flex-direction:column;align-items:center;gap:16px;margin-top:36px}
+.mobile-nav-contact a{display:flex;align-items:center;gap:8px;font-size:15px;color:var(--gold-deep);font-weight:500}
+body.nav-open{overflow:hidden}
+body.nav-open .fab-stack{display:none}
 
 .hero{position:relative;overflow:hidden;min-height:84vh;display:flex;align-items:center;padding:200px 0 90px}
 .hero-bg{position:absolute;inset:0;z-index:0}
@@ -275,7 +281,6 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
     <a class="brand" href="#">
       <img src="assets/logo.png" alt="DrSmile Πολυοδοντιατρείο">
       <span class="brand-sub">
-        <span class="brand-by"><span class="bl"></span>by<span class="bl"></span></span>
         <span class="brand-name">Αναστασία Παρχαρίδου</span>
       </span>
     </a>
@@ -291,6 +296,21 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
     </div>
   </div>
 </nav>
+</div>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="Κλείσιμο μενού"><i class="ti ti-x"></i></button>
+  <nav class="mobile-nav-links">
+    <a href="#services">Υπηρεσίες</a>
+    <a href="#team">Η Ομάδα</a>
+    <a href="#results">Πριν / Μετά</a>
+    <a href="#philo">Φιλοσοφία</a>
+    <a href="#contact">Επικοινωνία</a>
+  </nav>
+  <div class="mobile-nav-contact">
+    <a href="tel:2310769674"><i class="ti ti-phone"></i> 2310 769 674</a>
+    <a href="mailto:info@drsmile.gr"><i class="ti ti-mail"></i> info@drsmile.gr</a>
+  </div>
 </div>
 
 <header class="hero">
@@ -512,7 +532,6 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
       <div class="fb-logo">
         <img src="assets/logo.png" alt="DrSmile Πολυοδοντιατρείο">
         <span class="brand-sub">
-          <span class="brand-by"><span class="bl"></span>by<span class="bl"></span></span>
           <span class="brand-name">Αναστασία Παρχαρίδου</span>
         </span>
         <p>Πολυοδοντιατρείο — ομάδα εξειδικευμένων οδοντιάτρων, ολιστική φροντίδα για κάθε ηλικία, στον Εύοσμο Θεσσαλονίκης.</p>
@@ -547,6 +566,15 @@ document.querySelectorAll('.scard').forEach(card=>{
   card.addEventListener('click',()=>card.classList.toggle('open'));
   card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();card.classList.toggle('open')}});
 });
+const burger=document.querySelector('.burger');
+const mobileNav=document.getElementById('mobileNav');
+const mobileNavClose=document.getElementById('mobileNavClose');
+function openMobileNav(){mobileNav.classList.add('open');document.body.classList.add('nav-open')}
+function closeMobileNav(){mobileNav.classList.remove('open');document.body.classList.remove('nav-open')}
+burger.addEventListener('click',openMobileNav);
+mobileNavClose.addEventListener('click',closeMobileNav);
+mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMobileNav));
+addEventListener('keydown',e=>{if(e.key==='Escape')closeMobileNav()});
 </script>
 </body>
 </html>
