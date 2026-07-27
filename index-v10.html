@@ -53,9 +53,8 @@ a{color:inherit;text-decoration:none}
   transform:translateY(-3px) scale(1.06);
   box-shadow:0 10px 24px -10px rgba(176,141,87,.55), 0 0 0 2px var(--gold-soft)}
 
-.site-header{position:fixed;top:0;left:0;right:0;z-index:100;transition:.4s;background:transparent}
-.site-header.scrolled{background:rgba(251,248,242,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.utilbar{background:transparent;color:var(--charcoal-2);font-size:12.5px}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(251,248,242,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.utilbar{background:var(--warm-white);color:var(--charcoal-2);font-size:12.5px;border-bottom:1px solid var(--line-soft)}
 .utilbar .wrap{display:flex;align-items:center;justify-content:space-between;height:40px;gap:20px}
 .utilbar a{color:var(--charcoal-2);transition:.25s}
 .utilbar a:hover{color:var(--gold-deep)}
@@ -64,22 +63,15 @@ a{color:inherit;text-decoration:none}
 .ub-mid{opacity:.85}
 .addr-short{display:none}
 
-.topnav .wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
-.site-header.scrolled .topnav-bar{padding:10px 0}
-.brand{display:flex;flex-direction:column;align-items:center;gap:7px}
-.brand img{height:52px;width:auto;transition:.4s}
-.site-header.scrolled .brand img{height:36px}
-.brand-sub{display:flex;flex-direction:column;align-items:center;gap:4px;overflow:hidden;max-height:50px;opacity:1;transition:.4s}
-.site-header.scrolled .brand-sub{max-height:0;opacity:0}
+.topnav .wrap{display:flex;align-items:center;justify-content:center;padding:14px 0}
 .brand-name{font-family:var(--fs);font-style:italic;font-size:15px;color:var(--gold-deep);font-weight:500}
-footer .brand-sub{align-items:flex-start;max-height:none;opacity:1;margin:6px 0 16px}
+footer .brand-sub{display:flex;flex-direction:column;align-items:flex-start;margin:6px 0 16px}
 footer .brand-name{color:var(--gold-soft)}
 .nav-links{display:flex;gap:36px}
 .nav-links a{font-size:14px;font-weight:500;letter-spacing:.02em;position:relative;padding:4px 0;color:var(--charcoal)}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;background:var(--gold-deep);transition:.35s}
 .nav-links a:hover::after{width:100%}
-.nav-right{display:flex;align-items:center;gap:22px}
-.burger{display:none;font-size:26px;background:none;border:0;color:var(--charcoal);cursor:pointer}
+.burger{display:none;font-size:28px;background:none;border:0;color:var(--charcoal);cursor:pointer;line-height:1}
 
 .mobile-nav{position:fixed;inset:0;z-index:300;background:var(--ivory);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;opacity:0;visibility:hidden;transform:translateY(-16px);transition:.4s cubic-bezier(.2,.7,.2,1)}
 .mobile-nav.open{opacity:1;visibility:visible;transform:none}
@@ -91,24 +83,19 @@ footer .brand-name{color:var(--gold-soft)}
 body.nav-open{overflow:hidden}
 body.nav-open .fab-stack{display:none}
 
-.hero{position:relative;overflow:hidden;min-height:84vh;display:flex;align-items:center;padding:200px 0 90px}
+.hero{position:relative;overflow:hidden;min-height:76vh;display:flex;align-items:center;padding:80px 0}
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:60% 45%}
 .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,var(--ivory) 0%,var(--ivory) 26%,rgba(251,248,242,.88) 40%,rgba(251,248,242,.4) 58%,rgba(251,248,242,.06) 76%,transparent 92%)}
 .hero-content{position:relative;z-index:1;width:100%}
-.hero-text{max-width:620px}
-.eyebrow-en{display:inline-flex;align-items:center;gap:14px;margin-bottom:26px;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-deep)}
-.eyebrow-en .ln{width:44px;height:1px;background:var(--gold-deep)}
-.hero h1{font-family:var(--fs);font-weight:300;font-size:clamp(42px,6.2vw,84px);line-height:1.05;letter-spacing:-.02em;color:var(--charcoal)}
+.hero-text{max-width:600px}
+.hero-lockup{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-bottom:30px}
+.hero-lockup img{height:92px;width:auto}
+.hero-lockup .hl-name{font-family:var(--fs);font-style:italic;font-size:20px;font-weight:500;color:var(--gold-deep);letter-spacing:.01em}
+.hero h1{font-family:var(--fs);font-weight:300;font-size:clamp(30px,3.9vw,50px);line-height:1.18;letter-spacing:-.015em;color:var(--charcoal)}
 .hero h1 em{font-style:italic;font-weight:400;color:var(--gold-deep)}
-.hero .sub{font-size:18px;color:var(--muted);max-width:480px;margin:26px 0 36px;line-height:1.75}
-.hero-cta{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-.triptych{display:flex;gap:28px;margin-top:50px;padding-top:28px;border-top:1px solid var(--line);flex-wrap:wrap;align-items:center}
-.triptych .t-item{font-family:var(--fs);font-style:italic;font-size:17px;color:var(--charcoal-2)}
-.triptych .t-dot{width:5px;height:5px;border-radius:50%;background:var(--gold)}
-.hero-quote{position:absolute;right:110px;bottom:190px;z-index:1;display:flex;align-items:flex-start;gap:12px;max-width:230px}
-.hero-quote i{font-size:22px;color:var(--gold-deep);margin-top:2px;flex:none}
-.hero-quote p{font-family:var(--fs);font-style:italic;font-size:14px;color:var(--charcoal-2);line-height:1.5}
+.hero h1 .hl-why{display:block;font-size:.62em;color:var(--muted);font-style:italic;margin-bottom:2px}
+.hero .sub{font-size:15.5px;color:var(--muted);max-width:520px;margin-top:26px;line-height:1.8}
 
 .trustbar{background:var(--warm-white);border-bottom:1px solid var(--line)}
 .trustbar-grid{display:grid;grid-template-columns:repeat(4,1fr);padding:32px 0}
@@ -132,11 +119,13 @@ body.nav-open .fab-stack{display:none}
 .story-p.it{font-style:italic;color:var(--gold-deep);font-size:clamp(21px,2.3vw,26px)}
 
 .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:54px}
-.why-card{background:var(--warm-white);border:1px solid var(--line);border-radius:22px 22px 22px 6px;padding:36px 30px;transition:.35s}
+.why-card{background:var(--warm-white);border:1px solid var(--line);border-radius:22px 22px 22px 6px;padding:36px 30px;transition:.4s cubic-bezier(.2,.7,.2,1);text-align:center;overflow:hidden}
 .why-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -30px rgba(120,96,50,.28);border-color:var(--gold-deep)}
-.why-card .emboss-ic{margin-bottom:22px}
-.why-card h3{font-family:var(--fs);font-weight:500;font-size:21px;margin-bottom:12px;line-height:1.3;color:var(--charcoal)}
-.why-card p{font-size:13.5px;color:var(--muted);line-height:1.7}
+.why-card .emboss-ic{margin:0 auto 20px}
+.why-card h3{font-family:var(--fs);font-weight:500;font-size:22px;line-height:1.3;color:var(--charcoal)}
+.why-card p{font-size:13.5px;color:var(--muted);line-height:1.7;
+  max-height:0;opacity:0;margin-top:0;transition:.45s cubic-bezier(.2,.7,.2,1)}
+.why-card:hover p,.why-card:focus-within p{max-height:340px;opacity:1;margin-top:14px}
 
 .serv-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:38px 16px;margin-top:48px}
 .scard{padding:0 6px;cursor:pointer;-webkit-tap-highlight-color:transparent;perspective:1000px}
@@ -144,32 +133,26 @@ body.nav-open .fab-stack{display:none}
 .scard.open .scard-flip{transform:rotateY(180deg)}
 .scard-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
 .scard-back{transform:rotateY(180deg);padding:0 4px}
-.scard .emboss-ic{width:72px;height:72px;margin-bottom:16px}
+.scard .emboss-ic{width:72px;height:72px;margin-bottom:16px;animation:svcFloat 4.5s ease-in-out infinite}
+.scard:nth-child(2n) .emboss-ic{animation-delay:-1.1s}
+.scard:nth-child(3n) .emboss-ic{animation-delay:-2.3s}
+.scard:nth-child(5n) .emboss-ic{animation-delay:-3.4s}
+@keyframes svcFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.scard:hover .emboss-ic{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.scard .emboss-ic{animation:none}}
 .scard h3{font-family:var(--sans);font-weight:700;font-size:12.5px;letter-spacing:.02em;text-transform:uppercase;color:var(--charcoal);line-height:1.35;margin:0}
 .scard-back p{font-size:11px;color:var(--muted);line-height:1.6;margin:0}
 
-.team{color:var(--charcoal)}
-.team .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
-.team-img{aspect-ratio:4/4.6;border-radius:300px 300px 22px 22px;overflow:hidden;background:linear-gradient(165deg,#E9D9B8,#9C7A45);position:relative;box-shadow:0 40px 90px -44px rgba(120,96,50,.35)}
-.team-img::after{content:"";position:absolute;inset:9px;border:1px solid rgba(255,255,255,.5);border-radius:290px 290px 14px 14px}
-.team-img img{width:100%;height:100%;object-fit:cover}
-.team-seal{position:absolute;right:-20px;bottom:34px;width:112px;height:112px;border-radius:50%;background:var(--warm-white);box-shadow:0 18px 40px -16px rgba(120,96,50,.45),0 0 0 1px var(--line);padding:9px;z-index:2}
-.team-seal img{width:100%;height:100%;border-radius:50%;object-fit:cover}
-.team h2{color:var(--charcoal)}
-.team .quote{font-family:var(--fs);font-style:italic;font-weight:300;font-size:clamp(24px,2.8vw,36px);line-height:1.3;color:var(--gold-deep);margin:8px 0 26px}
-.team p.bio{color:var(--muted);font-size:15.5px;max-width:540px;line-height:1.8}
-.team-creds{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 30px}
-.chip{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);background:var(--warm-white);border-radius:999px;padding:9px 18px;font-size:13px;color:var(--charcoal-2)}
-.chip i{color:var(--gold-deep)}
-.team-values{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:10px;border-top:1px solid var(--line);padding-top:26px}
-.tv{display:flex;gap:12px;align-items:flex-start}
-.tv i{color:var(--gold-deep);font-size:18px;margin-top:2px}
-.tv span{font-size:13.5px;color:var(--muted);line-height:1.5}
-.cred-seals{display:flex;gap:28px;margin-top:30px;padding-top:28px;border-top:1px solid var(--line)}
-.seal{display:flex;align-items:center;gap:14px;max-width:230px}
-.seal img{width:58px;height:58px;border-radius:50%;object-fit:cover;flex:none;background:var(--warm-white);box-shadow:0 1px 0 rgba(255,255,255,.6),0 0 0 1px var(--line)}
-.seal span{font-size:12px;line-height:1.5;color:var(--muted);letter-spacing:.01em}
-.sign{font-family:var(--fs);font-style:italic;font-size:30px;color:var(--gold-deep);margin-top:26px}
+.doctor .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center}
+.doc-photo{position:relative;aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:linear-gradient(165deg,#E9D9B8,#9C7A45);box-shadow:0 40px 90px -44px rgba(120,96,50,.45);padding:10px}
+.doc-photo img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.doc-brand{font-family:var(--fs);font-weight:300;font-size:clamp(28px,3.4vw,42px);line-height:1.12;color:var(--charcoal)}
+.doc-lead{font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin:20px 0 6px}
+.doc-name{font-family:var(--fs);font-style:italic;font-size:clamp(26px,3vw,36px);color:var(--gold-deep);font-weight:500}
+.doc-creds{list-style:none;margin-top:26px;padding-top:24px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:14px}
+.doc-creds li{display:flex;gap:13px;align-items:flex-start;font-size:14.5px;color:var(--muted);line-height:1.6}
+.doc-creds li i{color:var(--gold-deep);font-size:17px;margin-top:2px;flex:none}
+
 
 .ba-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:20px;overflow:hidden;position:relative}
 .ba-wrap .pane{aspect-ratio:1/1;position:relative;overflow:hidden}
@@ -183,26 +166,35 @@ body.nav-open .fab-stack{display:none}
 .philo-tags .ptag{font-family:var(--fs);font-style:italic;font-size:16px;color:var(--charcoal-2);background:var(--warm-white);border:1px solid var(--line);border-radius:999px;padding:10px 22px}
 .philo p.body{font-size:16.5px;color:var(--muted);max-width:760px;line-height:1.85}
 
-.ctaband{background:var(--charcoal);color:var(--ivory);text-align:center;position:relative;overflow:hidden}
-.ctaband::before{content:"";position:absolute;inset:0;background-image:radial-gradient(600px 400px at 50% 0%,rgba(216,190,142,.16),transparent 60%)}
-.ctaband .wrap{position:relative;max-width:720px}
-.ctaband h2{color:var(--ivory)}
-.ctaband h2 em{color:var(--gold-soft)}
-.ctaband p{color:var(--muted-d);font-size:16.5px;margin:22px 0 34px;line-height:1.7}
 
-.contact{background:var(--warm-white)}
-.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-.contact h2 em{color:var(--gold-deep)}
-.contact .lead{color:var(--muted);font-size:16px;max-width:440px;margin:22px 0 30px;line-height:1.7}
+.contact{background:var(--charcoal);color:var(--ivory);position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;inset:0;background-image:radial-gradient(700px 460px at 20% 0%,rgba(216,190,142,.15),transparent 62%)}
+.contact .wrap{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.contact h2{color:var(--ivory)}
+.contact h2 em{color:var(--gold-soft)}
+.contact .lead{color:var(--muted-d);font-size:16px;max-width:440px;margin:22px 0 30px;line-height:1.7}
 .cinfo{display:flex;flex-direction:column;gap:2px;margin-bottom:26px}
-.cr{display:flex;gap:18px;align-items:flex-start;padding:20px 0;border-top:1px solid var(--line)}
-.cr i{color:var(--gold-deep);font-size:20px;margin-top:3px}
-.cr .cr-ic{width:34px;height:34px;border-radius:50%;object-fit:cover;flex:none;margin-top:0;background:var(--warm-white);box-shadow:0 1px 0 rgba(255,255,255,.6),0 0 0 1px var(--line)}
-.cr .k{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
-.cr .v{font-family:var(--fs);font-size:19px;color:var(--charcoal)}
-.cr .v.sm{font-size:15px;font-family:var(--sans)}
-.mapwrap{border-radius:20px 20px 20px 6px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3.4;box-shadow:0 30px 60px -38px rgba(120,96,50,.3)}
+.cr{display:flex;gap:18px;align-items:flex-start;padding:20px 0;border-top:1px solid var(--line-soft)}
+.cr i{color:var(--gold-soft);font-size:20px;margin-top:3px}
+.cr .cr-ic{width:34px;height:34px;border-radius:50%;object-fit:cover;flex:none;margin-top:0;background:var(--warm-white);box-shadow:0 0 0 1px var(--line-soft)}
+.cr .k{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-d);margin-bottom:4px}
+.cr .v{font-family:var(--fs);font-size:19px;color:var(--ivory)}
+.cr .v.sm{font-size:15px;font-family:var(--sans);color:var(--warm-white)}
+.cr a.v:hover{color:var(--gold-soft)}
+.mapwrap{position:relative;border-radius:20px 20px 20px 6px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3.4;box-shadow:0 30px 60px -38px rgba(0,0,0,.55)}
 .mapwrap iframe{width:100%;height:100%;border:0}
+.map-nav{position:absolute;left:16px;bottom:16px;z-index:2;display:inline-flex;align-items:center;gap:9px;background:var(--warm-white);color:var(--charcoal);font-size:13.5px;font-weight:600;padding:12px 20px;border-radius:999px;box-shadow:0 10px 26px -10px rgba(0,0,0,.5);transition:.3s}
+.map-nav i{color:var(--gold-deep);font-size:17px}
+.map-nav:hover{background:var(--gold-deep);color:#fff}
+.map-nav:hover i{color:#fff}
+
+.soc-cta{margin-top:34px;padding-top:28px;border-top:1px solid var(--line-soft)}
+.soc-cta p{font-family:var(--fs);font-style:italic;font-size:19px;color:var(--gold-soft);margin-bottom:16px}
+.soc-row{display:flex;gap:12px;flex-wrap:wrap}
+.soc-row a{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line-soft);border-radius:999px;padding:10px 18px;font-size:13px;font-weight:500;color:var(--warm-white);transition:.3s}
+.soc-row a i{font-size:17px;color:var(--gold-soft);transition:.3s}
+.soc-row a:hover{background:var(--gold-deep);border-color:var(--gold-deep);color:#fff;transform:translateY(-2px)}
+.soc-row a:hover i{color:#fff}
 
 footer{background:var(--charcoal);color:var(--muted-d);padding:70px 0 34px;border-top:1px solid var(--line-soft)}
 .fgrid{display:flex;justify-content:space-between;gap:50px;flex-wrap:wrap;padding-bottom:40px;border-bottom:1px solid var(--line-soft)}
@@ -232,25 +224,39 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
   .hero-bg{position:relative;inset:auto;width:100%;z-index:0}
   .hero-bg img{width:100%;height:auto;object-fit:contain;display:block}
   .hero-bg::after{display:none}
-  .hero-content{padding:32px 0 60px}
+  .hero-content{padding:34px 0 56px}
   .hero-text{max-width:100%}
-  .hero h1,.hero .sub,.eyebrow-en{text-shadow:none}
-  .hero-quote{display:none}
+  .hero-lockup{align-items:center;text-align:center;width:100%;margin-bottom:24px}
+  .hero-lockup img{height:74px}
+  .hero-lockup .hl-name{font-size:17px}
+  .hero h1{text-align:center}
+  .hero .sub{margin-top:22px}
   .sec{padding:70px 0}
   .fab-stack{bottom:18px;right:18px}
   .fab .flyout{display:none}
   .trustbar-grid{grid-template-columns:1fr 1fr;gap:26px 20px}
   .tb-item{flex-direction:column;align-items:center;text-align:center;gap:10px;border-left:none;padding:0}
-  .why-grid{grid-template-columns:1fr 1fr}
   .serv-grid{grid-template-columns:repeat(3,1fr);gap:32px 16px}
   .philo-grid{grid-template-columns:1fr 1fr}
-  .team .wrap,.contact .wrap{grid-template-columns:1fr;gap:44px}
-  .team-values{grid-template-columns:1fr}
-  .team-seal{width:88px;height:88px;right:6px;bottom:20px}
+  .contact .wrap,.doctor .wrap{grid-template-columns:1fr;gap:44px}
+  .doc-photo{max-width:300px;margin:0 auto}
+
+  /* 6 πλεονεκτήματα: εικονίδιο αριστερά, τίτλος + κείμενο δεξιά, πάντα ορατά */
+  .why-grid{grid-template-columns:1fr;gap:14px;margin-top:34px}
+  .why-card{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;
+    text-align:left;padding:20px 18px;border-radius:16px 16px 16px 4px}
+  .why-card:hover{transform:none;box-shadow:none;border-color:var(--line)}
+  .why-card .emboss-ic{width:52px;height:52px;margin:0;grid-row:span 2}
+  .why-card h3{font-size:16px;line-height:1.25;align-self:center}
+  .why-card p{font-size:12.5px;line-height:1.6;max-height:none;opacity:1;margin-top:6px;grid-column:2}
 }
 @media(max-width:560px){
-  .why-grid,.philo-grid{grid-template-columns:1fr}
+  .philo-grid{grid-template-columns:1fr}
   .trustbar-grid{gap:22px 14px}
+  .why-card h3{font-size:15px}
+  .why-card .emboss-ic{width:46px;height:46px}
+  .map-nav{left:12px;bottom:12px;font-size:12.5px;padding:10px 16px}
+  .soc-row a{flex:1 1 calc(50% - 6px);justify-content:center}
   .serv-grid{grid-template-columns:repeat(3,1fr);gap:24px 10px}
   .scard{padding:0 4px}
   .scard .emboss-ic{width:56px;height:56px;margin-bottom:10px}
@@ -260,7 +266,6 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
   .ba-wrap{grid-template-columns:1fr}
   .addr-full{display:none}
   .addr-short{display:inline}
-  .cred-seals{flex-direction:column;gap:20px}
 }
 </style>
 </head>
@@ -278,22 +283,14 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
 
 <nav class="topnav" id="topnav">
   <div class="wrap topnav-bar">
-    <a class="brand" href="#">
-      <img src="assets/logo.png" alt="DrSmile Πολυοδοντιατρείο">
-      <span class="brand-sub">
-        <span class="brand-name">Αναστασία Παρχαρίδου</span>
-      </span>
-    </a>
     <div class="nav-links">
       <a href="#services">Υπηρεσίες</a>
-      <a href="#team">Η Ομάδα</a>
+      <a href="#why">Τι μας ξεχωρίζει</a>
       <a href="#results">Πριν / Μετά</a>
       <a href="#philo">Φιλοσοφία</a>
       <a href="#contact">Επικοινωνία</a>
     </div>
-    <div class="nav-right">
-      <button class="burger"><i class="ti ti-menu-2"></i></button>
-    </div>
+    <button class="burger" aria-label="Άνοιγμα μενού"><i class="ti ti-menu-2"></i></button>
   </div>
 </nav>
 </div>
@@ -302,7 +299,7 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
   <button class="mobile-nav-close" id="mobileNavClose" aria-label="Κλείσιμο μενού"><i class="ti ti-x"></i></button>
   <nav class="mobile-nav-links">
     <a href="#services">Υπηρεσίες</a>
-    <a href="#team">Η Ομάδα</a>
+    <a href="#why">Τι μας ξεχωρίζει</a>
     <a href="#results">Πριν / Μετά</a>
     <a href="#philo">Φιλοσοφία</a>
     <a href="#contact">Επικοινωνία</a>
@@ -319,24 +316,13 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
   </div>
   <div class="wrap hero-content">
     <div class="hero-text">
-      <div class="eyebrow-en reveal"><span class="ln"></span>Quiet Luxury Dentistry</div>
-      <h1 class="reveal" style="transition-delay:.08s">Η ωραιότερη καμπύλη<br>πάνω σου<br><em>είναι το χαμόγελό σου.</em></h1>
-      <p class="sub reveal" style="transition-delay:.16s">Στο DrSmile, η ομάδα εξειδικευμένων οδοντιάτρων μας αντιμετωπίζει κάθε περιστατικό ολοκληρωμένα — ένα πολυοδοντιατρείο, μία συνολική φροντίδα, για κάθε ηλικία, σε έναν χώρο σχεδιασμένο να σας εμπνέει ηρεμία και εμπιστοσύνη.</p>
-      <div class="hero-cta reveal" style="transition-delay:.24s">
-        <a class="btn btn-gold" href="#services">Δείτε τις υπηρεσίες <i class="ti ti-arrow-down-right"></i></a>
+      <div class="hero-lockup reveal">
+        <img src="assets/logo.png" alt="DrSmile Πολυοδοντιατρείο">
+        <span class="hl-name">Αναστασία Παρχαρίδου</span>
       </div>
-      <div class="triptych reveal" style="transition-delay:.32s">
-        <span class="t-item">Κάθε οδοντιατρική ανάγκη</span>
-        <span class="t-dot"></span>
-        <span class="t-item">Μία ομάδα</span>
-        <span class="t-dot"></span>
-        <span class="t-item">Σε έναν χώρο</span>
-      </div>
+      <h1 class="reveal" style="transition-delay:.08s"><span class="hl-why">γιατί…</span>η ωραιότερη καμπύλη πάνω σου<br><em>είναι το χαμόγελό σου!</em></h1>
+      <p class="sub reveal" style="transition-delay:.16s">Στο Πολυοδοντιατρείο DrSmile προσφέρουμε μία ομάδα εξειδικευμένων οδοντιάτρων, προηγμένη τεχνολογία και ολοκληρωμένες υπηρεσίες για κάθε ηλικία, ώστε κάθε θεραπεία να πραγματοποιείται στον ίδιο χώρο, με άνεση, ασφάλεια και χωρίς περιττή ταλαιπωρία.</p>
     </div>
-  </div>
-  <div class="hero-quote reveal" style="transition-delay:.4s">
-    <i class="ti ti-dental"></i>
-    <p>Με σεβασμό σε εσάς,<br>με αγάπη για το χαμόγελό σας.</p>
   </div>
 </header>
 
@@ -352,7 +338,7 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
     </div>
     <div class="tb-item reveal" style="transition-delay:.12s">
       <div class="tb-ic"><i class="ti ti-heart-handshake"></i></div>
-      <div><h4>Ολιστική Προσέγγιση</h4><p>Για τη συνολική σας ευεξία</p></div>
+      <div><h4>Συνολική Προσέγγιση</h4><p>Για τη συνολική σας ευεξία</p></div>
     </div>
     <div class="tb-item reveal" style="transition-delay:.18s">
       <div class="tb-ic"><i class="ti ti-diamond"></i></div>
@@ -366,9 +352,60 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
   <a class="fab" href="mailto:info@drsmile.gr" aria-label="Στείλτε email"><i class="ti ti-mail"></i><span class="flyout">Στείλτε email</span></a>
 </div>
 
+<section class="sec" id="why">
+  <div class="wrap">
+    <div class="sec-label reveal"><span class="ln"></span><span class="label">Τι μας ξεχωρίζει</span></div>
+    <h2 class="reveal" style="transition-delay:.06s">Τι κάνει το DrSmile<br><em>να ξεχωρίζει.</em></h2>
+    <div class="why-grid">
+      <div class="why-card reveal" tabindex="0">
+        <img class="emboss-ic" src="assets/icons/why-1.jpg" alt="">
+        <h3>Όλη η φροντίδα, σε έναν χώρο</h3>
+        <p>Από την πρώτη διάγνωση και τις ψηφιακές ακτινογραφίες μέχρι τις εξειδικευμένες θεραπείες και την ολοκλήρωση του σχεδίου θεραπείας, η ομάδα του οδοντιατρείου - πολυοδοντιατρείου DrSmile βρίσκεται δίπλα σου σε κάθε στάδιο, προσφέροντας ολοκληρωμένη φροντίδα χωρίς περιττές μετακινήσεις.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:.08s" tabindex="0">
+        <img class="emboss-ic" src="assets/icons/why-2.jpg" alt="">
+        <h3>Μία ομάδα, ένας άνθρωπος δίπλα σου</h3>
+        <p>Στο οδοντιατρείο - πολυοδοντιατρείο DrSmile, έχεις πάντα τον δικό σου οδοντίατρο, που γνωρίζει την περίπτωσή σου και συντονίζει το σχέδιο θεραπείας σου. Δίπλα του βρίσκεται μια ομάδα εξειδικευμένων συνεργατών, που παρεμβαίνει όταν χρειάζεται, ώστε να απολαμβάνεις την ασφάλεια μιας προσωπικής σχέσης και ταυτόχρονα το πλεονέκτημα μιας ολοκληρωμένης επιστημονικής ομάδας.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:.16s" tabindex="0">
+        <img class="emboss-ic" src="assets/icons/why-3.jpg" alt="">
+        <h3>Φροντίδα για κάθε ηλικία</h3>
+        <p>Από την οδοντιατρική για παιδιά (παιδοδοντία) μέχρι τις ανάγκες της τρίτης ηλικίας, στο οδοντιατρείο - πολυοδοντιατρείο DrSmile προσφέρουμε ολοκληρωμένη οδοντιατρική φροντίδα, ώστε το χαμόγελό σου να μας εμπιστεύεται σε κάθε ηλικία. Κάθε μέλος της οικογένειας μπορεί να απολαμβάνει εξατομικευμένη θεραπεία από την κατάλληλη ειδικότητα, στον ίδιο χώρο, με την ίδια φιλοσοφία φροντίδας και εμπιστοσύνης.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:.24s" tabindex="0">
+        <img class="emboss-ic" src="assets/icons/why-4.jpg" alt="">
+        <h3>Ποιότητα που φαίνεται &amp; αντέχει</h3>
+        <p>Στο οδοντιατρείο - πολυοδοντιατρείο DrSmile, κάθε θεραπεία σχεδιάζεται ώστε να προσφέρει αξία και στο μέλλον. Γι' αυτό επενδύουμε σε ποιοτικά υλικά, σύγχρονες τεχνικές και υψηλά επιστημονικά πρότυπα, ώστε κάθε αποτέλεσμα να είναι λειτουργικό, αισθητικά άρτιο και σχεδιασμένο να διαρκεί. Δεν επιλέγουμε υλικά με γνώμονα το χαμηλότερο κόστος, αλλά το καλύτερο αποτέλεσμα για τον ασθενή. Γιατί η ποιότητα δεν είναι μία επιπλέον παροχή· είναι η βάση κάθε υπηρεσίας που προσφέρουμε.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:.32s" tabindex="0">
+        <img class="emboss-ic" src="assets/icons/why-5.jpg" alt="">
+        <h3>Σύγχρονη τεχνολογία</h3>
+        <p>Η τεχνολογία αποκτά αξία όταν κάνει τη φροντίδα καλύτερη. Με προηγμένο εξοπλισμό και ψηφιακά διαγνωστικά μέσα, προσφέρουμε μεγαλύτερη ακρίβεια, ασφάλεια και καλύτερη εμπειρία σε κάθε θεραπεία.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:.4s" tabindex="0">
+        <img class="emboss-ic" src="assets/icons/why-6.jpg" alt="">
+        <h3>Ένας χώρος που σε χαλαρώνει</h3>
+        <p>Το οδοντιατρείο - πολυοδοντιατρείο DrSmile στον Εύοσμο Θεσσαλονίκης αποτελεί σύγχρονο χώρο υψηλής αισθητικής, όπου η άνεση, η ηρεμία και η διακριτική πολυτέλεια συμβάλλουν ώστε κάθε επίσκεψη να είναι ευχάριστη για τον κάθε ηλικίας ασθενή.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec story">
+  <div class="wrap story-wrap">
+    <div class="sec-label reveal" style="justify-content:center"><span class="ln"></span><span class="label">Η Ιστορία μας</span><span class="ln"></span></div>
+    <h2 class="reveal" style="text-align:center;transition-delay:.06s">Δεν δημιουργήσαμε απλώς<br>ένα <em>οδοντιατρείο!</em></h2>
+    <p class="story-p reveal" style="transition-delay:.12s">Δημιουργήσαμε έναν χώρο όπου η επιστημονική γνώση συναντά την ανθρώπινη φροντίδα.</p>
+    <p class="story-p reveal" style="transition-delay:.18s">Δημιουργήσαμε έναν χώρο όπου κάθε θεραπεία σχεδιάζεται με βάση τις πραγματικές ανάγκες του ασθενούς, αξιοποιώντας την εξειδίκευση διαφορετικών οδοντιάτρων, σύγχρονη τεχνολογία και υλικά υψηλής ποιότητας.</p>
+    <p class="story-p reveal" style="transition-delay:.24s">Το DrSmile - Πολυοδοντιατρείο γεννήθηκε από την πεποίθηση ότι η οδοντιατρική δεν αφορά μόνο τη θεραπεία των δοντιών. Αφορά την υγεία, την αυτοπεποίθηση και την ποιότητα ζωής.</p>
+    <p class="story-p reveal it" style="transition-delay:.3s">Για εμάς, κάθε ασθενής είναι μοναδικός!</p>
+  </div>
+</section>
+
 <section class="sec" id="services" style="padding-top:60px">
   <div class="wrap">
     <div class="sec-label reveal"><span class="ln"></span><span class="label">Υπηρεσίες</span></div>
+    <h2 class="reveal" style="transition-delay:.06s">Μπορούμε να βοηθήσουμε<br><em>αν ενδιαφέρεσαι για:</em></h2>
     <div class="serv-grid">
       <div class="scard reveal" tabindex="0" role="button" aria-label="Γενική Οδοντιατρική"><div class="scard-flip"><div class="scard-face scard-front"><img class="emboss-ic" src="assets/icons/serv-geniki.jpg" alt=""><h3>Γενική Οδοντιατρική</h3></div><div class="scard-face scard-back"><p>Πλήρης διαγνωστικός &amp; προληπτικός έλεγχος για όλη την οικογένεια.</p></div></div></div>
       <div class="scard reveal" style="transition-delay:.04s" tabindex="0" role="button" aria-label="Αισθητική Οδοντιατρική"><div class="scard-flip"><div class="scard-face scard-front"><img class="emboss-ic" src="assets/icons/serv-aisthitiki.jpg" alt=""><h3>Αισθητική Οδοντιατρική</h3></div><div class="scard-face scard-back"><p>Λεύκανση, όψεις ρητίνης, όψεις &amp; θήκες πορσελάνης, οδοντικά strass, λευκά σφραγίσματα.</p></div></div></div>
@@ -386,98 +423,22 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
   </div>
 </section>
 
-<section class="sec" id="why">
+<section class="sec doctor" id="doctor">
   <div class="wrap">
-    <div class="sec-label reveal"><span class="ln"></span><span class="label">Τι μας ξεχωρίζει</span></div>
-    <h2 class="reveal" style="transition-delay:.06s">Έξι λόγοι να μας <em>εμπιστευτείτε.</em></h2>
-    <div class="why-grid">
-      <div class="why-card reveal">
-        <img class="emboss-ic" src="assets/icons/why-1.jpg" alt="">
-        <h3>Όλη η οδοντιατρική φροντίδα σου, σε έναν χώρο</h3>
-        <p>Από την πρώτη διάγνωση και τις ψηφιακές ακτινογραφίες μέχρι τις εξειδικευμένες θεραπείες και την ολοκλήρωση του σχεδίου θεραπείας, η ομάδα του οδοντιατρείου - πολυοδοντιατρείου DrSmile βρίσκεται δίπλα σου σε κάθε στάδιο, προσφέροντας ολοκληρωμένη φροντίδα χωρίς περιττές μετακινήσεις.</p>
-      </div>
-      <div class="why-card reveal" style="transition-delay:.08s">
-        <img class="emboss-ic" src="assets/icons/why-2.jpg" alt="">
-        <h3>Μία ομάδα ειδικών, με έναν άνθρωπο δίπλα σου</h3>
-        <p>Στο οδοντιατρείο - πολυοδοντιατρείο DrSmile, έχεις πάντα τον δικό σου οδοντίατρο, που γνωρίζει την περίπτωσή σου και συντονίζει το σχέδιο θεραπείας σου. Δίπλα του βρίσκεται μια ομάδα εξειδικευμένων συνεργατών, που παρεμβαίνει όταν χρειάζεται, ώστε να απολαμβάνεις την ασφάλεια μιας προσωπικής σχέσης και ταυτόχρονα το πλεονέκτημα μιας ολοκληρωμένης επιστημονικής ομάδας.</p>
-      </div>
-      <div class="why-card reveal" style="transition-delay:.16s">
-        <img class="emboss-ic" src="assets/icons/why-3.jpg" alt="">
-        <h3>Οδοντιατρική φροντίδα για κάθε ηλικία</h3>
-        <p>Από την οδοντιατρική για παιδιά (παιδοδοντία) μέχρι τις ανάγκες της τρίτης ηλικίας, στο οδοντιατρείο - πολυοδοντιατρείο DrSmile προσφέρουμε ολοκληρωμένη οδοντιατρική φροντίδα, ώστε το χαμόγελό σου να μας εμπιστεύεται σε κάθε ηλικία. Κάθε μέλος της οικογένειας μπορεί να απολαμβάνει εξατομικευμένη θεραπεία από την κατάλληλη ειδικότητα, στον ίδιο χώρο, με την ίδια φιλοσοφία φροντίδας και εμπιστοσύνης.</p>
-      </div>
-      <div class="why-card reveal" style="transition-delay:.24s">
-        <img class="emboss-ic" src="assets/icons/why-4.jpg" alt="">
-        <h3>Οδοντιατρικές υπηρεσίες υψηλής ποιότητας — Ποιότητα που φαίνεται. Και αντέχει.</h3>
-        <p>Στο οδοντιατρείο - πολυοδοντιατρείο DrSmile, κάθε θεραπεία σχεδιάζεται ώστε να προσφέρει αξία και στο μέλλον. Γι' αυτό επενδύουμε σε ποιοτικά υλικά, σύγχρονες τεχνικές και υψηλά επιστημονικά πρότυπα, ώστε κάθε αποτέλεσμα να είναι λειτουργικό, αισθητικά άρτιο και σχεδιασμένο να διαρκεί. Δεν επιλέγουμε υλικά με γνώμονα το χαμηλότερο κόστος, αλλά το καλύτερο αποτέλεσμα για τον ασθενή. Γιατί η ποιότητα δεν είναι μία επιπλέον παροχή· είναι η βάση κάθε υπηρεσίας που προσφέρουμε.</p>
-      </div>
-      <div class="why-card reveal" style="transition-delay:.32s">
-        <img class="emboss-ic" src="assets/icons/why-5.jpg" alt="">
-        <h3>Σύγχρονη οδοντιατρική τεχνολογία στην υπηρεσία του ασθενούς</h3>
-        <p>Η τεχνολογία αποκτά αξία όταν κάνει τη φροντίδα καλύτερη. Με προηγμένο εξοπλισμό και ψηφιακά διαγνωστικά μέσα, προσφέρουμε μεγαλύτερη ακρίβεια, ασφάλεια και καλύτερη εμπειρία σε κάθε θεραπεία.</p>
-      </div>
-      <div class="why-card reveal" style="transition-delay:.4s">
-        <img class="emboss-ic" src="assets/icons/why-6.jpg" alt="">
-        <h3>Ένας χώρος που αναβαθμίζει την εμπειρία του οδοντιάτρου</h3>
-        <p>Το οδοντιατρείο - πολυοδοντιατρείο DrSmile στον Εύοσμο Θεσσαλονίκης αποτελεί σύγχρονο χώρο υψηλής αισθητικής, όπου η άνεση, η ηρεμία και η διακριτική πολυτέλεια συμβάλλουν ώστε κάθε επίσκεψη να είναι ευχάριστη για τον κάθε ηλικίας ασθενή.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec story">
-  <div class="wrap story-wrap">
-    <div class="sec-label reveal" style="justify-content:center"><span class="ln"></span><span class="label">Η Ιστορία μας</span><span class="ln"></span></div>
-    <h2 class="reveal" style="text-align:center;transition-delay:.06s">Δεν φτιάξαμε απλώς ένα <em>οδοντιατρείο.</em></h2>
-    <p class="story-p reveal" style="transition-delay:.12s">Δεν δημιουργήσαμε απλώς ένα οδοντιατρείο - πολυοδοντιατρείο στον Εύοσμο Θεσσαλονίκης. Δημιουργήσαμε έναν χώρο όπου η επιστημονική γνώση συναντά την ανθρώπινη φροντίδα.</p>
-    <p class="story-p reveal" style="transition-delay:.18s">Το DrSmile γεννήθηκε από την πεποίθηση ότι η οδοντιατρική δεν αφορά μόνο τη θεραπεία των δοντιών. Αφορά την αυτοπεποίθηση, την υγεία, την ποιότητα ζωής.</p>
-    <p class="story-p reveal" style="transition-delay:.24s">Γι' αυτό σταματήσαμε να σκεφτόμαστε το DrSmile σαν ένα απλό οδοντιατρείο — το αντιμετωπίζουμε ως ένα premium healthcare brand, για ενήλικες και παιδιά.</p>
-    <p class="story-p reveal it" style="transition-delay:.3s">Για εμάς, κάθε ασθενής είναι μοναδικός.</p>
-  </div>
-</section>
-
-<section class="sec team" id="team">
-  <div class="wrap">
-    <div class="team-img reveal">
-      <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=1200&auto=format&fit=crop" alt="Δρ. Αναστασία Παρχαρίδου και η ομάδα DrSmile">
-      <div class="team-seal"><img src="assets/icons/badge-doctor.jpg" alt="DrSmile — Αναστασία Παρχαρίδου, Χειρουργός Οδοντίατρος"></div>
+    <div class="doc-photo reveal">
+      <img src="assets/doctor.jpg" alt="Αναστασία Παρχαρίδου — Χειρουργός Οδοντίατρος">
     </div>
     <div>
-      <div class="sec-label reveal"><span class="ln"></span><span class="label">Η Ομάδα μας</span></div>
-      <h2 class="reveal" style="transition-delay:.06s">Μία ομάδα,<br><em>ολιστική φροντίδα.</em></h2>
-      <p class="quote reveal" style="transition-delay:.12s">«Ένα οδοντιατρείο — μία συνολική αντιμετώπιση του ασθενούς.»</p>
-      <p class="bio reveal" style="transition-delay:.18s">Το DrSmile είναι πολυοδοντιατρείο με επικεφαλής τη Δρ. Αναστασία Παρχαρίδου. Η ομάδα μας αποτελείται από εξειδικευμένους οδοντιάτρους διαφορετικών ειδικοτήτων, που συνεργάζονται στενά ώστε να αναλαμβάνουμε κάθε είδους περιστατικό — με οδοντιατρικές υπηρεσίες υψηλής ποιότητας, για κάθε ηλικία.</p>
-      <div class="team-creds reveal" style="transition-delay:.24s">
-        <span class="chip"><i class="ti ti-stethoscope"></i> Χειρουργός Οδοντίατρος</span>
-        <span class="chip"><i class="ti ti-certificate"></i> Γενική &amp; Αισθητική Οδοντιατρική ενηλίκων &amp; παίδων</span>
-        <span class="chip"><i class="ti ti-award"></i> Πιστοποιημένη Senior Master Provider Ορθοδοντικής Τεχνολογίας Fastbraces®</span>
-        <span class="chip"><i class="ti ti-star"></i> Οδοντιατρικές υπηρεσίες υψηλής ποιότητας</span>
-      </div>
-      <div class="team-values reveal" style="transition-delay:.3s">
-        <div class="tv"><i class="ti ti-users-group"></i><span>Ομάδα εξειδικευμένων οδοντιάτρων διαφορετικών ειδικοτήτων</span></div>
-        <div class="tv"><i class="ti ti-heart-handshake"></i><span>Ανάληψη κάθε είδους περιστατικού</span></div>
-        <div class="tv"><i class="ti ti-building-hospital"></i><span>Ένα οδοντιατρείο — μία συνολική αντιμετώπιση ασθενούς</span></div>
-        <div class="tv"><i class="ti ti-star"></i><span>Οδοντιατρικές υπηρεσίες υψηλής ποιότητας</span></div>
-      </div>
-      <div class="cred-seals reveal" style="transition-delay:.3s">
-        <div class="seal"><img src="assets/icons/badge-cred-general.jpg" alt="Γενική &amp; Αισθητική Οδοντιατρική Ενηλίκων &amp; Παίδων"><span>Γενική &amp; Αισθητική Οδοντιατρική<br>ενηλίκων &amp; παίδων</span></div>
-        <div class="seal"><img src="assets/icons/badge-cred-fastbraces.jpg" alt="Πιστοποιημένη Senior Master Provider Fastbraces"><span>Πιστοποιημένη Senior Master Provider<br>Ορθοδοντικής Τεχνολογίας Fastbraces®</span></div>
-      </div>
-      <div class="sign reveal" style="transition-delay:.36s">Δρ. Α. Παρχαρίδου &amp; Ομάδα DrSmile</div>
+      <h2 class="doc-brand reveal">DrSmile<br><em>Πολυοδοντιατρείο</em></h2>
+      <div class="doc-lead reveal" style="transition-delay:.08s">Επικεφαλής</div>
+      <div class="doc-name reveal" style="transition-delay:.12s">Αναστασία Παρχαρίδου</div>
+      <ul class="doc-creds reveal" style="transition-delay:.18s">
+        <li><i class="ti ti-stethoscope"></i><span>Χειρουργός Οδοντίατρος</span></li>
+        <li><i class="ti ti-certificate"></i><span>Γενική και Αισθητική Οδοντιατρική ενηλίκων &amp; παίδων</span></li>
+        <li><i class="ti ti-award"></i><span>Πιστοποιημένη Senior Master Provider Ορθοδοντικής Τεχνολογίας Fastbraces®</span></li>
+        <li><i class="ti ti-star"></i><span>Οδοντιατρικές υπηρεσίες υψηλής ποιότητας</span></li>
+      </ul>
     </div>
-  </div>
-</section>
-
-<section class="sec" id="results">
-  <div class="wrap">
-    <div class="sec-label reveal"><span class="ln"></span><span class="label">Πριν / Μετά</span></div>
-    <h2 class="reveal" style="transition-delay:.06s">Αληθινές <em>μεταμορφώσεις.</em></h2>
-    <div class="ba-wrap reveal" style="margin-top:50px;transition-delay:.12s">
-      <div class="pane"><img src="https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?q=80&w=1200&auto=format&fit=crop" alt="Πριν"><span class="tag">Πριν</span></div>
-      <div class="pane"><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1200&auto=format&fit=crop" alt="Μετά"><span class="tag">Μετά</span></div>
-      <div class="divider"></div>
-    </div>
-    <div style="text-align:center;margin-top:36px" class="reveal"><a class="btn btn-line" href="#"><i class="ti ti-photo"></i> Δείτε όλη τη συλλογή χαμόγελων</a></div>
   </div>
 </section>
 
@@ -495,12 +456,16 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
   </div>
 </section>
 
-<section class="sec ctaband">
+<section class="sec" id="results">
   <div class="wrap">
-    <div class="sec-label reveal" style="justify-content:center"><span class="ln"></span><span class="label">Επικοινωνία</span><span class="ln"></span></div>
-    <h2 class="reveal" style="transition-delay:.06s">Ελάτε να γνωριστούμε<br>στο <em>πολυοδοντιατρείο</em> μας.</h2>
-    <p class="reveal" style="transition-delay:.12s">Η ομάδα του DrSmile σας περιμένει στον Εύοσμο, με ολοκληρωμένη φροντίδα για κάθε ηλικία &amp; κάθε περιστατικό.</p>
-    <a class="btn btn-gold reveal" style="transition-delay:.18s" href="tel:2310769674"><i class="ti ti-phone"></i> Καλέστε μας τώρα</a>
+    <div class="sec-label reveal"><span class="ln"></span><span class="label">Πριν / Μετά</span></div>
+    <h2 class="reveal" style="transition-delay:.06s">Αληθινές <em>μεταμορφώσεις.</em></h2>
+    <div class="ba-wrap reveal" style="margin-top:50px;transition-delay:.12s">
+      <div class="pane"><img src="https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?q=80&w=1200&auto=format&fit=crop" alt="Πριν"><span class="tag">Πριν</span></div>
+      <div class="pane"><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1200&auto=format&fit=crop" alt="Μετά"><span class="tag">Μετά</span></div>
+      <div class="divider"></div>
+    </div>
+    <div style="text-align:center;margin-top:36px" class="reveal"><a class="btn btn-line" href="#"><i class="ti ti-photo"></i> Δείτε όλη τη συλλογή χαμόγελων</a></div>
   </div>
 </section>
 
@@ -511,15 +476,24 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
       <h2 class="reveal" style="transition-delay:.06s">Ας χτίσουμε<br>το <em>χαμόγελό</em> σας.</h2>
       <p class="lead reveal" style="transition-delay:.12s">Κλείστε το ραντεβού σας — η ομάδα του DrSmile σας περιμένει στον Εύοσμο.</p>
       <div class="cinfo reveal" style="transition-delay:.1s">
-        <div class="cr"><img class="cr-ic" src="assets/icons/badge-address.jpg" alt=""><div><div class="k">Διεύθυνση</div><div class="v sm">Καραολή και Δημητρίου 121, Εύοσμος Θεσσαλονίκη, ΤΚ. 56224</div></div></div>
-        <div class="cr"><img class="cr-ic" src="assets/icons/badge-phone.jpg" alt=""><div><div class="k">Τηλέφωνο</div><div class="v">2310 769 674</div></div></div>
+        <div class="cr"><img class="cr-ic" src="assets/icons/badge-address.jpg" alt=""><div><div class="k">Διεύθυνση</div><a class="v sm" href="https://www.google.com/maps/dir/?api=1&destination=Karaoli+kai+Dimitriou+121,+Evosmos,+Thessaloniki" target="_blank" rel="noopener">Καραολή και Δημητρίου 121, Εύοσμος Θεσσαλονίκη, ΤΚ. 56224</a></div></div>
+        <div class="cr"><img class="cr-ic" src="assets/icons/badge-phone.jpg" alt=""><div><div class="k">Τηλέφωνο</div><a class="v" href="tel:2310769674">2310 769 674</a></div></div>
         <div class="cr"><i class="ti ti-clock-hour-4"></i><div><div class="k">Ωράριο</div><div class="v sm">Δευτέρα – Παρασκευή · 09:00 – 21:00<br>Σάββατο με ραντεβού</div></div></div>
-        <div class="cr"><i class="ti ti-brand-instagram"></i><div><div class="k">Ακολουθήστε</div><div class="v sm">Facebook · Instagram · YouTube · TikTok</div></div></div>
       </div>
       <a class="btn btn-gold reveal" href="tel:2310769674"><i class="ti ti-phone"></i> Καλέστε μας τώρα</a>
+      <div class="soc-cta reveal" style="transition-delay:.16s">
+        <p>Δείτε πραγματικά περιστατικά και τη καθημερινότητά μας — ακολουθήστε μας:</p>
+        <div class="soc-row">
+          <a href="#" target="_blank" rel="noopener"><i class="ti ti-brand-facebook"></i> Facebook</a>
+          <a href="#" target="_blank" rel="noopener"><i class="ti ti-brand-instagram"></i> Instagram</a>
+          <a href="#" target="_blank" rel="noopener"><i class="ti ti-brand-tiktok"></i> TikTok</a>
+          <a href="#" target="_blank" rel="noopener"><i class="ti ti-brand-youtube"></i> YouTube</a>
+        </div>
+      </div>
     </div>
     <div class="mapwrap reveal" style="transition-delay:.14s">
       <iframe src="https://maps.google.com/maps?q=Karaoli%20kai%20Dimitriou%20121%20Evosmos%20Thessaloniki&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" allowfullscreen></iframe>
+      <a class="map-nav" href="https://www.google.com/maps/dir/?api=1&destination=Karaoli+kai+Dimitriou+121,+Evosmos,+Thessaloniki" target="_blank" rel="noopener"><i class="ti ti-navigation"></i> Οδηγίες πλοήγησης</a>
     </div>
   </div>
 </section>
@@ -543,7 +517,7 @@ footer .fb-logo p{max-width:280px;font-size:14px;line-height:1.7;color:var(--war
       </div>
       <div class="fcol"><h4>Επικοινωνία</h4><a href="tel:2310769674"><i class="ti ti-phone"></i> 2310 769 674</a><a href="#"><i class="ti ti-map-pin"></i> Καραολή και Δημητρίου 121</a><a href="#"><i class="ti ti-building"></i> Εύοσμος Θεσσαλονίκη, ΤΚ. 56224</a><a href="#"><i class="ti ti-world"></i> www.drsmile.gr</a></div>
       <div class="fcol"><h4>Υπηρεσίες</h4><a href="#services">Γενική Οδοντιατρική</a><a href="#services">Αισθητική Οδοντιατρική</a><a href="#services">Ορθοδοντική Fastbraces®</a><a href="#services">Εμφυτευματολογία</a><a href="#services">Παιδοδοντία</a></div>
-      <div class="fcol"><h4>Χρήσιμοι Σύνδεσμοι</h4><a href="#team">Η Ομάδα</a><a href="#results">Πριν / Μετά</a><a href="#philo">Φιλοσοφία</a><a href="#contact">Επικοινωνία</a></div>
+      <div class="fcol"><h4>Χρήσιμοι Σύνδεσμοι</h4><a href="#why">Τι μας ξεχωρίζει</a><a href="#results">Πριν / Μετά</a><a href="#philo">Φιλοσοφία</a><a href="#contact">Επικοινωνία</a></div>
     </div>
     <div class="fbot">
       <span>© 2026 DrSmile — Δρ. Αναστασία Παρχαρίδου. Με επιφύλαξη παντός δικαιώματος.</span>
