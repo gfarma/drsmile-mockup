@@ -212,20 +212,25 @@ footer .fb-logo p{max-width:420px;font-size:14px;line-height:1.7;color:var(--war
   .nav-links{display:none}
   .burger{display:block}
   .utilbar .ub-mid{display:none}
-  .utilbar .wrap{height:auto;padding-top:9px;padding-bottom:9px;gap:10px;font-size:11.5px}
-  .ub-item{white-space:normal;align-items:flex-start;line-height:1.4}
+  .utilbar .wrap{height:auto;padding-top:9px;padding-bottom:9px;gap:14px;font-size:11.5px}
+  .ub-item{white-space:normal;align-items:flex-start;line-height:1.4;min-width:0}
   .ub-item i{margin-top:2px}
-  /* λογότυπο + επιστημονική διεύθυνση + μότο μέσα στην εικόνα */
-  .hero{position:relative;overflow:hidden;min-height:76vh;display:flex;align-items:flex-end;padding:60px 0 46px}
-  .hero-bg{position:absolute;inset:0;z-index:0}
-  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:66% 38%}
-  .hero-bg::after{display:block;background:linear-gradient(180deg,rgba(251,248,242,.12) 0%,rgba(251,248,242,.3) 38%,rgba(251,248,242,.8) 76%,var(--ivory) 100%)}
-  .hero-content{padding:0}
+  /* το τηλέφωνο κρατά όλο του το πλάτος — δεν σπάει σε δύο γραμμές */
+  .utilbar a.ub-item{flex:none;white-space:nowrap;font-weight:600}
+  /* Ολόκληρη η φωτογραφία ορατή· από κάτω της η mobile έκδοση του banner
+     συνεχίζει το ίδιο φόντο και σβήνει στο ivory, οπότε το λογότυπο, η
+     επιστημονική διεύθυνση και το μότο κάθονται μέσα στην εικόνα όσο κι αν
+     αναδιπλωθεί το κείμενο σε στενές οθόνες. */
+  .hero{position:relative;overflow:visible;min-height:0;display:block;padding:0 0 6px;
+    background:url(assets/hero-banner-mobile.png) top center/100% auto no-repeat}
+  .hero-bg{display:none}
+  .hero-content{padding:calc(58.33vw + 20px) 22px 0}   /* 784/1344 = ύψος φωτογραφίας */
   .hero-text{max-width:100%}
-  .hero-lockup{align-items:center;text-align:center;width:100%;margin-bottom:20px}
-  .hero-lockup img{height:70px}
-  .hero h1{text-align:center}
-  .hero-note{padding:28px 0 4px}
+  .hero-lockup{align-items:center;text-align:center;width:100%;gap:6px;margin-bottom:14px}
+  .hero-lockup img{height:62px}
+  .hero-lockup .hl-name{font-size:10.5px;letter-spacing:.1em}
+  .hero h1{text-align:center;font-size:26px;line-height:1.22}
+  .hero-note{padding:26px 0 4px}
   .sec{padding:70px 0}
   .fab-stack{bottom:16px;right:16px;gap:10px}
   .fab{padding:11px 18px;font-size:12.5px}
@@ -254,6 +259,7 @@ footer .fb-logo p{max-width:420px;font-size:14px;line-height:1.7;color:var(--war
   .fgrid{justify-content:flex-start}
 }
 @media(max-width:560px){
+  .btn{white-space:normal;text-align:center;padding:14px 22px;max-width:100%}
   .tb-item h4,.scard h3{font-size:12px}
   .map-nav{left:12px;bottom:12px;font-size:12.5px;padding:10px 16px}
   .ccard{padding:22px 20px}
@@ -305,7 +311,10 @@ footer .fb-logo p{max-width:420px;font-size:14px;line-height:1.7;color:var(--war
 
 <header class="hero">
   <div class="hero-bg">
-    <img src="assets/hero-banner.png" alt="Χαμόγελο DrSmile">
+    <picture>
+      <source media="(max-width:920px)" srcset="assets/hero-banner-mobile.png">
+      <img src="assets/hero-banner.png" alt="Χαμόγελο DrSmile">
+    </picture>
   </div>
   <div class="wrap hero-content">
     <div class="hero-text">
