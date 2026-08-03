@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DrSmile — Εκδοχές για τις Υπηρεσίες</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..600;1,400..600&family=Manrope:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#FBF8F2; --warm-white:#FEFCF8; --gold:#B08D57; --gold-deep:#9C7A45; --gold-soft:#D8BE8E;
+  --charcoal:#2E2A24; --muted:#7A7062;
+  --line:rgba(176,141,87,.24); --line-soft:rgba(176,141,87,.14);
+  --fs:'Cormorant Garamond',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);color:var(--charcoal);background:var(--ivory);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+.page-head{padding:64px 0 10px;text-align:center}
+.page-head h1{font-family:var(--fs);font-weight:300;font-size:clamp(30px,4vw,50px);line-height:1.1}
+.page-head p{color:var(--muted);font-size:15.5px;max-width:660px;margin:16px auto 0}
+.opt{padding:54px 0;border-top:1px solid var(--line-soft);margin-top:44px}
+.opt-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+.opt-tag{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:#fff;background:var(--gold-deep);padding:7px 14px;border-radius:999px}
+.opt-head h2{font-family:var(--fs);font-weight:400;font-size:clamp(23px,3vw,33px)}
+.opt-note{color:var(--muted);font-size:14.5px;max-width:760px;margin-bottom:34px}
+.opt-note b{color:var(--charcoal);font-weight:600}
+
+.grid{display:grid;gap:22px}
+.card{background:var(--warm-white);border:1px solid var(--line);transition:.4s cubic-bezier(.2,.7,.2,1)}
+.card:hover{transform:translateY(-6px);border-color:var(--gold-deep);box-shadow:0 26px 52px -32px rgba(120,96,50,.32)}
+.card .ic{border-radius:50%;object-fit:cover;background:var(--warm-white);box-shadow:0 1px 0 rgba(255,255,255,.6),0 0 0 1px var(--line);transition:.4s}
+.card:hover .ic{transform:translateY(-3px) scale(1.06);box-shadow:0 10px 24px -10px rgba(176,141,87,.55),0 0 0 2px var(--gold-soft)}
+.card h3{font-family:var(--sans);font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--charcoal);margin:0}
+.card p{color:var(--muted)}
+
+/* Α — πλαίσιο με τίτλο και επεξήγηση */
+.gA{grid-template-columns:repeat(4,1fr)}
+.cA{display:flex;flex-direction:column;align-items:center;text-align:center;border-radius:150px 150px 20px 20px;padding:38px 24px 30px}
+.cA .ic{width:76px;height:76px;margin-bottom:20px}
+.cA h3{font-size:13px;line-height:1.45}
+.cA p{font-size:11.5px;line-height:1.65;margin-top:9px}
+
+/* Β — πλαίσιο με τίτλο· επεξήγηση στο hover */
+.gB{grid-template-columns:repeat(4,1fr)}
+.cB{display:flex;flex-direction:column;align-items:center;text-align:center;border-radius:150px 150px 20px 20px;padding:40px 24px 34px;cursor:pointer}
+.cB .ic{width:84px;height:84px;margin-bottom:22px}
+.cB h3{font-size:13.5px;line-height:1.45}
+.cB p{font-size:11.5px;line-height:1.65;max-height:0;opacity:0;margin-top:0;overflow:hidden;transition:.45s cubic-bezier(.2,.7,.2,1)}
+.cB:hover p,.cB.open p{max-height:240px;opacity:1;margin-top:10px}
+
+/* Γ — συμπαγές πλέγμα, μόνο εικονίδιο και τίτλος */
+.gC{grid-template-columns:repeat(6,1fr);gap:16px}
+.cC{display:flex;flex-direction:column;align-items:center;text-align:center;border-radius:110px 110px 16px 16px;padding:28px 14px 22px}
+.cC .ic{width:62px;height:62px;margin-bottom:14px}
+.cC h3{font-size:11px;line-height:1.4}
+.cC p{display:none}
+
+@media(max-width:1100px){
+  .gA,.gB{grid-template-columns:repeat(3,1fr)}
+  .gC{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:760px){
+  .wrap{padding:0 20px}
+  .gA,.gB,.gC{grid-template-columns:1fr 1fr;gap:14px}
+  .cA,.cB{padding:26px 16px 22px;border-radius:110px 110px 16px 16px}
+  .cA .ic,.cB .ic{width:58px;height:58px;margin-bottom:14px}
+  .cA h3,.cB h3{font-size:11.5px}
+  .cA p,.cB p{font-size:11px}
+  .cC{padding:22px 10px 18px;border-radius:90px 90px 14px 14px}
+  .cC .ic{width:52px;height:52px}
+  .cC h3{font-size:10.5px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap page-head">
+  <h1>Υπηρεσίες — τρεις εκδοχές</h1>
+  <p>Και οι τρεις έχουν ημικυκλικό πλαίσιο, όπως αυτό της φωτογραφίας σας. Διαφέρουν στο πόσο κείμενο δείχνουν με την πρώτη ματιά.</p>
+</div>
+
+<section class="opt">
+  <div class="wrap">
+    <div class="opt-head"><span class="opt-tag">Εκδοχή Α</span><h2>Πλαίσιο με τίτλο και επεξήγηση</h2></div>
+    <p class="opt-note">Αυτή είναι στη σελίδα αυτή τη στιγμή. <b>Υπέρ:</b> βλέπει κανείς αμέσως τι περιλαμβάνει κάθε υπηρεσία. <b>Κατά:</b> αρκετό κείμενο μαζεμένο — το μάτι δυσκολεύεται να ξεχωρίσει γρήγορα και τις 12.</p>
+    <div class="grid gA">
+      <div class="card cA"><img class="ic" src="assets/icons/serv-geniki.jpg" alt=""><div><h3>Γενική Οδοντιατρική</h3></div></div>
+      <div class="card cA"><img class="ic" src="assets/icons/serv-aisthitiki.jpg" alt=""><div><h3>Αισθητική Οδοντιατρική</h3><p>λεύκανση, όψεις ρητίνης, όψεις και θήκες πορσελάνης, οδοντικά strass, λευκά σφραγίσματα ρητίνης</p></div></div>
+      <div class="card cA"><img class="ic" src="assets/icons/serv-fastbraces.jpg" alt=""><div><h3>Ορθοδοντική Fastbraces®</h3><p>γρήγορο ίσιωμα δοντιών, χωρίς εξαγωγές</p></div></div>
+      <div class="card cA"><img class="ic" src="assets/icons/serv-periodontologia.jpg" alt=""><div><h3>Περιοδοντολογία</h3><p>καθαρισμός, θεραπεία ουλίτιδας, θεραπεία περιοδοντίτιδας, ουλεκτομή-ουλοπλαστική, επιμήκυνση μύλης κτλ</p></div></div>
+      <div class="card cA"><img class="ic" src="assets/icons/serv-emfyteumatologia.jpg" alt=""><div><h3>Εμφυτευματολογία</h3><p>για διόρθωση μερικής ή ολικής νωδότητας</p></div></div>
+      <div class="card cA"><img class="ic" src="assets/icons/serv-paidodontia.jpg" alt=""><div><h3>Παιδοδοντία</h3><p>φθορίωση, σφραγίσματα, προληπτικές καλύψεις-sealants, πολφοτομή κτλ</p></div></div>
+      <div class="card cA"><img class="ic" src="assets/icons/serv-endodontia.jpg" alt=""><div><h3>Ενδοδοντία</h3><p>απονευρώσεις</p></div></div>
+      <div class="card cA"><img class="ic" src="assets/icons/serv-prosthetiki.jpg" alt=""><div><h3>Προσθετική κινητή και ακίνητη</h3><p>ολικές οδοντοστοιχίες, μερικές οδοντοστοιχίες, θήκες, γέφυρες, επί εμφυτευμάτων, ολοκεραμικά κτλ</p></div></div>
+      <div class="card cA"><img class="ic" src="assets/icons/serv-xeirourgiki.jpg" alt=""><div><h3>Χειρουργική στόματος</h3><p>εξαγωγή φρονιμιτών, ανύψωση ιγμορείου, ακρορριζεκτομές κτλ</p></div></div>
+      <div class="card cA"><img class="ic" src="assets/icons/serv-sfragismata.jpg" alt=""><div><h3>Αισθητικές εμφράξεις</h3><p>σφραγίσματα - χτίσιμο δοντιών - επένθετα</p></div></div>
+      <div class="card cA"><img class="ic" src="assets/icons/serv-narthikes.jpg" alt=""><div><h3>Κατασκευή ναρθήκων</h3><p>λεύκανσης, ορθοδοντικής, βρουξισμού</p></div></div>
+      <div class="card cA"><img class="ic" src="assets/icons/serv-laser.jpg" alt=""><div><h3>Λέιζερ (Laser)</h3><p>λεύκανση, ουλεκτομή, ουλοπλαστική, θεραπεία περιοδοντίτιδας, μείωση οδοντικής ευαισθησίας κτλ</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="opt">
+  <div class="wrap">
+    <div class="opt-head"><span class="opt-tag">Εκδοχή Β</span><h2>Πλαίσιο με τίτλο· η επεξήγηση στο πέρασμα του κέρσορα</h2></div>
+    <p class="opt-note">Μεγαλύτερο εικονίδιο, μόνο ο τίτλος. Η επεξήγηση εμφανίζεται με τον κέρσορα — ή με πάτημα στο κινητό. <b>Υπέρ:</b> και οι 12 υπηρεσίες διαβάζονται με μια ματιά, χωρίς θόρυβο. <b>Κατά:</b> η επεξήγηση δεν φαίνεται αν δεν την αναζητήσει κανείς.</p>
+    <div class="grid gB">
+      <div class="card cB"><img class="ic" src="assets/icons/serv-geniki.jpg" alt=""><div><h3>Γενική Οδοντιατρική</h3></div></div>
+      <div class="card cB"><img class="ic" src="assets/icons/serv-aisthitiki.jpg" alt=""><div><h3>Αισθητική Οδοντιατρική</h3><p>λεύκανση, όψεις ρητίνης, όψεις και θήκες πορσελάνης, οδοντικά strass, λευκά σφραγίσματα ρητίνης</p></div></div>
+      <div class="card cB"><img class="ic" src="assets/icons/serv-fastbraces.jpg" alt=""><div><h3>Ορθοδοντική Fastbraces®</h3><p>γρήγορο ίσιωμα δοντιών, χωρίς εξαγωγές</p></div></div>
+      <div class="card cB"><img class="ic" src="assets/icons/serv-periodontologia.jpg" alt=""><div><h3>Περιοδοντολογία</h3><p>καθαρισμός, θεραπεία ουλίτιδας, θεραπεία περιοδοντίτιδας, ουλεκτομή-ουλοπλαστική, επιμήκυνση μύλης κτλ</p></div></div>
+      <div class="card cB"><img class="ic" src="assets/icons/serv-emfyteumatologia.jpg" alt=""><div><h3>Εμφυτευματολογία</h3><p>για διόρθωση μερικής ή ολικής νωδότητας</p></div></div>
+      <div class="card cB"><img class="ic" src="assets/icons/serv-paidodontia.jpg" alt=""><div><h3>Παιδοδοντία</h3><p>φθορίωση, σφραγίσματα, προληπτικές καλύψεις-sealants, πολφοτομή κτλ</p></div></div>
+      <div class="card cB"><img class="ic" src="assets/icons/serv-endodontia.jpg" alt=""><div><h3>Ενδοδοντία</h3><p>απονευρώσεις</p></div></div>
+      <div class="card cB"><img class="ic" src="assets/icons/serv-prosthetiki.jpg" alt=""><div><h3>Προσθετική κινητή και ακίνητη</h3><p>ολικές οδοντοστοιχίες, μερικές οδοντοστοιχίες, θήκες, γέφυρες, επί εμφυτευμάτων, ολοκεραμικά κτλ</p></div></div>
+      <div class="card cB"><img class="ic" src="assets/icons/serv-xeirourgiki.jpg" alt=""><div><h3>Χειρουργική στόματος</h3><p>εξαγωγή φρονιμιτών, ανύψωση ιγμορείου, ακρορριζεκτομές κτλ</p></div></div>
+      <div class="card cB"><img class="ic" src="assets/icons/serv-sfragismata.jpg" alt=""><div><h3>Αισθητικές εμφράξεις</h3><p>σφραγίσματα - χτίσιμο δοντιών - επένθετα</p></div></div>
+      <div class="card cB"><img class="ic" src="assets/icons/serv-narthikes.jpg" alt=""><div><h3>Κατασκευή ναρθήκων</h3><p>λεύκανσης, ορθοδοντικής, βρουξισμού</p></div></div>
+      <div class="card cB"><img class="ic" src="assets/icons/serv-laser.jpg" alt=""><div><h3>Λέιζερ (Laser)</h3><p>λεύκανση, ουλεκτομή, ουλοπλαστική, θεραπεία περιοδοντίτιδας, μείωση οδοντικής ευαισθησίας κτλ</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="opt">
+  <div class="wrap">
+    <div class="opt-head"><span class="opt-tag">Εκδοχή Γ</span><h2>Συμπαγές πλέγμα — μόνο εικονίδιο και τίτλος</h2></div>
+    <p class="opt-note">Μικρότερα πλακίδια, έξι ανά σειρά. <b>Υπέρ:</b> όλες οι υπηρεσίες χωράνε σε δύο σειρές — η πιο γρήγορη εικόνα του εύρους σας. <b>Κατά:</b> καμία επεξήγηση εδώ· θα ζει στη σελίδα της κάθε υπηρεσίας.</p>
+    <div class="grid gC">
+      <div class="card cC"><img class="ic" src="assets/icons/serv-geniki.jpg" alt=""><div><h3>Γενική Οδοντιατρική</h3></div></div>
+      <div class="card cC"><img class="ic" src="assets/icons/serv-aisthitiki.jpg" alt=""><div><h3>Αισθητική Οδοντιατρική</h3></div></div>
+      <div class="card cC"><img class="ic" src="assets/icons/serv-fastbraces.jpg" alt=""><div><h3>Ορθοδοντική Fastbraces®</h3></div></div>
+      <div class="card cC"><img class="ic" src="assets/icons/serv-periodontologia.jpg" alt=""><div><h3>Περιοδοντολογία</h3></div></div>
+      <div class="card cC"><img class="ic" src="assets/icons/serv-emfyteumatologia.jpg" alt=""><div><h3>Εμφυτευματολογία</h3></div></div>
+      <div class="card cC"><img class="ic" src="assets/icons/serv-paidodontia.jpg" alt=""><div><h3>Παιδοδοντία</h3></div></div>
+      <div class="card cC"><img class="ic" src="assets/icons/serv-endodontia.jpg" alt=""><div><h3>Ενδοδοντία</h3></div></div>
+      <div class="card cC"><img class="ic" src="assets/icons/serv-prosthetiki.jpg" alt=""><div><h3>Προσθετική κινητή και ακίνητη</h3></div></div>
+      <div class="card cC"><img class="ic" src="assets/icons/serv-xeirourgiki.jpg" alt=""><div><h3>Χειρουργική στόματος</h3></div></div>
+      <div class="card cC"><img class="ic" src="assets/icons/serv-sfragismata.jpg" alt=""><div><h3>Αισθητικές εμφράξεις</h3></div></div>
+      <div class="card cC"><img class="ic" src="assets/icons/serv-narthikes.jpg" alt=""><div><h3>Κατασκευή ναρθήκων</h3></div></div>
+      <div class="card cC"><img class="ic" src="assets/icons/serv-laser.jpg" alt=""><div><h3>Λέιζερ (Laser)</h3></div></div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.querySelectorAll('.cB').forEach(c=>c.addEventListener('click',()=>{
+  const was=c.classList.contains('open');
+  document.querySelectorAll('.cB.open').forEach(o=>o.classList.remove('open'));
+  if(!was)c.classList.add('open');
+}));
+</script>
+</body>
+</html>

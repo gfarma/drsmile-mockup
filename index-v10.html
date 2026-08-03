@@ -66,17 +66,43 @@ a{color:inherit;text-decoration:none}
 .brand-name{font-family:var(--fs);font-style:italic;font-size:15px;color:var(--gold-deep);font-weight:500}
 footer .brand-sub{display:flex;flex-direction:column;align-items:flex-start;margin:6px 0 16px}
 footer .brand-name{color:var(--gold-soft)}
-.nav-links{display:flex;gap:36px}
-.nav-links a{font-size:14px;font-weight:500;letter-spacing:.02em;position:relative;padding:4px 0;color:var(--charcoal)}
-.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;background:var(--gold-deep);transition:.35s}
-.nav-links a:hover::after{width:100%}
+.nav-links{display:flex;align-items:center;gap:26px}
+.nav-links>a,.nav-drop>a{font-size:13.5px;font-weight:500;letter-spacing:.01em;position:relative;padding:4px 0;color:var(--charcoal);white-space:nowrap;display:inline-flex;align-items:center;gap:5px}
+.nav-links>a::after,.nav-drop>a::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;background:var(--gold-deep);transition:.35s}
+.nav-links>a:hover::after,.nav-drop:hover>a::after{width:100%}
+.nav-links a.soon{color:var(--muted)}
+.nav-drop>a i{font-size:14px;color:var(--gold-deep);transition:.3s}
+.nav-drop:hover>a i{transform:rotate(180deg)}
+
+.nav-drop{position:relative}
+.nav-sub{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);
+  min-width:260px;padding:12px 0;margin-top:14px;
+  background:var(--warm-white);border:1px solid var(--line);border-radius:14px;
+  box-shadow:0 26px 54px -28px rgba(120,96,50,.4);
+  opacity:0;visibility:hidden;pointer-events:none;transition:.3s cubic-bezier(.2,.7,.2,1);z-index:120}
+.nav-sub::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.nav-drop:hover .nav-sub,.nav-drop:focus-within .nav-sub{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.nav-sub a{display:block;padding:9px 22px;font-size:13px;font-weight:500;color:var(--charcoal-2);white-space:nowrap;transition:.22s}
+.nav-sub a:hover{background:rgba(216,190,142,.16);color:var(--gold-deep);padding-left:27px}
+
+.mnav-group{display:flex;flex-direction:column;align-items:center}
+.mnav-toggle{display:inline-flex;align-items:center;gap:8px;background:none;border:0;cursor:pointer;
+  font-family:var(--fs);font-size:28px;font-weight:500;color:var(--charcoal)}
+.mnav-toggle i{font-size:20px;color:var(--gold-deep);transition:.3s}
+.mnav-toggle[aria-expanded="true"] i{transform:rotate(180deg)}
+.mnav-sub{display:flex;flex-direction:column;align-items:center;gap:12px;overflow:hidden;
+  max-height:0;opacity:0;transition:.4s cubic-bezier(.2,.7,.2,1)}
+.mnav-group.open .mnav-sub{max-height:520px;opacity:1;margin-top:16px}
+.mnav-sub a{font-family:var(--sans);font-size:14px;color:var(--muted);font-weight:500}
 .burger{display:none;font-size:28px;background:none;border:0;color:var(--charcoal);cursor:pointer;line-height:1}
 
 .mobile-nav{position:fixed;inset:0;z-index:300;background:var(--ivory);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;opacity:0;visibility:hidden;transform:translateY(-16px);transition:.4s cubic-bezier(.2,.7,.2,1)}
 .mobile-nav.open{opacity:1;visibility:visible;transform:none}
 .mobile-nav-close{position:absolute;top:26px;right:22px;font-size:28px;background:none;border:0;color:var(--charcoal);cursor:pointer}
-.mobile-nav-links{display:flex;flex-direction:column;align-items:center;gap:30px}
-.mobile-nav-links a{font-family:var(--fs);font-size:28px;font-weight:500;color:var(--charcoal)}
+.mobile-nav{overflow-y:auto;padding:80px 20px}
+.mobile-nav-links{display:flex;flex-direction:column;align-items:center;gap:22px}
+.mobile-nav-links>a{font-family:var(--fs);font-size:26px;font-weight:500;color:var(--charcoal);text-align:center}
+.mobile-nav-links a.soon{color:var(--muted)}
 .mobile-nav-contact{display:flex;flex-direction:column;align-items:center;gap:16px;margin-top:36px}
 .mobile-nav-contact a{display:flex;align-items:center;gap:8px;font-size:15px;color:var(--gold-deep);font-weight:500}
 body.nav-open{overflow:hidden}
@@ -128,18 +154,22 @@ body.nav-open .fab-stack{display:none}
 .story-p.it{font-style:italic;color:var(--gold-deep);font-size:clamp(21px,2.3vw,26px)}
 
 
-.serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px 0;margin-top:44px}
-.scard{display:flex;align-items:flex-start;gap:16px;padding:18px 26px;border-left:1px solid var(--line)}
-.scard:nth-child(3n+1){border-left:none;padding-left:0}
-.scard .emboss-ic{width:56px;height:56px;flex:none;animation:svcFloat 4.5s ease-in-out infinite}
+.serv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:46px}
+.scard{display:flex;flex-direction:column;align-items:center;text-align:center;
+  background:var(--warm-white);border:1px solid var(--line);
+  border-radius:150px 150px 20px 20px;padding:38px 24px 30px;
+  transition:.4s cubic-bezier(.2,.7,.2,1)}
+.scard:hover{transform:translateY(-6px);border-color:var(--gold-deep);
+  box-shadow:0 26px 52px -32px rgba(120,96,50,.32)}
+.scard .emboss-ic{width:76px;height:76px;flex:none;margin-bottom:20px;animation:svcFloat 4.5s ease-in-out infinite}
 .scard:nth-child(2n) .emboss-ic{animation-delay:-1.1s}
 .scard:nth-child(3n) .emboss-ic{animation-delay:-2.3s}
 .scard:nth-child(5n) .emboss-ic{animation-delay:-3.4s}
 @keyframes svcFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 .scard:hover .emboss-ic{animation-play-state:paused}
 @media(prefers-reduced-motion:reduce){.scard .emboss-ic{animation:none}}
-.scard h3{font-family:var(--sans);font-weight:700;font-size:12.5px;letter-spacing:.03em;text-transform:uppercase;color:var(--charcoal);line-height:1.45;margin:0}
-.scard p{font-size:12px;color:var(--muted);line-height:1.65;margin-top:6px}
+.scard h3{font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.03em;text-transform:uppercase;color:var(--charcoal);line-height:1.45;margin:0}
+.scard p{font-size:11.5px;color:var(--muted);line-height:1.65;margin-top:9px}
 
 .doc-head{display:flex;align-items:center;gap:52px}
 .doc-photo{position:relative;flex:none;width:290px;aspect-ratio:4/4.6;
@@ -248,10 +278,11 @@ footer .fb-logo p{max-width:420px;font-size:14px;line-height:1.7;color:var(--war
   .tb-item h4{font-size:11.5px;letter-spacing:.02em}
   .tb-item p{font-size:11.5px}
 
-  .serv-grid{grid-template-columns:1fr;gap:4px;margin-top:34px}
-  .scard{padding:14px 0;border-left:none;border-top:1px solid var(--line-soft)}
-  .scard:first-child{border-top:none}
-  .scard .emboss-ic{width:48px;height:48px}
+  .serv-grid{grid-template-columns:1fr 1fr;gap:14px;margin-top:34px}
+  .scard{padding:26px 16px 22px;border-radius:110px 110px 16px 16px}
+  .scard .emboss-ic{width:58px;height:58px;margin-bottom:14px}
+  .scard h3{font-size:11.5px}
+  .scard p{font-size:11px}
 
   .doc-head{flex-direction:column;align-items:center;text-align:center;gap:30px}
   .doc-photo{width:240px}
@@ -273,7 +304,7 @@ footer .fb-logo p{max-width:420px;font-size:14px;line-height:1.7;color:var(--war
 }
 </style>
 </head>
-<body>
+<body id="top">
 <div class="grain"></div>
 
 <div class="site-header" id="siteHeader">
@@ -288,10 +319,28 @@ footer .fb-logo p{max-width:420px;font-size:14px;line-height:1.7;color:var(--war
 <nav class="topnav" id="topnav">
   <div class="wrap topnav-bar">
     <div class="nav-links">
-      <a href="#services">Υπηρεσίες</a>
-      <a href="#why">Τι μας ξεχωρίζει</a>
-      <a href="#results">Πριν / Μετά</a>
-      <a href="#philo">Φιλοσοφία</a>
+      <a href="#top">Αρχική</a>
+      <a href="#doctor">Η ομάδα DrSmile</a>
+      <a href="#" class="soon" title="Σελίδα υπό κατασκευή">Ο χώρος DrSmile</a>
+      <div class="nav-drop">
+        <a href="#services">Υπηρεσίες <i class="ti ti-chevron-down"></i></a>
+        <div class="nav-sub">
+          <a href="#services">Γενική Οδοντιατρική</a>
+          <a href="#services">Αισθητική Οδοντιατρική</a>
+          <a href="#services">Ορθοδοντική Fastbraces®</a>
+          <a href="#services">Περιοδοντολογία</a>
+          <a href="#services">Εμφυτευματολογία</a>
+          <a href="#services">Παιδοδοντία</a>
+          <a href="#services">Ενδοδοντία</a>
+          <a href="#services">Προσθετική κινητή και ακίνητη</a>
+          <a href="#services">Χειρουργική στόματος</a>
+          <a href="#services">Αισθητικές εμφράξεις</a>
+          <a href="#services">Κατασκευή ναρθήκων</a>
+          <a href="#services">Λέιζερ (Laser)</a>
+        </div>
+      </div>
+      <a href="#" class="soon" title="Σελίδα υπό κατασκευή">FAQ</a>
+      <a href="#results">Gallery περιστατικών</a>
       <a href="#contact">Επικοινωνία</a>
     </div>
     <button class="burger" aria-label="Άνοιγμα μενού"><i class="ti ti-menu-2"></i></button>
@@ -302,10 +351,28 @@ footer .fb-logo p{max-width:420px;font-size:14px;line-height:1.7;color:var(--war
 <div class="mobile-nav" id="mobileNav">
   <button class="mobile-nav-close" id="mobileNavClose" aria-label="Κλείσιμο μενού"><i class="ti ti-x"></i></button>
   <nav class="mobile-nav-links">
-    <a href="#services">Υπηρεσίες</a>
-    <a href="#why">Τι μας ξεχωρίζει</a>
-    <a href="#results">Πριν / Μετά</a>
-    <a href="#philo">Φιλοσοφία</a>
+    <a href="#top">Αρχική</a>
+    <a href="#doctor">Η ομάδα DrSmile</a>
+    <a href="#" class="soon">Ο χώρος DrSmile</a>
+    <div class="mnav-group">
+      <button class="mnav-toggle" aria-expanded="false">Υπηρεσίες <i class="ti ti-chevron-down"></i></button>
+      <div class="mnav-sub">
+        <a href="#services">Γενική Οδοντιατρική</a>
+        <a href="#services">Αισθητική Οδοντιατρική</a>
+        <a href="#services">Ορθοδοντική Fastbraces®</a>
+        <a href="#services">Περιοδοντολογία</a>
+        <a href="#services">Εμφυτευματολογία</a>
+        <a href="#services">Παιδοδοντία</a>
+        <a href="#services">Ενδοδοντία</a>
+        <a href="#services">Προσθετική κινητή και ακίνητη</a>
+        <a href="#services">Χειρουργική στόματος</a>
+        <a href="#services">Αισθητικές εμφράξεις</a>
+        <a href="#services">Κατασκευή ναρθήκων</a>
+        <a href="#services">Λέιζερ (Laser)</a>
+      </div>
+    </div>
+    <a href="#" class="soon">FAQ</a>
+    <a href="#results">Gallery περιστατικών</a>
     <a href="#contact">Επικοινωνία</a>
   </nav>
   <div class="mobile-nav-contact">
@@ -523,6 +590,14 @@ document.querySelectorAll('.tb-item').forEach(item=>{
     const wasOpen=item.classList.contains('open');
     document.querySelectorAll('.tb-item.open').forEach(o=>o.classList.remove('open'));
     if(!wasOpen)item.classList.add('open');
+  });
+});
+// Υπηρεσίες: πτυσσόμενη υποενότητα στο μενού του κινητού
+document.querySelectorAll('.mnav-toggle').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const g=btn.closest('.mnav-group');
+    const open=g.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
   });
 });
 const burger=document.querySelector('.burger');
