@@ -94,7 +94,8 @@ body.nav-open .fab-stack{display:none}
 .hero-lockup .hl-name strong{font-weight:600;color:var(--charcoal-2)}
 .hero h1{font-family:var(--fs);font-weight:300;font-size:clamp(30px,3.9vw,50px);line-height:1.18;letter-spacing:-.015em;color:var(--charcoal)}
 .hero h1 em{font-style:italic;font-weight:400;color:var(--gold-deep)}
-.hero .sub{font-size:15.5px;color:var(--muted);max-width:520px;margin-top:26px;line-height:1.8}
+.hero-note{padding:38px 0 6px}
+.hero-note p{font-size:15.5px;color:var(--muted);max-width:720px;line-height:1.85}
 
 .trustbar{background:var(--warm-white);border-bottom:1px solid var(--line)}
 .trustbar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px 0;padding:40px 0}
@@ -214,16 +215,17 @@ footer .fb-logo p{max-width:420px;font-size:14px;line-height:1.7;color:var(--war
   .utilbar .wrap{height:auto;padding-top:9px;padding-bottom:9px;gap:10px;font-size:11.5px}
   .ub-item{white-space:normal;align-items:flex-start;line-height:1.4}
   .ub-item i{margin-top:2px}
-  .hero{position:relative;overflow:visible;min-height:0;display:block;padding:0}
-  .hero-bg{position:relative;inset:auto;width:100%;z-index:0}
-  .hero-bg img{width:100%;height:auto;object-fit:contain;display:block}
-  .hero-bg::after{display:none}
-  .hero-content{padding:34px 0 56px}
+  /* λογότυπο + επιστημονική διεύθυνση + μότο μέσα στην εικόνα */
+  .hero{position:relative;overflow:hidden;min-height:76vh;display:flex;align-items:flex-end;padding:60px 0 46px}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:66% 38%}
+  .hero-bg::after{display:block;background:linear-gradient(180deg,rgba(251,248,242,.12) 0%,rgba(251,248,242,.3) 38%,rgba(251,248,242,.8) 76%,var(--ivory) 100%)}
+  .hero-content{padding:0}
   .hero-text{max-width:100%}
-  .hero-lockup{align-items:center;text-align:center;width:100%;margin-bottom:24px}
-  .hero-lockup img{height:74px}
+  .hero-lockup{align-items:center;text-align:center;width:100%;margin-bottom:20px}
+  .hero-lockup img{height:70px}
   .hero h1{text-align:center}
-  .hero .sub{margin-top:22px}
+  .hero-note{padding:28px 0 4px}
   .sec{padding:70px 0}
   .fab-stack{bottom:16px;right:16px;gap:10px}
   .fab{padding:11px 18px;font-size:12.5px}
@@ -309,13 +311,18 @@ footer .fb-logo p{max-width:420px;font-size:14px;line-height:1.7;color:var(--war
     <div class="hero-text">
       <div class="hero-lockup reveal">
         <img src="assets/logo.png" alt="DrSmile Πολυοδοντιατρείο">
-        <span class="hl-name">Επικεφαλής <strong>Αναστασία Παρχαρίδου</strong></span>
+        <span class="hl-name">Επιστημονική διεύθυνση: <strong>Αναστασία Παρχαρίδου</strong></span>
       </div>
       <h1 class="reveal" style="transition-delay:.08s">Δημιουργούμε χαμόγελα<br><em>όπως ακριβώς σας αξίζει!</em></h1>
-      <p class="sub reveal" style="transition-delay:.16s">Στο Πολυοδοντιατρείο DrSmile προσφέρουμε μία ομάδα εξειδικευμένων οδοντιάτρων, προηγμένη τεχνολογία και ολοκληρωμένες υπηρεσίες για κάθε ηλικία, ώστε κάθε θεραπεία να πραγματοποιείται στον ίδιο χώρο, με άνεση, ασφάλεια και χωρίς περιττή ταλαιπωρία.</p>
     </div>
   </div>
 </header>
+
+<section class="hero-note">
+  <div class="wrap">
+    <p class="reveal">Στο Πολυοδοντιατρείο DrSmile στον Εύοσμο Θεσσαλονίκης προσφέρουμε μία ομάδα εξειδικευμένων οδοντιάτρων, προηγμένη τεχνολογία και ολοκληρωμένες υπηρεσίες για κάθε ηλικία, ώστε κάθε θεραπεία να πραγματοποιείται στον ίδιο χώρο, με άνεση, ασφάλεια και χωρίς περιττή ταλαιπωρία.</p>
+  </div>
+</section>
 
 <section class="trustbar" id="why">
   <div class="wrap trustbar-grid">
