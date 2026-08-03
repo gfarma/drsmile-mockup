@@ -98,7 +98,8 @@ body.nav-open .fab-stack{display:none}
 .hero-note p{font-size:15.5px;color:var(--muted);max-width:720px;line-height:1.85}
 
 .trustbar{background:var(--warm-white);border-bottom:1px solid var(--line)}
-.trustbar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px 0;padding:40px 0}
+.trustbar-head{padding:76px 0 4px}
+.trustbar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px 0;padding:40px 0 64px}
 .tb-item{display:flex;align-items:flex-start;gap:16px;padding:16px 26px;border-left:1px solid var(--line);transition:.35s}
 .tb-item:nth-child(3n+1){border-left:none;padding-left:0}
 .tb-ic{width:52px;height:52px;flex:none;border-radius:50%;object-fit:cover;background:var(--warm-white);
@@ -113,8 +114,8 @@ body.nav-open .fab-stack{display:none}
 .sec{padding:110px 0}
 .sec-label{display:flex;align-items:center;gap:16px;margin-bottom:18px}
 .sec-label .ln{width:40px;height:1px;background:var(--gold-deep)}
-.sec h2{font-family:var(--fs);font-weight:300;font-size:clamp(32px,4.3vw,58px);line-height:1.04;letter-spacing:-.015em;color:var(--charcoal)}
-.sec h2 em{font-style:italic;color:var(--gold-deep)}
+.sec h2,.trustbar h2{font-family:var(--fs);font-weight:300;font-size:clamp(32px,4.3vw,58px);line-height:1.04;letter-spacing:-.015em;color:var(--charcoal)}
+.sec h2 em,.trustbar h2 em{font-style:italic;color:var(--gold-deep)}
 .sec .intro{font-size:17px;color:var(--muted);max-width:560px;margin-top:20px;line-height:1.75}
 
 .story{padding:90px 0 60px}
@@ -237,7 +238,8 @@ footer .fb-logo p{max-width:420px;font-size:14px;line-height:1.7;color:var(--war
   .fab i{font-size:17px}
 
   /* πλεονεκτήματα + υπηρεσίες: εικονίδιο αριστερά, κείμενο δεξιά, πάντα ορατά */
-  .trustbar-grid{grid-template-columns:1fr;gap:4px;padding:28px 0}
+  .trustbar-head{padding:56px 0 2px}
+  .trustbar-grid{grid-template-columns:1fr;gap:4px;padding:24px 0 48px}
   .tb-item{padding:14px 0;border-left:none;border-top:1px solid var(--line-soft)}
   .tb-item:first-child{border-top:none}
   .tb-ic{width:46px;height:46px}
@@ -334,6 +336,10 @@ footer .fb-logo p{max-width:420px;font-size:14px;line-height:1.7;color:var(--war
 </section>
 
 <section class="trustbar" id="why">
+  <div class="wrap trustbar-head">
+    <div class="sec-label reveal"><span class="ln"></span><span class="label">Τι μας ξεχωρίζει</span></div>
+    <h2 class="reveal" style="transition-delay:.06s">Τι κάνει το DrSmile<br><em>να ξεχωρίζει.</em></h2>
+  </div>
   <div class="wrap trustbar-grid">
     <div class="tb-item reveal" tabindex="0">
       <img class="tb-ic" src="assets/icons/why-1.jpg" alt="">
