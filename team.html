@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Η ομάδα DrSmile — Πολυοδοντιατρείο, Εύοσμος Θεσσαλονίκης</title>
+<meta name="description" content="Η ομάδα του Πολυοδοντιατρείου DrSmile στον Εύοσμο Θεσσαλονίκης: οδοντίατροι διαφορετικών ειδικοτήτων σε έναν χώρο. Τι κάνει ο παιδοδοντίατρος, ο περιοδοντολόγος, ο ενδοδοντολόγος και κάθε ειδικότητα.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..600;1,400..600&family=Manrope:wght@300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.7.0/dist/tabler-icons.min.css">
+<style>
+:root{
+  --ivory:#FBF8F2; --warm-white:#FEFCF8; --pearl:#F2ECE0; --champagne:#E9D9B8; --greige:#E6DFD1;
+  --gold:#B08D57; --gold-deep:#9C7A45; --gold-soft:#D8BE8E;
+  --charcoal:#2E2A24; --charcoal-2:#3A342C; --muted:#7A7062; --muted-d:#8C8272;
+  --line:rgba(176,141,87,.24); --line-soft:rgba(176,141,87,.14);
+  --fs:'Cormorant Garamond',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--charcoal);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  background-color:var(--ivory);
+  background-image:
+    radial-gradient(820px 680px at 18% 12%,rgba(255,255,251,.6),transparent 60%),
+    radial-gradient(720px 600px at 86% 38%,rgba(242,236,224,.5),transparent 56%),
+    radial-gradient(900px 720px at 62% 72%,rgba(254,252,248,.45),transparent 60%);
+  background-repeat:no-repeat;background-attachment:fixed}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+.label{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-deep)}
+
+.draft{background:var(--gold-deep);color:#fff;text-align:center;font-size:12.5px;padding:10px 20px;letter-spacing:.02em}
+.draft b{font-weight:700}
+
+.site-header{position:sticky;top:0;z-index:100;background:rgba(251,248,242,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.utilbar{background:var(--warm-white);color:var(--charcoal-2);font-size:12.5px;border-bottom:1px solid var(--line-soft)}
+.utilbar .wrap{display:flex;align-items:center;justify-content:space-between;height:40px;gap:20px}
+.ub-item{display:flex;align-items:center;gap:8px;white-space:nowrap}
+.ub-item i{color:var(--gold-deep);font-size:14px}
+.topnav .wrap{display:flex;align-items:center;justify-content:center;padding:14px 0}
+.nav-links{display:flex;align-items:center;gap:26px}
+.nav-links a{font-size:13.5px;font-weight:500;position:relative;padding:4px 0;color:var(--charcoal);white-space:nowrap}
+.nav-links a.here{color:var(--gold-deep);font-weight:600}
+.nav-links a.soon{color:var(--muted)}
+.burger{display:none;font-size:28px;background:none;border:0;color:var(--charcoal);cursor:pointer;line-height:1}
+.mobile-nav{position:fixed;inset:0;z-index:300;background:var(--ivory);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:80px 20px;overflow-y:auto;
+  opacity:0;visibility:hidden;transform:translateY(-16px);transition:.4s cubic-bezier(.2,.7,.2,1)}
+.mobile-nav.open{opacity:1;visibility:visible;transform:none}
+.mobile-nav-close{position:absolute;top:26px;right:22px;font-size:28px;background:none;border:0;color:var(--charcoal);cursor:pointer}
+.mobile-nav a{font-family:var(--fs);font-size:26px;font-weight:500;color:var(--charcoal);text-align:center}
+.mobile-nav a.here{color:var(--gold-deep)}
+.mobile-nav a.soon{color:var(--muted)}
+body.nav-open{overflow:hidden}
+
+.page-hero{padding:76px 0 10px;text-align:center}
+.page-hero .label{display:block;margin-bottom:16px}
+.page-hero h1{font-family:var(--fs);font-weight:300;font-size:clamp(34px,5vw,62px);line-height:1.06;letter-spacing:-.015em}
+.page-hero h1 em{font-style:italic;color:var(--gold-deep)}
+.page-hero p{color:var(--muted);font-size:16px;max-width:660px;margin:22px auto 0;line-height:1.8}
+
+.sec{padding:70px 0}
+.sec-head{max-width:760px}
+.sec h2{font-family:var(--fs);font-weight:300;font-size:clamp(28px,3.6vw,44px);line-height:1.1;letter-spacing:-.015em}
+.sec h2 em{font-style:italic;color:var(--gold-deep)}
+.sec .lead{color:var(--muted);font-size:15.5px;margin-top:18px;line-height:1.85}
+
+.intro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+.icard{background:var(--warm-white);border:1px solid var(--line);border-radius:20px 20px 20px 6px;padding:30px 26px}
+.icard i{font-size:26px;color:var(--gold-deep)}
+.icard h3{font-family:var(--fs);font-weight:500;font-size:21px;margin:14px 0 10px;line-height:1.25}
+.icard p{font-size:13.5px;color:var(--muted);line-height:1.75}
+
+.spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px}
+.spec{background:var(--warm-white);border:1px solid var(--line);border-radius:110px 110px 18px 18px;
+  padding:34px 30px 30px;display:flex;flex-direction:column;align-items:center;text-align:center;transition:.4s cubic-bezier(.2,.7,.2,1)}
+.spec:hover{transform:translateY(-5px);border-color:var(--gold-deep);box-shadow:0 26px 52px -34px rgba(120,96,50,.32)}
+.spec .ic{width:66px;height:66px;border-radius:50%;object-fit:cover;background:var(--warm-white);
+  box-shadow:0 1px 0 rgba(255,255,255,.6),0 0 0 1px var(--line);margin-bottom:18px;transition:.4s}
+.spec:hover .ic{transform:translateY(-3px) scale(1.06);box-shadow:0 10px 24px -10px rgba(176,141,87,.55),0 0 0 2px var(--gold-soft)}
+.spec h3{font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.03em;text-transform:uppercase;line-height:1.4}
+.spec .what{font-family:var(--fs);font-style:italic;font-size:17px;color:var(--gold-deep);margin:8px 0 12px}
+.spec p{font-size:13px;color:var(--muted);line-height:1.75}
+
+.note{margin-top:50px;background:var(--pearl);border-radius:20px 20px 20px 6px;padding:34px 32px;max-width:900px}
+.note h3{font-family:var(--fs);font-weight:500;font-size:23px;margin-bottom:12px}
+.note p{font-size:14.5px;color:var(--muted);line-height:1.85}
+
+.ctaband{background:var(--charcoal);color:var(--ivory);text-align:center;padding:80px 0}
+.ctaband h2{color:var(--ivory)}
+.ctaband h2 em{color:var(--gold-soft)}
+.ctaband p{color:var(--muted-d);font-size:16px;margin:20px auto 30px;max-width:600px}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:500;font-size:14px;padding:15px 30px;
+  border-radius:999px;border:1px solid var(--gold-deep);background:var(--gold-deep);color:#fff;transition:.35s}
+.btn:hover{background:transparent;color:var(--gold-soft);transform:translateY(-2px)}
+
+footer{background:var(--charcoal);color:var(--muted-d);padding:44px 0;border-top:1px solid var(--line-soft);font-size:13px;text-align:center}
+footer a{color:var(--gold-soft)}
+
+@media(max-width:920px){
+  .wrap{padding:0 22px}
+  .nav-links{display:none}
+  .burger{display:block}
+  .utilbar .ub-mid{display:none}
+  .utilbar .wrap{height:auto;padding-top:9px;padding-bottom:9px;gap:14px;font-size:11.5px}
+  .ub-item{white-space:normal;align-items:flex-start;line-height:1.4;min-width:0}
+  .utilbar a.ub-item{flex:none;white-space:nowrap;font-weight:600}
+  .sec{padding:54px 0}
+  .intro-grid{grid-template-columns:1fr;gap:14px}
+  .spec-grid{grid-template-columns:1fr;gap:14px}
+  .spec{border-radius:90px 90px 16px 16px;padding:28px 22px 24px}
+}
+</style>
+</head>
+<body>
+
+<div class="draft"><b>ΠΡΟΧΕΙΡΟ ΚΕΙΜΕΝΟ</b> — οι περιγραφές των ειδικοτήτων είναι πρόταση προς έλεγχο και έγκριση από την Δρ. Παρχαρίδου.</div>
+
+<div class="site-header">
+  <div class="utilbar">
+    <div class="wrap">
+      <div class="ub-item"><i class="ti ti-map-pin"></i> <span>Καραολή και Δημητρίου 121, Εύοσμος Θεσσαλονίκη, ΤΚ. 56224</span></div>
+      <div class="ub-item ub-mid"><i class="ti ti-clock-hour-4"></i> Δευ–Παρ 09:00–21:00 · Σάββατο με ραντεβού</div>
+      <a class="ub-item" href="tel:2310769674"><i class="ti ti-phone"></i> 2310 769 674</a>
+    </div>
+  </div>
+  <nav class="topnav">
+    <div class="wrap">
+      <div class="nav-links">
+        <a href="index-v10.html">Αρχική</a>
+        <a href="team.html" class="here">Η ομάδα DrSmile</a>
+        <a href="#" class="soon">Ο χώρος DrSmile</a>
+        <a href="index-v10.html#services">Υπηρεσίες</a>
+        <a href="#" class="soon">FAQ</a>
+        <a href="index-v10.html#results">Gallery περιστατικών</a>
+        <a href="index-v10.html#contact">Επικοινωνία</a>
+      </div>
+      <button class="burger" aria-label="Μενού"><i class="ti ti-menu-2"></i></button>
+    </div>
+  </nav>
+</div>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="Κλείσιμο μενού"><i class="ti ti-x"></i></button>
+  <a href="index-v10.html">Αρχική</a>
+  <a href="team.html" class="here">Η ομάδα DrSmile</a>
+  <a href="#" class="soon">Ο χώρος DrSmile</a>
+  <a href="index-v10.html#services">Υπηρεσίες</a>
+  <a href="#" class="soon">FAQ</a>
+  <a href="index-v10.html#results">Gallery περιστατικών</a>
+  <a href="index-v10.html#contact">Επικοινωνία</a>
+</div>
+
+<header class="wrap page-hero">
+  <span class="label">Η ομάδα DrSmile</span>
+  <h1>Μία ομάδα ειδικών,<br><em>σε έναν χώρο.</em></h1>
+  <p>Στο DrSmile δε δουλεύει ένας οδοντίατρος μόνος του. Συνεργάζονται οδοντίατροι διαφορετικών ειδικοτήτων, ώστε κάθε περιστατικό να το αναλαμβάνει εκείνος που το γνωρίζει καλύτερα — χωρίς να χρειάζεται να πηγαίνετε από ιατρείο σε ιατρείο.</p>
+</header>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Πώς <em>δουλεύουμε.</em></h2>
+      <p class="lead">Η φιλοσοφία μας είναι απλή: ένας άνθρωπος παρακολουθεί συνολικά την περίπτωσή σας και συντονίζει το σχέδιο θεραπείας. Όποτε χρειάζεται μια εξειδίκευση, ο κατάλληλος συνάδελφος μπαίνει στη θεραπεία — στον ίδιο χώρο, με τον ίδιο φάκελο και την ίδια φιλοσοφία φροντίδας.</p>
+    </div>
+    <div class="intro-grid">
+      <div class="icard">
+        <i class="ti ti-user-heart"></i>
+        <h3>Ο δικός σας οδοντίατρος</h3>
+        <p>Ένα σταθερό πρόσωπο που γνωρίζει το ιστορικό σας, σας εξηγεί τι χρειάζεται και συντονίζει κάθε βήμα.</p>
+      </div>
+      <div class="icard">
+        <i class="ti ti-users-group"></i>
+        <h3>Ειδικότητες όποτε χρειαστούν</h3>
+        <p>Δεν παραπέμπουμε αλλού. Ο ειδικός συνάδελφος αναλαμβάνει το δικό του κομμάτι εδώ, σε συνεννόηση με την υπόλοιπη ομάδα.</p>
+      </div>
+      <div class="icard">
+        <i class="ti ti-file-description"></i>
+        <h3>Ένα ενιαίο σχέδιο</h3>
+        <p>Ακτινογραφίες, διάγνωση και θεραπείες σε έναν φάκελο — χωρίς επαναλήψεις εξετάσεων και χαμένες πληροφορίες.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Ποιος κάνει <em>τι.</em></h2>
+      <p class="lead">Οι ονομασίες των ειδικοτήτων μπερδεύουν — και είναι λογικό. Παρακάτω, με απλά λόγια, τι αναλαμβάνει η καθεμία.</p>
+    </div>
+    <div class="spec-grid">
+
+      <div class="spec">
+        <img class="ic" src="assets/icons/serv-geniki.jpg" alt="">
+        <h3>Γενικός Οδοντίατρος</h3>
+        <div class="what">η συνολική εικόνα</div>
+        <p>Παρακολουθεί τη στοματική σας υγεία συνολικά: κάνει τον έλεγχο και τη διάγνωση, αναλαμβάνει την πρόληψη και τις βασικές θεραπείες, και κρίνει πότε χρειάζεται κάποια ειδικότητα. Είναι το πρόσωπο που ξέρει όλο σας το ιστορικό.</p>
+      </div>
+
+      <div class="spec">
+        <img class="ic" src="assets/icons/serv-paidodontia.jpg" alt="">
+        <h3>Παιδοδοντίατρος</h3>
+        <div class="what">τα παιδιά</div>
+        <p>Ειδικεύεται στα παιδιά και τους εφήβους — από τα πρώτα νεογιλά δόντια μέχρι τη μόνιμη οδοντοφυΐα. Πέρα από τη θεραπεία, δουλεύει και με τον φόβο: το πώς θα νιώσει το παιδί στην καρέκλα καθορίζει τη σχέση του με τον οδοντίατρο για μια ζωή.</p>
+      </div>
+
+      <div class="spec">
+        <img class="ic" src="assets/icons/serv-periodontologia.jpg" alt="">
+        <h3>Περιοδοντολόγος</h3>
+        <div class="what">τα ούλα και το στήριγμα</div>
+        <p>Ασχολείται με τα ούλα και τους ιστούς που κρατούν το δόντι στη θέση του. Αντιμετωπίζει την ουλίτιδα και την περιοδοντίτιδα — παθήσεις που συχνά προχωρούν χωρίς πόνο και γι' αυτό εντοπίζονται αργά.</p>
+      </div>
+
+      <div class="spec">
+        <img class="ic" src="assets/icons/serv-endodontia.jpg" alt="">
+        <h3>Ενδοδοντολόγος</h3>
+        <div class="what">το εσωτερικό του δοντιού</div>
+        <p>Ασχολείται με τον πολφό, δηλαδή το «νεύρο» στο εσωτερικό του δοντιού. Η απονεύρωση είναι η βασική του θεραπεία: όταν ο πολφός φλεγμαίνει ή νεκρώνεται, καθαρίζει και σφραγίζει τους ριζικούς σωλήνες ώστε να διασωθεί το δόντι.</p>
+      </div>
+
+      <div class="spec">
+        <img class="ic" src="assets/icons/serv-fastbraces.jpg" alt="">
+        <h3>Ορθοδοντικός</h3>
+        <div class="what">η θέση των δοντιών</div>
+        <p>Διορθώνει τη θέση των δοντιών και τον τρόπο που κλείνει η δαγκωματιά. Δεν είναι μόνο αισθητικό: η σωστή σύγκλειση επηρεάζει το μάσημα, την καθαριότητα των δοντιών και τις αρθρώσεις της γνάθου.</p>
+      </div>
+
+      <div class="spec">
+        <img class="ic" src="assets/icons/serv-prosthetiki.jpg" alt="">
+        <h3>Προσθετολόγος</h3>
+        <div class="what">η αποκατάσταση</div>
+        <p>Αποκαθιστά δόντια που λείπουν ή έχουν φθαρεί σοβαρά — με θήκες, γέφυρες, όψεις ή οδοντοστοιχίες, κινητές και ακίνητες. Στόχος είναι να επιστρέψει η λειτουργία μαζί με τη φυσική εμφάνιση.</p>
+      </div>
+
+      <div class="spec">
+        <img class="ic" src="assets/icons/serv-emfyteumatologia.jpg" alt="">
+        <h3>Εμφυτευματολόγος</h3>
+        <div class="what">το χαμένο δόντι</div>
+        <p>Τοποθετεί οδοντικά εμφυτεύματα: τεχνητές ρίζες στο οστό, πάνω στις οποίες στηρίζεται το νέο δόντι. Λύση για μερική ή ολική έλλειψη δοντιών, χωρίς να χρειάζεται να τροχιστούν τα γειτονικά.</p>
+      </div>
+
+      <div class="spec">
+        <img class="ic" src="assets/icons/serv-xeirourgiki.jpg" alt="">
+        <h3>Χειρουργός Στόματος</h3>
+        <div class="what">οι επεμβάσεις</div>
+        <p>Αναλαμβάνει τις χειρουργικές πράξεις στη στοματική κοιλότητα: εξαγωγές φρονιμιτών και έγκλειστων δοντιών, ανύψωση ιγμορείου, ακρορριζεκτομές και άλλες επεμβάσεις που προετοιμάζουν ή ολοκληρώνουν μια θεραπεία.</p>
+      </div>
+
+    </div>
+
+    <div class="note">
+      <h3>Γιατί έχει σημασία να είναι όλοι μαζί</h3>
+      <p>Ένα σύνθετο περιστατικό σπάνια αφορά μία μόνο ειδικότητα. Ένα εμφύτευμα μπορεί να χρειάζεται πρώτα περιοδοντική θεραπεία και μετά προσθετική αποκατάσταση. Όταν οι γιατροί δουλεύουν στον ίδιο χώρο και βλέπουν τον ίδιο φάκελο, το σχέδιο βγαίνει ενιαίο — αντί για κομμάτια που ο ασθενής καλείται να συνδέσει μόνος του.</p>
+    </div>
+  </div>
+</section>
+
+<section class="ctaband">
+  <div class="wrap">
+    <h2>Ας δούμε <em>τι χρειάζεστε.</em></h2>
+    <p>Κλείστε ένα ραντεβού γνωριμίας και ελέγχου. Θα σας εξηγήσουμε τι υπάρχει, τι προτείνουμε και γιατί.</p>
+    <a class="btn" href="tel:2310769674"><i class="ti ti-phone"></i> 2310 769 674</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    © 2026 DrSmile — Πολυοδοντιατρείο, Εύοσμος Θεσσαλονίκης ·
+    <a href="index-v10.html">Επιστροφή στην αρχική</a>
+  </div>
+</footer>
+
+<script>
+const burger=document.querySelector('.burger');
+const mobileNav=document.getElementById('mobileNav');
+const mobileNavClose=document.getElementById('mobileNavClose');
+const close=()=>{mobileNav.classList.remove('open');document.body.classList.remove('nav-open')};
+burger.addEventListener('click',()=>{mobileNav.classList.add('open');document.body.classList.add('nav-open')});
+mobileNavClose.addEventListener('click',close);
+mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
+addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+</script>
+</body>
+</html>
