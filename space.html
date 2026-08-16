@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Η ομάδα DrSmile — Πολυοδοντιατρείο, Εύοσμος Θεσσαλονίκης</title>
-<meta name="description" content="Η ομάδα του Πολυοδοντιατρείου DrSmile στον Εύοσμο Θεσσαλονίκης: οδοντίατροι διαφορετικών ειδικοτήτων σε έναν χώρο. Τι κάνει ο παιδοδοντίατρος, ο περιοδοντολόγος, ο ενδοδοντολόγος και κάθε ειδικότητα.">
+<title>Ο χώρος DrSmile — Πολυοδοντιατρείο, Εύοσμος Θεσσαλονίκης</title>
+<meta name="description" content="Ο χώρος του Πολυοδοντιατρείου DrSmile στον Εύοσμο Θεσσαλονίκης: υποδοχή, χώρος αναμονής, παιδική γωνιά και σύγχρονα οδοντιατρεία, σχεδιασμένα για ηρεμία και άνεση.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..600;1,400..600&family=Manrope:wght@300..800&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@ a{color:inherit;text-decoration:none}
 .wrap{max-width:1280px;margin:0 auto;padding:0 40px}
 .label{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-deep)}
 
-.draft{background:var(--gold-deep);color:#fff;text-align:center;font-size:12.5px;padding:10px 20px;letter-spacing:.02em}
+.draft{background:var(--gold-deep);color:#fff;text-align:center;font-size:12.5px;padding:10px 20px}
 .draft b{font-weight:700}
 
 .site-header{position:sticky;top:0;z-index:100;background:rgba(251,248,242,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
@@ -87,42 +87,37 @@ footer .brand-name{color:var(--gold-soft)}
 .mobile-nav-contact a{display:flex;align-items:center;gap:8px;font-size:15px;color:var(--gold-deep);font-weight:500}
 body.nav-open{overflow:hidden}
 
-.page-hero{padding:76px 0 10px;text-align:center}
+.page-hero{padding:70px 0 6px;text-align:center}
 .page-hero .label{display:block;margin-bottom:16px}
 .page-hero h1{font-family:var(--fs);font-weight:300;font-size:clamp(34px,5vw,62px);line-height:1.06;letter-spacing:-.015em}
 .page-hero h1 em{font-style:italic;color:var(--gold-deep)}
-.page-hero p{color:var(--muted);font-size:16px;max-width:660px;margin:22px auto 0;line-height:1.8}
+.page-hero p{color:var(--muted);font-size:16px;max-width:680px;margin:22px auto 0;line-height:1.8}
 
-.sec{padding:70px 0}
-.sec-head{max-width:760px}
-.sec h2{font-family:var(--fs);font-weight:300;font-size:clamp(28px,3.6vw,44px);line-height:1.1;letter-spacing:-.015em}
-.sec h2 em{font-style:italic;color:var(--gold-deep)}
-.sec .lead{color:var(--muted);font-size:15.5px;margin-top:18px;line-height:1.85}
+.sec{padding:56px 0}
 
-.intro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
-.icard{background:var(--warm-white);border:1px solid var(--line);border-radius:20px 20px 20px 6px;padding:30px 26px}
-.icard i{font-size:26px;color:var(--gold-deep)}
-.icard h3{font-family:var(--fs);font-weight:500;font-size:21px;margin:14px 0 10px;line-height:1.25}
-.icard p{font-size:13.5px;color:var(--muted);line-height:1.75}
+/* Γκαλερί: ημικυκλικό πλαίσιο, όπως σε όλο το site */
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.shot{background:var(--warm-white);border:1px solid var(--line);border-radius:150px 150px 20px 20px;
+  padding:14px 14px 26px;transition:.4s cubic-bezier(.2,.7,.2,1)}
+.shot:hover{transform:translateY(-6px);border-color:var(--gold-deep);box-shadow:0 30px 60px -36px rgba(120,96,50,.35)}
+.shot .ph{border-radius:140px 140px 12px 12px;overflow:hidden;background:var(--pearl)}
+.shot .ph img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/10;transition:.6s cubic-bezier(.2,.7,.2,1)}
+.shot:hover .ph img{transform:scale(1.04)}
+.shot .cap{text-align:center;padding:22px 20px 0}
+.shot h3{font-family:var(--sans);font-weight:700;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--charcoal)}
+.shot p{font-size:13px;color:var(--muted);line-height:1.7;margin-top:8px}
 
-.spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px}
-.spec{background:var(--warm-white);border:1px solid var(--line);border-radius:110px 110px 18px 18px;
-  padding:34px 30px 30px;display:flex;flex-direction:column;align-items:center;text-align:center;transition:.4s cubic-bezier(.2,.7,.2,1)}
-.spec:hover{transform:translateY(-5px);border-color:var(--gold-deep);box-shadow:0 26px 52px -34px rgba(120,96,50,.32)}
-.spec .ic{width:66px;height:66px;border-radius:50%;object-fit:cover;background:var(--warm-white);
-  box-shadow:0 1px 0 rgba(255,255,255,.6),0 0 0 1px var(--line);margin-bottom:18px;transition:.4s}
-.spec:hover .ic{transform:translateY(-3px) scale(1.06);box-shadow:0 10px 24px -10px rgba(176,141,87,.55),0 0 0 2px var(--gold-soft)}
-.spec h3{font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.03em;text-transform:uppercase;line-height:1.4}
-.spec .what{font-family:var(--fs);font-style:italic;font-size:17px;color:var(--gold-deep);margin:8px 0 12px}
-.spec p{font-size:13px;color:var(--muted);line-height:1.75}
+.shot.wide{grid-column:1 / -1;border-radius:190px 190px 20px 20px}
+.shot.wide .ph{border-radius:180px 180px 12px 12px}
+.shot.wide .ph img{aspect-ratio:21/9}
 
-.note{margin-top:50px;background:var(--pearl);border-radius:20px 20px 20px 6px;padding:34px 32px;max-width:900px}
+.note{margin-top:46px;background:var(--pearl);border-radius:20px 20px 20px 6px;padding:32px;max-width:900px}
 .note h3{font-family:var(--fs);font-weight:500;font-size:23px;margin-bottom:12px}
 .note p{font-size:14.5px;color:var(--muted);line-height:1.85}
 
-.ctaband{background:var(--charcoal);color:var(--ivory);text-align:center;padding:80px 0}
-.ctaband h2{color:var(--ivory)}
-.ctaband h2 em{color:var(--gold-soft)}
+.ctaband{background:var(--charcoal);color:var(--ivory);text-align:center;padding:78px 0;margin-top:56px}
+.ctaband h2{font-family:var(--fs);font-weight:300;font-size:clamp(28px,3.6vw,44px);color:var(--ivory);line-height:1.1}
+.ctaband h2 em{font-style:italic;color:var(--gold-soft)}
 .ctaband p{color:var(--muted-d);font-size:16px;margin:20px auto 30px;max-width:600px}
 .btn{display:inline-flex;align-items:center;gap:10px;font-weight:500;font-size:14px;padding:15px 30px;
   border-radius:999px;border:1px solid var(--gold-deep);background:var(--gold-deep);color:#fff;transition:.35s}
@@ -142,16 +137,17 @@ footer a{color:var(--gold-soft)}
   .utilbar .wrap{height:auto;padding-top:9px;padding-bottom:9px;gap:14px;font-size:11.5px}
   .ub-item{white-space:normal;align-items:flex-start;line-height:1.4;min-width:0}
   .utilbar a.ub-item{flex:none;white-space:nowrap;font-weight:600}
-  .sec{padding:54px 0}
-  .intro-grid{grid-template-columns:1fr;gap:14px}
-  .spec-grid{grid-template-columns:1fr;gap:14px}
-  .spec{border-radius:90px 90px 16px 16px;padding:28px 22px 24px}
+  .sec{padding:44px 0}
+  .gal{grid-template-columns:1fr;gap:16px}
+  .shot,.shot.wide{border-radius:110px 110px 16px 16px;padding:10px 10px 20px}
+  .shot .ph,.shot.wide .ph{border-radius:100px 100px 10px 10px}
+  .shot.wide .ph img{aspect-ratio:16/10}
 }
 </style>
 </head>
 <body>
 
-<div class="draft"><b>ΠΡΟΧΕΙΡΟ ΚΕΙΜΕΝΟ</b> — οι περιγραφές των ειδικοτήτων είναι πρόταση προς έλεγχο και έγκριση από την Δρ. Παρχαρίδου.</div>
+<div class="draft"><b>ΠΡΟΧΕΙΡΟ</b> — οι εικόνες είναι τρισδιάστατες απεικονίσεις του σχεδιασμού, όχι φωτογραφίες του υλοποιημένου χώρου.</div>
 
 <div class="site-header" id="siteHeader">
 <div class="utilbar">
@@ -166,8 +162,8 @@ footer a{color:var(--gold-soft)}
   <div class="wrap topnav-bar">
     <div class="nav-links">
       <a href="index-v10.html">Αρχική</a>
-      <a href="team.html" class="here">Η ομάδα DrSmile</a>
-      <a href="space.html">Ο χώρος DrSmile</a>
+      <a href="team.html">Η ομάδα DrSmile</a>
+      <a href="space.html" class="here">Ο χώρος DrSmile</a>
       <div class="nav-drop">
         <a href="index-v10.html#services">Υπηρεσίες <i class="ti ti-chevron-down"></i></a>
         <div class="nav-sub">
@@ -198,8 +194,8 @@ footer a{color:var(--gold-soft)}
   <button class="mobile-nav-close" id="mobileNavClose" aria-label="Κλείσιμο μενού"><i class="ti ti-x"></i></button>
   <nav class="mobile-nav-links">
     <a href="index-v10.html">Αρχική</a>
-    <a href="team.html" class="here">Η ομάδα DrSmile</a>
-    <a href="space.html">Ο χώρος DrSmile</a>
+    <a href="team.html">Η ομάδα DrSmile</a>
+    <a href="space.html" class="here">Ο χώρος DrSmile</a>
     <div class="mnav-group">
       <button class="mnav-toggle" aria-expanded="false">Υπηρεσίες <i class="ti ti-chevron-down"></i></button>
       <div class="mnav-sub">
@@ -228,114 +224,92 @@ footer a{color:var(--gold-soft)}
 </div>
 
 <header class="wrap page-hero">
-  <span class="label">Η ομάδα DrSmile</span>
-  <h1>Μία ομάδα ειδικών,<br><em>σε έναν χώρο.</em></h1>
-  <p>Στο DrSmile δε δουλεύει ένας οδοντίατρος μόνος του. Συνεργάζονται οδοντίατροι διαφορετικών ειδικοτήτων, ώστε κάθε περιστατικό να το αναλαμβάνει εκείνος που το γνωρίζει καλύτερα — χωρίς να χρειάζεται να πηγαίνετε από ιατρείο σε ιατρείο.</p>
+  <span class="label">Ο χώρος DrSmile</span>
+  <h1>Ένας χώρος που αλλάζει<br><em>την οδοντιατρική εμπειρία.</em></h1>
+  <p>Σχεδιάσαμε κάθε γωνιά με μία σκέψη: πώς θα νιώσει ο ασθενής από τη στιγμή που θα περάσει την πόρτα. Καμπύλες αντί για γωνίες, ζεστά υλικά, φυσικό φως και ηρεμία — γιατί η φροντίδα ξεκινά πριν καθίσετε στην καρέκλα.</p>
 </header>
 
 <section class="sec">
   <div class="wrap">
-    <div class="sec-head">
-      <h2>Πώς <em>δουλεύουμε.</em></h2>
-      <p class="lead">Η φιλοσοφία μας είναι απλή: ένας άνθρωπος παρακολουθεί συνολικά την περίπτωσή σας και συντονίζει το σχέδιο θεραπείας. Όποτε χρειάζεται μια εξειδίκευση, ο κατάλληλος συνάδελφος μπαίνει στη θεραπεία — στον ίδιο χώρο, με τον ίδιο φάκελο και την ίδια φιλοσοφία φροντίδας.</p>
-    </div>
-    <div class="intro-grid">
-      <div class="icard">
-        <i class="ti ti-user-heart"></i>
-        <h3>Ο δικός σας οδοντίατρος</h3>
-        <p>Ένα σταθερό πρόσωπο που γνωρίζει το ιστορικό σας, σας εξηγεί τι χρειάζεται και συντονίζει κάθε βήμα.</p>
-      </div>
-      <div class="icard">
-        <i class="ti ti-users-group"></i>
-        <h3>Ειδικότητες όποτε χρειαστούν</h3>
-        <p>Δεν παραπέμπουμε αλλού. Ο ειδικός συνάδελφος αναλαμβάνει το δικό του κομμάτι εδώ, σε συνεννόηση με την υπόλοιπη ομάδα.</p>
-      </div>
-      <div class="icard">
-        <i class="ti ti-file-description"></i>
-        <h3>Ένα ενιαίο σχέδιο</h3>
-        <p>Ακτινογραφίες, διάγνωση και θεραπείες σε έναν φάκελο — χωρίς επαναλήψεις εξετάσεων και χαμένες πληροφορίες.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="gal">
 
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2>Ποιος κάνει <em>τι.</em></h2>
-      <p class="lead">Οι ονομασίες των ειδικοτήτων μπερδεύουν — και είναι λογικό. Παρακάτω, με απλά λόγια, τι αναλαμβάνει η καθεμία.</p>
-    </div>
-    <div class="spec-grid">
-
-      <div class="spec">
-        <img class="ic" src="assets/icons/serv-geniki.jpg" alt="">
-        <h3>Γενικός Οδοντίατρος</h3>
-        <div class="what">η συνολική εικόνα</div>
-        <p>Παρακολουθεί τη στοματική σας υγεία συνολικά: κάνει τον έλεγχο και τη διάγνωση, αναλαμβάνει την πρόληψη και τις βασικές θεραπείες, και κρίνει πότε χρειάζεται κάποια ειδικότητα. Είναι το πρόσωπο που ξέρει όλο σας το ιστορικό.</p>
+      <div class="shot wide">
+        <div class="ph"><img src="assets/space/space-1-prosopsi.jpg" alt="Η πρόσοψη του πολυοδοντιατρείου DrSmile στον Εύοσμο" loading="lazy"></div>
+        <div class="cap">
+          <h3>Η πρόσοψη</h3>
+          <p>Διακριτική, φωτεινή και αναγνωρίσιμη. Στην είσοδο αναγράφονται όλες οι ειδικότητες, ώστε να ξέρετε τι θα βρείτε πριν καν μπείτε.</p>
+        </div>
       </div>
 
-      <div class="spec">
-        <img class="ic" src="assets/icons/serv-paidodontia.jpg" alt="">
-        <h3>Παιδοδοντίατρος</h3>
-        <div class="what">τα παιδιά</div>
-        <p>Ειδικεύεται στα παιδιά και τους εφήβους — από τα πρώτα νεογιλά δόντια μέχρι τη μόνιμη οδοντοφυΐα. Πέρα από τη θεραπεία, δουλεύει και με τον φόβο: το πώς θα νιώσει το παιδί στην καρέκλα καθορίζει τη σχέση του με τον οδοντίατρο για μια ζωή.</p>
+      <div class="shot">
+        <div class="ph"><img src="assets/space/space-2-reception.jpg" alt="Η υποδοχή του DrSmile" loading="lazy"></div>
+        <div class="cap">
+          <h3>Η υποδοχή</h3>
+          <p>Το πρώτο πράγμα που συναντάτε δεν είναι ένα γκισέ, αλλά ένας άνθρωπος. Καμπύλες γραμμές, ζεστός φωτισμός και ενυδρείο που ηρεμεί το βλέμμα.</p>
+        </div>
       </div>
 
-      <div class="spec">
-        <img class="ic" src="assets/icons/serv-periodontologia.jpg" alt="">
-        <h3>Περιοδοντολόγος</h3>
-        <div class="what">τα ούλα και το στήριγμα</div>
-        <p>Ασχολείται με τα ούλα και τους ιστούς που κρατούν το δόντι στη θέση του. Αντιμετωπίζει την ουλίτιδα και την περιοδοντίτιδα — παθήσεις που συχνά προχωρούν χωρίς πόνο και γι' αυτό εντοπίζονται αργά.</p>
+      <div class="shot">
+        <div class="ph"><img src="assets/space/space-3-anamoni.jpg" alt="Ο χώρος αναμονής του DrSmile" loading="lazy"></div>
+        <div class="cap">
+          <h3>Η αναμονή</h3>
+          <p>Άνετα καθίσματα, φυσικό φως και αρκετός χώρος ώστε να μη νιώθει κανείς στριμωγμένος — ούτε τις ώρες αιχμής.</p>
+        </div>
       </div>
 
-      <div class="spec">
-        <img class="ic" src="assets/icons/serv-endodontia.jpg" alt="">
-        <h3>Ενδοδοντολόγος</h3>
-        <div class="what">το εσωτερικό του δοντιού</div>
-        <p>Ασχολείται με τον πολφό, δηλαδή το «νεύρο» στο εσωτερικό του δοντιού. Η απονεύρωση είναι η βασική του θεραπεία: όταν ο πολφός φλεγμαίνει ή νεκρώνεται, καθαρίζει και σφραγίζει τους ριζικούς σωλήνες ώστε να διασωθεί το δόντι.</p>
+      <div class="shot">
+        <div class="ph"><img src="assets/space/space-4-paidia.jpg" alt="Η παιδική γωνιά του DrSmile" loading="lazy"></div>
+        <div class="cap">
+          <h3>Η παιδική γωνιά</h3>
+          <p>Δικός τους χώρος, με διαδραστική οθόνη και παιχνίδια. Ένα παιδί που περνά ευχάριστα την αναμονή, μπαίνει πιο ήρεμο στο οδοντιατρείο.</p>
+        </div>
       </div>
 
-      <div class="spec">
-        <img class="ic" src="assets/icons/serv-fastbraces.jpg" alt="">
-        <h3>Ορθοδοντικός</h3>
-        <div class="what">η θέση των δοντιών</div>
-        <p>Διορθώνει τη θέση των δοντιών και τον τρόπο που κλείνει η δαγκωματιά. Δεν είναι μόνο αισθητικό: η σωστή σύγκλειση επηρεάζει το μάσημα, την καθαριότητα των δοντιών και τις αρθρώσεις της γνάθου.</p>
+      <div class="shot">
+        <div class="ph"><img src="assets/space/space-6-diadromos.jpg" alt="Ο διάδρομος και τα οδοντιατρεία του DrSmile" loading="lazy"></div>
+        <div class="cap">
+          <h3>Οι χώροι θεραπείας</h3>
+          <p>Ξεχωριστά, αριθμημένα οδοντιατρεία με ανελκυστήρα και πρόσβαση για όλους. Κάθε θεραπεία γίνεται σε δικό της χώρο, με απόλυτη ιδιωτικότητα.</p>
+        </div>
       </div>
 
-      <div class="spec">
-        <img class="ic" src="assets/icons/serv-prosthetiki.jpg" alt="">
-        <h3>Προσθετολόγος</h3>
-        <div class="what">η αποκατάσταση</div>
-        <p>Αποκαθιστά δόντια που λείπουν ή έχουν φθαρεί σοβαρά — με θήκες, γέφυρες, όψεις ή οδοντοστοιχίες, κινητές και ακίνητες. Στόχος είναι να επιστρέψει η λειτουργία μαζί με τη φυσική εμφάνιση.</p>
+      <div class="shot">
+        <div class="ph"><img src="assets/space/space-7-iatreio-b.jpg" alt="Οδοντιατρείο DrSmile με σύγχρονο εξοπλισμό" loading="lazy"></div>
+        <div class="cap">
+          <h3>Το οδοντιατρείο</h3>
+          <p>Σύγχρονη έδρα, ψηφιακά μέσα και οθόνη οροφής — για να βλέπετε κι εσείς τι γίνεται, ή για να κοιτάτε αλλού αν προτιμάτε.</p>
+        </div>
       </div>
 
-      <div class="spec">
-        <img class="ic" src="assets/icons/serv-emfyteumatologia.jpg" alt="">
-        <h3>Εμφυτευματολόγος</h3>
-        <div class="what">το χαμένο δόντι</div>
-        <p>Τοποθετεί οδοντικά εμφυτεύματα: τεχνητές ρίζες στο οστό, πάνω στις οποίες στηρίζεται το νέο δόντι. Λύση για μερική ή ολική έλλειψη δοντιών, χωρίς να χρειάζεται να τροχιστούν τα γειτονικά.</p>
+      <div class="shot">
+        <div class="ph"><img src="assets/space/space-5-iatreio-a.jpg" alt="Οδοντιατρείο DrSmile με γραφείο ενημέρωσης" loading="lazy"></div>
+        <div class="cap">
+          <h3>Ο χώρος ενημέρωσης</h3>
+          <p>Σε κάθε οδοντιατρείο υπάρχει γραφείο, ώστε η συζήτηση για το σχέδιο θεραπείας να γίνεται καθιστοί και με την ησυχία σας.</p>
+        </div>
       </div>
 
-      <div class="spec">
-        <img class="ic" src="assets/icons/serv-xeirourgiki.jpg" alt="">
-        <h3>Χειρουργός Στόματος</h3>
-        <div class="what">οι επεμβάσεις</div>
-        <p>Αναλαμβάνει τις χειρουργικές πράξεις στη στοματική κοιλότητα: εξαγωγές φρονιμιτών και έγκλειστων δοντιών, ανύψωση ιγμορείου, ακρορριζεκτομές και άλλες επεμβάσεις που προετοιμάζουν ή ολοκληρώνουν μια θεραπεία.</p>
+      <div class="shot">
+        <div class="ph"><img src="assets/space/space-8-iatreio-c.jpg" alt="Δεύτερο οδοντιατρείο DrSmile" loading="lazy"></div>
+        <div class="cap">
+          <h3>Περισσότερα από ένα</h3>
+          <p>Τα πολλαπλά οδοντιατρεία επιτρέπουν σε διαφορετικές ειδικότητες να δουλεύουν παράλληλα — λιγότερη αναμονή, λιγότερες επισκέψεις.</p>
+        </div>
       </div>
 
     </div>
 
     <div class="note">
-      <h3>Γιατί έχει σημασία να είναι όλοι μαζί</h3>
-      <p>Ένα σύνθετο περιστατικό σπάνια αφορά μία μόνο ειδικότητα. Ένα εμφύτευμα μπορεί να χρειάζεται πρώτα περιοδοντική θεραπεία και μετά προσθετική αποκατάσταση. Όταν οι γιατροί δουλεύουν στον ίδιο χώρο και βλέπουν τον ίδιο φάκελο, το σχέδιο βγαίνει ενιαίο — αντί για κομμάτια που ο ασθενής καλείται να συνδέσει μόνος του.</p>
+      <h3>Γιατί δώσαμε τόση σημασία στον χώρο</h3>
+      <p>Το οδοντιατρείο είναι από τα λίγα μέρη που οι άνθρωποι αναβάλλουν να επισκεφθούν. Συχνά όχι εξαιτίας του πόνου, αλλά της αίσθησης. Ένας χώρος ζεστός, φωτεινός και ήσυχος δεν είναι πολυτέλεια — είναι μέρος της θεραπείας, γιατί φέρνει τον ασθενή πιο νωρίς και τον κρατά συνεπή.</p>
     </div>
   </div>
 </section>
 
 <section class="ctaband">
   <div class="wrap">
-    <h2>Ας δούμε <em>τι χρειάζεστε.</em></h2>
-    <p>Κλείστε ένα ραντεβού γνωριμίας και ελέγχου. Θα σας εξηγήσουμε τι υπάρχει, τι προτείνουμε και γιατί.</p>
+    <h2>Ελάτε να τον <em>δείτε από κοντά.</em></h2>
+    <p>Κλείστε ένα ραντεβού γνωριμίας — θα χαρούμε να σας ξεναγήσουμε.</p>
     <a class="btn" href="tel:2310769674"><i class="ti ti-phone"></i> 2310 769 674</a>
   </div>
 </section>
