@@ -129,6 +129,14 @@ footer a{color:var(--gold-soft)}
 .fsoc a{width:42px;height:42px;border:1px solid var(--line-soft);border-radius:50%;display:grid;place-items:center;color:var(--gold-soft);font-size:18px;transition:.3s}
 .fsoc a:hover{background:var(--gold-deep);border-color:var(--gold-deep);color:#fff;transform:translateY(-2px)}
 
+
+/* τα δύο σταθερά κουμπιά, ίδια με την αρχική */
+.fab-stack{position:fixed;bottom:28px;right:28px;z-index:10000;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.fab{display:inline-flex;align-items:center;gap:11px;padding:13px 22px;border-radius:999px;background:var(--warm-white);border:1.5px solid var(--gold);font-family:var(--sans);font-size:13.5px;font-weight:600;letter-spacing:.01em;color:var(--gold-deep);white-space:nowrap;box-shadow:0 10px 30px -12px rgba(60,44,12,.4);transition:.35s cubic-bezier(.2,.7,.2,1)}
+.fab i{font-size:19px}
+.fab:hover{box-shadow:0 0 0 5px rgba(176,141,87,.18),0 12px 30px -10px rgba(176,141,87,.5);color:#fff;background:var(--gold-deep);transform:translateY(-2px)}
+body.nav-open .fab-stack{display:none}
+
 @media(max-width:920px){
   .wrap{padding:0 22px}
   .nav-links{display:none}
@@ -138,6 +146,9 @@ footer a{color:var(--gold-soft)}
   .ub-item{white-space:normal;align-items:flex-start;line-height:1.4;min-width:0}
   .utilbar a.ub-item{flex:none;white-space:nowrap;font-weight:600}
   .sec{padding:44px 0}
+  .fab-stack{bottom:16px;right:16px;gap:10px}
+  .fab{padding:11px 18px;font-size:12.5px}
+  .fab i{font-size:17px}
   .gal{grid-template-columns:1fr;gap:16px}
   .shot,.shot.wide{border-radius:110px 110px 16px 16px;padding:10px 10px 20px}
   .shot .ph,.shot.wide .ph{border-radius:100px 100px 10px 10px}
@@ -313,6 +324,11 @@ footer a{color:var(--gold-soft)}
     <a class="btn" href="tel:2310769674"><i class="ti ti-phone"></i> 2310 769 674</a>
   </div>
 </section>
+
+<div class="fab-stack">
+  <a class="fab" href="tel:2310769674"><i class="ti ti-phone"></i><span>Καλέστε μας</span></a>
+  <a class="fab" href="mailto:info@drsmile.gr"><i class="ti ti-mail"></i><span>Στείλτε μήνυμα</span></a>
+</div>
 
 <footer>
   <div class="wrap">
