@@ -99,9 +99,10 @@ body.nav-open{overflow:hidden}
 .sec h2 em{font-style:italic;color:var(--gold-deep)}
 
 /* διάχυτες φωτογραφίες, στο ίδιο ημικυκλικό πλαίσιο του site */
-.photo-band{border:1px solid var(--line);background:var(--warm-white);
-  border-radius:190px 190px 22px 22px;padding:14px;overflow:hidden}
-.photo-band img{width:100%;border-radius:178px 178px 12px 12px;object-fit:cover;aspect-ratio:21/9}
+/* Οι φωτογραφίες έχουν ήδη το χρυσό τόξο μέσα τους, με διάφανο γύρω:
+   δεν μπαίνει δεύτερο πλαίσιο από πάνω. */
+.photo-band{text-align:center;margin:0 auto}
+.photo-band img{width:100%;max-width:1000px;height:auto;margin:0 auto}
 
 .hl-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px 30px;margin:44px 0 40px}
 .hl-list li{display:flex;gap:14px;align-items:flex-start;font-size:15px;color:var(--charcoal-2);line-height:1.6}
@@ -127,10 +128,8 @@ body.nav-open{overflow:hidden}
 /* επικεφαλής: φωτογραφία δίπλα στο όνομα και τις ιδιότητες */
 .leader-sec{padding-top:26px}
 .leader{display:flex;align-items:center;gap:52px}
-.leader-photo{flex:none;width:300px;aspect-ratio:4/4.6;padding:9px;overflow:hidden;
-  border-radius:210px 210px 18px 18px;background:linear-gradient(165deg,#E9D9B8,#9C7A45);
-  box-shadow:0 40px 90px -44px rgba(120,96,50,.45)}
-.leader-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;border-radius:202px 202px 12px 12px}
+.leader-photo{flex:none;width:320px}
+.leader-photo img{width:100%;height:auto}
 .leader-id .label{display:block;margin-bottom:14px}
 .leader-name{font-family:var(--fs);font-weight:300;font-size:clamp(30px,3.8vw,48px);line-height:1.1;color:var(--charcoal)}
 .leader-creds{list-style:none;margin-top:26px;padding-top:24px;border-top:1px solid var(--line);
@@ -169,8 +168,6 @@ footer a{color:var(--gold-soft)}
   .ub-item{white-space:normal;align-items:flex-start;line-height:1.4;min-width:0}
   .utilbar a.ub-item{flex:none;white-space:nowrap;font-weight:600}
   .sec{padding:44px 0}
-  .photo-band{border-radius:120px 120px 16px 16px;padding:10px}
-  .photo-band img{border-radius:112px 112px 10px 10px;aspect-ratio:16/10}
   .hl-list{grid-template-columns:1fr;gap:12px;margin:32px 0 30px}
   .hl-list li{font-size:14px}
   .prose p{font-size:15px}
@@ -178,7 +175,7 @@ footer a{color:var(--gold-soft)}
   .spec{gap:16px;padding:22px 20px}
   .spec .ic{width:54px;height:54px}
   .leader{flex-direction:column;align-items:center;text-align:center;gap:30px}
-  .leader-photo{width:240px}
+  .leader-photo{width:250px}
   .leader-creds li{text-align:left}
   .leader-bio{margin-top:34px}
   .fab-stack{bottom:16px;right:16px;gap:10px}
@@ -273,7 +270,7 @@ footer a{color:var(--gold-soft)}
 <section class="sec" style="padding-top:34px">
   <div class="wrap">
     <div class="photo-band">
-      <img src="assets/space/space-2-reception.jpg" alt="Ο χώρος υποδοχής του Πολυοδοντιατρείου DrSmile" loading="lazy">
+      <img src="assets/team/team-1-aktinografies.webp" alt="Η ομάδα του DrSmile μελετά ακτινογραφίες ασθενούς" loading="lazy">
     </div>
 
     <ul class="hl-list">
@@ -355,13 +352,17 @@ footer a{color:var(--gold-soft)}
         </div>
       </div>
     </div>
+
+    <div class="photo-band" style="margin-top:52px">
+      <img src="assets/team/team-4-omada-4.webp" alt="Η ομάδα του DrSmile σε συνεργασία" loading="lazy">
+    </div>
   </div>
 </section>
 
 <section class="sec" style="padding-top:10px">
   <div class="wrap">
     <div class="photo-band">
-      <img src="assets/space/space-6-diadromos.jpg" alt="Οι χώροι θεραπείας του DrSmile" loading="lazy">
+      <img src="assets/team/team-2-omada-6.webp" alt="Η ομάδα του Πολυοδοντιατρείου DrSmile" loading="lazy">
     </div>
 
     <div class="sec-head" style="margin-top:52px">
@@ -380,7 +381,7 @@ footer a{color:var(--gold-soft)}
   <div class="wrap">
     <div class="leader">
       <div class="leader-photo">
-        <img src="assets/doctor.jpg" alt="Αναστασία Παρχαρίδου, Χειρουργός Οδοντίατρος">
+        <img src="assets/team/team-3-parcharidou.webp" alt="Αναστασία Παρχαρίδου, Χειρουργός Οδοντίατρος">
       </div>
       <div class="leader-id">
         <span class="label">Επικεφαλής της ομάδας</span>
