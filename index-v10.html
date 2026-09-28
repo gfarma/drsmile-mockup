@@ -120,6 +120,7 @@ body.nav-open .fab-stack{display:none}
 .hero-lockup{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-bottom:30px}
 .hero-lockup img{height:92px;width:auto}
 .hero-lockup .hl-name{font-family:var(--sans);font-size:11.5px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.hero-lockup .hl-spec{font-size:13px;font-weight:500;line-height:1.55;color:var(--gold-deep);margin-top:2px}
 .hero-lockup .hl-name strong{font-weight:600;color:var(--charcoal-2)}
 .hero h1{font-family:var(--fs);font-weight:300;font-size:clamp(30px,3.9vw,50px);line-height:1.18;letter-spacing:-.015em;color:var(--charcoal)}
 .hero h1 em{font-style:italic;font-weight:400;color:var(--gold-deep)}
@@ -165,6 +166,7 @@ body.nav-open .fab-stack{display:none}
   transition:.4s cubic-bezier(.2,.7,.2,1)}
 .scard:hover{transform:translateY(-6px);border-color:var(--gold-deep);
   box-shadow:0 26px 52px -32px rgba(120,96,50,.32)}
+.emboss-ic.ic-font{display:grid;place-items:center;color:var(--gold-deep);font-size:36px;box-shadow:inset 0 0 0 1px rgba(184,150,90,.35)}
 .scard .emboss-ic{width:84px;height:84px;flex:none;margin-bottom:22px;animation:svcFloat 4.5s ease-in-out infinite}
 .scard:nth-child(2n) .emboss-ic{animation-delay:-1.1s}
 .scard:nth-child(3n) .emboss-ic{animation-delay:-2.3s}
@@ -270,6 +272,7 @@ footer .fb-logo p{max-width:420px;font-size:14px;line-height:1.7;color:var(--war
   .hero-lockup{align-items:center;text-align:center;width:100%;gap:6px;margin-bottom:14px}
   .hero-lockup img{height:62px}
   .hero-lockup .hl-name{font-size:10.5px;letter-spacing:.1em}
+  .hero-lockup .hl-spec{font-size:11.5px}
   .hero h1{text-align:center;font-size:26px;line-height:1.22}
   .hero-note{padding:26px 0 4px}
   .sec{padding:70px 0}
@@ -327,8 +330,8 @@ footer .fb-logo p{max-width:420px;font-size:14px;line-height:1.7;color:var(--war
   <div class="wrap topnav-bar">
     <div class="nav-links">
       <a href="#top">Αρχική</a>
-      <a href="team.html">Η ομάδα DrSmile</a>
-      <a href="space.html">Ο χώρος DrSmile</a>
+      <a href="team.html">Η ομάδα του DrSmile</a>
+      <a href="space.html">Ο χώρος του DrSmile</a>
       <div class="nav-drop">
         <a href="#services">Υπηρεσίες <i class="ti ti-chevron-down"></i></a>
         <div class="nav-sub">
@@ -339,15 +342,22 @@ footer .fb-logo p{max-width:420px;font-size:14px;line-height:1.7;color:var(--war
           <a href="#services">Εμφυτευματολογία</a>
           <a href="#services">Παιδοδοντία</a>
           <a href="#services">Ενδοδοντία</a>
-          <a href="#services">Προσθετική κινητή και ακίνητη</a>
+          <a href="#services">Προσθετική (κινητή, ακίνητη, επί εμφυτευμάτων)</a>
           <a href="#services">Χειρουργική στόματος</a>
-          <a href="#services">Αισθητικές εμφράξεις</a>
           <a href="#services">Κατασκευή ναρθήκων</a>
+          <a href="#services">Ψηφιακή ακτινοδιαγνωστική</a>
           <a href="#services">Λέιζερ (Laser)</a>
         </div>
       </div>
-      <a href="#" class="soon" title="Σελίδα υπό κατασκευή">FAQ</a>
-      <a href="#results">Gallery περιστατικών</a>
+      <div class="nav-drop">
+        <a href="#results">Gallery περιστατικών <i class="ti ti-chevron-down"></i></a>
+        <div class="nav-sub">
+          <a href="#results">Εμφράξεις σύνθετης ρητίνης - Επένθετα</a>
+          <a href="#results">Ορθοδοντική Fastbraces®</a>
+          <a href="#results">Προσθετική (κινητή, ακίνητη, επί εμφυτευμάτων)</a>
+        </div>
+      </div>
+      <a href="#" class="soon" title="Σελίδα υπό κατασκευή">FAQs</a>
       <a href="#contact">Επικοινωνία</a>
     </div>
     <button class="burger" aria-label="Άνοιγμα μενού"><i class="ti ti-menu-2"></i></button>
@@ -359,8 +369,8 @@ footer .fb-logo p{max-width:420px;font-size:14px;line-height:1.7;color:var(--war
   <button class="mobile-nav-close" id="mobileNavClose" aria-label="Κλείσιμο μενού"><i class="ti ti-x"></i></button>
   <nav class="mobile-nav-links">
     <a href="#top">Αρχική</a>
-    <a href="team.html">Η ομάδα DrSmile</a>
-    <a href="space.html">Ο χώρος DrSmile</a>
+    <a href="team.html">Η ομάδα του DrSmile</a>
+    <a href="space.html">Ο χώρος του DrSmile</a>
     <div class="mnav-group">
       <button class="mnav-toggle" aria-expanded="false">Υπηρεσίες <i class="ti ti-chevron-down"></i></button>
       <div class="mnav-sub">
@@ -371,15 +381,22 @@ footer .fb-logo p{max-width:420px;font-size:14px;line-height:1.7;color:var(--war
         <a href="#services">Εμφυτευματολογία</a>
         <a href="#services">Παιδοδοντία</a>
         <a href="#services">Ενδοδοντία</a>
-        <a href="#services">Προσθετική κινητή και ακίνητη</a>
+        <a href="#services">Προσθετική (κινητή, ακίνητη, επί εμφυτευμάτων)</a>
         <a href="#services">Χειρουργική στόματος</a>
-        <a href="#services">Αισθητικές εμφράξεις</a>
         <a href="#services">Κατασκευή ναρθήκων</a>
+        <a href="#services">Ψηφιακή ακτινοδιαγνωστική</a>
         <a href="#services">Λέιζερ (Laser)</a>
       </div>
     </div>
-    <a href="#" class="soon">FAQ</a>
-    <a href="#results">Gallery περιστατικών</a>
+    <div class="mnav-group">
+      <button class="mnav-toggle" aria-expanded="false">Gallery περιστατικών <i class="ti ti-chevron-down"></i></button>
+      <div class="mnav-sub">
+        <a href="#results">Εμφράξεις σύνθετης ρητίνης - Επένθετα</a>
+        <a href="#results">Ορθοδοντική Fastbraces®</a>
+        <a href="#results">Προσθετική (κινητή, ακίνητη, επί εμφυτευμάτων)</a>
+      </div>
+    </div>
+    <a href="#" class="soon">FAQs</a>
     <a href="#contact">Επικοινωνία</a>
   </nav>
   <div class="mobile-nav-contact">
@@ -400,6 +417,7 @@ footer .fb-logo p{max-width:420px;font-size:14px;line-height:1.7;color:var(--war
       <div class="hero-lockup reveal">
         <img src="assets/logo.png" alt="DrSmile Πολυοδοντιατρείο">
         <span class="hl-name">Επιστημονική διεύθυνση: <strong>Αναστασία Παρχαρίδου</strong></span>
+        <span class="hl-spec">Γενική και Αισθητική Οδοντιατρική ενηλίκων και παίδων<br>Ορθοδοντική Fastbraces®</span>
       </div>
       <h1 class="reveal" style="transition-delay:.08s">Δημιουργούμε χαμόγελα<br><em>όπως ακριβώς σας αξίζει!</em></h1>
     </div>
@@ -473,10 +491,10 @@ footer .fb-logo p{max-width:420px;font-size:14px;line-height:1.7;color:var(--war
       <div class="scard reveal" style="transition-delay:.16s"><img class="emboss-ic" src="assets/icons/serv-emfyteumatologia.jpg" alt=""><div><h3>Εμφυτευματολογία</h3><p>για διόρθωση μερικής ή ολικής νωδότητας</p></div></div>
       <div class="scard reveal" style="transition-delay:.20s"><img class="emboss-ic" src="assets/icons/serv-paidodontia.jpg" alt=""><div><h3>Παιδοδοντία</h3><p>φθορίωση, σφραγίσματα, προληπτικές καλύψεις-sealants, πολφοτομή κτλ</p></div></div>
       <div class="scard reveal" style="transition-delay:.24s"><img class="emboss-ic" src="assets/icons/serv-endodontia.jpg" alt=""><div><h3>Ενδοδοντία</h3><p>απονευρώσεις</p></div></div>
-      <div class="scard reveal" style="transition-delay:.28s"><img class="emboss-ic" src="assets/icons/serv-prosthetiki.jpg" alt=""><div><h3>Προσθετική κινητή και ακίνητη</h3><p>ολικές οδοντοστοιχίες, μερικές οδοντοστοιχίες, θήκες, γέφυρες, επί εμφυτευμάτων, ολοκεραμικά κτλ</p></div></div>
+      <div class="scard reveal" style="transition-delay:.28s"><img class="emboss-ic" src="assets/icons/serv-prosthetiki.jpg" alt=""><div><h3>Προσθετική (κινητή, ακίνητη, επί εμφυτευμάτων)</h3><p>ολικές οδοντοστοιχίες, μερικές οδοντοστοιχίες, θήκες, γέφυρες, επί εμφυτευμάτων, ολοκεραμικά κτλ</p></div></div>
       <div class="scard reveal" style="transition-delay:.32s"><img class="emboss-ic" src="assets/icons/serv-xeirourgiki.jpg" alt=""><div><h3>Χειρουργική στόματος</h3><p>εξαγωγή φρονιμιτών, ανύψωση ιγμορείου, ακρορριζεκτομές κτλ</p></div></div>
-      <div class="scard reveal" style="transition-delay:.36s"><img class="emboss-ic" src="assets/icons/serv-sfragismata.jpg" alt=""><div><h3>Αισθητικές εμφράξεις</h3><p>σφραγίσματα - χτίσιμο δοντιών - επένθετα</p></div></div>
-      <div class="scard reveal" style="transition-delay:.40s"><img class="emboss-ic" src="assets/icons/serv-narthikes.jpg" alt=""><div><h3>Κατασκευή ναρθήκων</h3><p>λεύκανσης, ορθοδοντικής, βρουξισμού</p></div></div>
+      <div class="scard reveal" style="transition-delay:.36s"><img class="emboss-ic" src="assets/icons/serv-narthikes.jpg" alt=""><div><h3>Κατασκευή ναρθήκων</h3><p>λεύκανσης, ορθοδοντικής, βρουξισμού</p></div></div>
+      <div class="scard reveal" style="transition-delay:.40s"><span class="emboss-ic ic-font" aria-hidden="true"><i class="ti ti-scan"></i></span><div><h3>Ψηφιακή ακτινοδιαγνωστική</h3></div></div>
       <div class="scard reveal" style="transition-delay:.44s"><img class="emboss-ic" src="assets/icons/serv-laser.jpg" alt=""><div><h3>Λέιζερ (Laser)</h3><p>λεύκανση, ουλεκτομή, ουλοπλαστική, θεραπεία περιοδοντίτιδας, μείωση οδοντικής ευαισθησίας κτλ</p></div></div>
     </div>
   </div>
