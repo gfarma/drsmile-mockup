@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Συχνές ερωτήσεις | DrSmile Πολυοδοντιατρείο, Εύοσμος Θεσσαλονίκης</title>
+<meta name="description" content="Συχνές ερωτήσεις για το DrSmile στον Εύοσμο Θεσσαλονίκης: ραντεβού, πρώτη επίσκεψη, φόβος του οδοντιάτρου, σχέδιο θεραπείας, κόστος και τρόποι πληρωμής.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..600;1,400..600&family=Manrope:wght@300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.7.0/dist/tabler-icons.min.css">
+<style>
+:root{
+  --ivory:#FBF8F2; --warm-white:#FEFCF8; --pearl:#F2ECE0; --champagne:#E9D9B8; --greige:#E6DFD1;
+  --gold:#B08D57; --gold-deep:#9C7A45; --gold-soft:#D8BE8E;
+  --charcoal:#2E2A24; --charcoal-2:#3A342C; --muted:#7A7062; --muted-d:#8C8272;
+  --line:rgba(176,141,87,.24); --line-soft:rgba(176,141,87,.14);
+  --fs:'Cormorant Garamond',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--charcoal);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  background-color:var(--ivory);
+  background-image:
+    radial-gradient(820px 680px at 18% 12%,rgba(255,255,251,.6),transparent 60%),
+    radial-gradient(720px 600px at 86% 38%,rgba(242,236,224,.5),transparent 56%),
+    radial-gradient(900px 720px at 62% 72%,rgba(254,252,248,.45),transparent 60%);
+  background-repeat:no-repeat;background-attachment:fixed}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+.label{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-deep)}
+
+.draft{background:var(--gold-deep);color:#fff;text-align:center;font-size:12.5px;padding:10px 20px}
+.draft b{font-weight:700}
+
+.site-header{position:sticky;top:0;z-index:100;background:rgba(251,248,242,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.utilbar{background:var(--warm-white);color:var(--charcoal-2);font-size:12.5px;border-bottom:1px solid var(--line-soft)}
+.utilbar .wrap{display:flex;align-items:center;justify-content:space-between;height:40px;gap:20px}
+.ub-item{display:flex;align-items:center;gap:8px;white-space:nowrap}
+.ub-item i{color:var(--gold-deep);font-size:14px}
+.topnav .wrap{display:flex;align-items:center;justify-content:center;padding:14px 0}
+.brand-name{font-family:var(--fs);font-style:italic;font-size:15px;color:var(--gold-deep);font-weight:500}
+footer .brand-sub{display:flex;flex-direction:column;align-items:flex-start;margin:6px 0 16px}
+footer .brand-name{color:var(--gold-soft)}
+.nav-links{display:flex;align-items:center;gap:26px}
+.nav-links>a,.nav-drop>a{font-size:13.5px;font-weight:500;letter-spacing:.01em;position:relative;padding:4px 0;color:var(--charcoal);white-space:nowrap;display:inline-flex;align-items:center;gap:5px}
+.nav-links>a::after,.nav-drop>a::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;background:var(--gold-deep);transition:.35s}
+.nav-links>a:hover::after,.nav-drop:hover>a::after{width:100%}
+.nav-links a.soon{color:var(--muted)}
+.nav-links a.here{color:var(--gold-deep);font-weight:600}
+.nav-links a.here::after{width:100%}
+.mobile-nav-links a.here{color:var(--gold-deep)}
+.nav-drop>a i{font-size:14px;color:var(--gold-deep);transition:.3s}
+.nav-drop:hover>a i{transform:rotate(180deg)}
+
+.nav-drop{position:relative}
+.nav-sub{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);
+  min-width:260px;padding:12px 0;margin-top:14px;
+  background:var(--warm-white);border:1px solid var(--line);border-radius:14px;
+  box-shadow:0 26px 54px -28px rgba(120,96,50,.4);
+  opacity:0;visibility:hidden;pointer-events:none;transition:.3s cubic-bezier(.2,.7,.2,1);z-index:120}
+.nav-sub::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.nav-drop:hover .nav-sub,.nav-drop:focus-within .nav-sub{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.nav-sub a{display:block;padding:9px 22px;font-size:13px;font-weight:500;color:var(--charcoal-2);white-space:nowrap;transition:.22s}
+.nav-sub a:hover{background:rgba(216,190,142,.16);color:var(--gold-deep);padding-left:27px}
+
+.mnav-group{display:flex;flex-direction:column;align-items:center}
+.mnav-toggle{display:inline-flex;align-items:center;gap:8px;background:none;border:0;cursor:pointer;
+  font-family:var(--fs);font-size:28px;font-weight:500;color:var(--charcoal)}
+.mnav-toggle i{font-size:20px;color:var(--gold-deep);transition:.3s}
+.mnav-toggle[aria-expanded="true"] i{transform:rotate(180deg)}
+.mnav-sub{display:flex;flex-direction:column;align-items:center;gap:12px;overflow:hidden;
+  max-height:0;opacity:0;transition:.4s cubic-bezier(.2,.7,.2,1)}
+.mnav-group.open .mnav-sub{max-height:520px;opacity:1;margin-top:16px}
+.mnav-sub a{font-family:var(--sans);font-size:14px;color:var(--muted);font-weight:500}
+.burger{display:none;font-size:28px;background:none;border:0;color:var(--charcoal);cursor:pointer;line-height:1}
+
+.mobile-nav{position:fixed;inset:0;z-index:300;background:var(--ivory);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;opacity:0;visibility:hidden;transform:translateY(-16px);transition:.4s cubic-bezier(.2,.7,.2,1)}
+.mobile-nav.open{opacity:1;visibility:visible;transform:none}
+.mobile-nav-close{position:absolute;top:26px;right:22px;font-size:28px;background:none;border:0;color:var(--charcoal);cursor:pointer}
+.mobile-nav{overflow-y:auto;padding:80px 20px}
+.mobile-nav-links{display:flex;flex-direction:column;align-items:center;gap:22px}
+.mobile-nav-links>a{font-family:var(--fs);font-size:26px;font-weight:500;color:var(--charcoal);text-align:center}
+.mobile-nav-links a.soon{color:var(--muted)}
+.mobile-nav-contact{display:flex;flex-direction:column;align-items:center;gap:16px;margin-top:36px}
+.mobile-nav-contact a{display:flex;align-items:center;gap:8px;font-size:15px;color:var(--gold-deep);font-weight:500}
+body.nav-open{overflow:hidden}
+
+.page-hero{padding:70px 0 6px;text-align:center}
+.page-hero .label{display:block;margin-bottom:16px}
+.page-hero h1{font-family:var(--fs);font-weight:300;font-size:clamp(34px,5vw,62px);line-height:1.06;letter-spacing:-.015em}
+.page-hero h1 em{font-style:italic;color:var(--gold-deep)}
+.page-hero p{color:var(--muted);font-size:16px;max-width:680px;margin:22px auto 0;line-height:1.8}
+
+.sec{padding:56px 0}
+
+/* Γκαλερί: ημικυκλικό πλαίσιο, όπως σε όλο το site */
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.shot{background:var(--warm-white);border:1px solid var(--line);border-radius:150px 150px 20px 20px;
+  padding:14px 14px 26px;transition:.4s cubic-bezier(.2,.7,.2,1)}
+.shot:hover{transform:translateY(-6px);border-color:var(--gold-deep);box-shadow:0 30px 60px -36px rgba(120,96,50,.35)}
+.shot .ph{border-radius:140px 140px 12px 12px;overflow:hidden;background:var(--pearl)}
+.shot .ph img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/10;transition:.6s cubic-bezier(.2,.7,.2,1)}
+.shot:hover .ph img{transform:scale(1.04)}
+.shot .cap{text-align:center;padding:22px 20px 0}
+.shot h3{font-family:var(--sans);font-weight:700;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--charcoal)}
+.shot p{font-size:13px;color:var(--muted);line-height:1.7;margin-top:8px}
+
+.shot.wide{grid-column:1 / -1;border-radius:190px 190px 20px 20px}
+.shot.wide .ph{border-radius:180px 180px 12px 12px}
+.shot.wide .ph img{aspect-ratio:21/9}
+
+.note{margin-top:46px;background:var(--pearl);border-radius:20px 20px 20px 6px;padding:32px;max-width:900px}
+.note h3{font-family:var(--fs);font-weight:500;font-size:23px;margin-bottom:12px}
+.note p{font-size:14.5px;color:var(--muted);line-height:1.85}
+
+.ctaband{background:var(--charcoal);color:var(--ivory);text-align:center;padding:78px 0;margin-top:56px}
+.ctaband h2{font-family:var(--fs);font-weight:300;font-size:clamp(28px,3.6vw,44px);color:var(--ivory);line-height:1.1}
+.ctaband h2 em{font-style:italic;color:var(--gold-soft)}
+.ctaband p{color:var(--muted-d);font-size:16px;margin:20px auto 30px;max-width:600px}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:500;font-size:14px;padding:15px 30px;
+  border-radius:999px;border:1px solid var(--gold-deep);background:var(--gold-deep);color:#fff;transition:.35s}
+.btn:hover{background:transparent;color:var(--gold-soft);transform:translateY(-2px)}
+
+footer{background:var(--charcoal);color:var(--muted-d);padding:44px 0;border-top:1px solid var(--line-soft);font-size:13px;text-align:center}
+footer a{color:var(--gold-soft)}
+.fsoc{display:flex;justify-content:center;gap:12px;margin-bottom:24px}
+.fsoc a{width:42px;height:42px;border:1px solid var(--line-soft);border-radius:50%;display:grid;place-items:center;color:var(--gold-soft);font-size:18px;transition:.3s}
+.fsoc a:hover{background:var(--gold-deep);border-color:var(--gold-deep);color:#fff;transform:translateY(-2px)}
+
+
+/* τα δύο σταθερά κουμπιά, ίδια με την αρχική */
+.fab-stack{position:fixed;bottom:28px;right:28px;z-index:10000;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.fab{display:inline-flex;align-items:center;gap:11px;padding:13px 22px;border-radius:999px;background:var(--warm-white);border:1.5px solid var(--gold);font-family:var(--sans);font-size:13.5px;font-weight:600;letter-spacing:.01em;color:var(--gold-deep);white-space:nowrap;box-shadow:0 10px 30px -12px rgba(60,44,12,.4);transition:.35s cubic-bezier(.2,.7,.2,1)}
+.fab i{font-size:19px}
+.fab:hover{box-shadow:0 0 0 5px rgba(176,141,87,.18),0 12px 30px -10px rgba(176,141,87,.5);color:#fff;background:var(--gold-deep);transform:translateY(-2px)}
+body.nav-open .fab-stack{display:none}
+
+@media(max-width:920px){
+  .wrap{padding:0 22px}
+  .nav-links{display:none}
+  .burger{display:block}
+  .utilbar .ub-mid{display:none}
+  .utilbar .wrap{height:auto;padding-top:9px;padding-bottom:9px;gap:14px;font-size:11.5px}
+  .ub-item{white-space:normal;align-items:flex-start;line-height:1.4;min-width:0}
+  .utilbar a.ub-item{flex:none;white-space:nowrap;font-weight:600}
+  .sec{padding:44px 0}
+  .fab-stack{bottom:16px;right:16px;gap:10px}
+  .fab{padding:11px 18px;font-size:12.5px}
+  .fab i{font-size:17px}
+  .gal{grid-template-columns:1fr;gap:16px}
+  .shot,.shot.wide{border-radius:110px 110px 16px 16px;padding:10px 10px 20px}
+  .shot .ph,.shot.wide .ph{border-radius:100px 100px 10px 10px}
+  .shot.wide .ph img{aspect-ratio:16/10}
+}
+.faqs{max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+.faq{border:1px solid var(--line);border-radius:20px;background:var(--warm-white);transition:.3s}
+.faq[open]{border-color:var(--gold-soft);box-shadow:0 24px 50px -36px rgba(60,44,12,.45)}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:18px;padding:24px 28px}
+.faq summary::-webkit-details-marker{display:none}
+.faq .n{font-family:var(--fs);font-style:italic;font-size:22px;color:var(--gold);flex:none}
+.faq .q{flex:1;font-weight:600;font-size:16.5px;line-height:1.45;color:var(--charcoal)}
+.faq summary i{flex:none;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--gold-deep);font-size:17px;transition:.3s}
+.faq[open] summary i{transform:rotate(45deg);background:var(--gold-deep);border-color:var(--gold-deep);color:#fff}
+.faq .a{padding:0 28px 26px 68px;display:flex;flex-direction:column;gap:12px}
+.faq .a p{font-size:15.5px;line-height:1.75;color:var(--charcoal-2)}
+@media(max-width:560px){.faq summary{padding:18px;gap:12px}.faq .q{font-size:15px}.faq .a{padding:0 18px 20px}.faq .n{font-size:19px}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Πώς μπορώ να κλείσω, να αλλάξω ή να ακυρώσω ένα ραντεβού;", "acceptedAnswer": {"@type": "Answer", "text": "Το DrSmile και η γραμματεία λειτουργούν από Δευτέρα έως Παρασκευή, 09:00–21:00. Μπορείτε να κλείσετε ή να τροποποιήσετε το ραντεβού σας είτε τηλεφωνικά είτε από κοντά, στη γραμματεία του ιατρείου. Εκτός αυτού του ωραρίου, μπορείτε να αφήσετε το μήνυμά σας στον τηλεφωνητή μας και θα επικοινωνήσουμε μαζί σας το συντομότερο. Σε περίπτωση αλλαγής ή ακύρωσης, μια όσο το δυνατόν πιο έγκαιρη ενημέρωση μας βοηθά να οργανώνουμε καλύτερα το πρόγραμμά μας και να εξυπηρετούμε όλους τους ασθενείς μας."}}, {"@type": "Question", "name": "Τι περιλαμβάνει η πρώτη μου επίσκεψη στο DrSmile;", "acceptedAnswer": {"@type": "Answer", "text": "Για την καλύτερη εξυπηρέτησή σας, η πρώτη επίσκεψη είναι συνήθως ένα ραντεβού εξέτασης και διάγνωσης. Ανάλογα με τις ανάγκες σας, μπορεί να περιλαμβάνει καθαρισμό των δοντιών και, εφόσον κριθεί απαραίτητο, ενδοστοματικές ακτινογραφίες ή/και πανοραμική ακτινογραφία. Η αρχική εξέταση είναι χρήσιμη ακόμα και αν επικοινωνείτε μαζί μας για ένα συγκεκριμένο πρόβλημα, όπως ένα σφράγισμα. Χωρίς να έχει προηγηθεί έλεγχος, δεν μπορούμε να γνωρίζουμε την έκταση της βλάβης και τον χρόνο που θα χρειαστεί για την αποκατάστασή της. Με αυτόν τον τρόπο μπορούμε να προγραμματίσουμε το κατάλληλο ραντεβού, με τον χρόνο που απαιτείται για τη σωστή ολοκλήρωση της θεραπείας. Παράλληλα, αποκτούμε μια συνολική εικόνα της στοματικής σας υγείας, οργανώνουμε το σχέδιο θεραπείας και σας ενημερώνουμε αναλυτικά για τον αριθμό και τη διάρκεια των ραντεβού, καθώς και για το αντίστοιχο οικονομικό πλάνο. Στη συνέχεια, εφόσον το επιθυμείτε, προγραμματίζουμε μαζί τα κατάλληλα ραντεβού για την έναρξη της θεραπείας σας."}}, {"@type": "Question", "name": "Φοβάμαι τον οδοντίατρο. Πώς μπορεί να με βοηθήσει η ομάδα του DrSmile;", "acceptedAnswer": {"@type": "Answer", "text": "Ο φόβος για τον οδοντίατρο είναι πολύ συχνός και απόλυτα κατανοητός. Η ομάδα μας αφιερώνει τον απαραίτητο χρόνο για να σας εξηγήσει κάθε στάδιο της θεραπείας, να απαντήσει στις ερωτήσεις σας και να προχωρήσει με τον ρυθμό που σας κάνει να αισθάνεστε άνετα. Όπου χρειάζεται, η ενημέρωση υποστηρίζεται και με ενδοστοματικές φωτογραφίες, ώστε να μπορείτε να δείτε και να κατανοήσετε με σαφήνεια τι συμβαίνει στη στοματική σας υγεία και γιατί προτείνεται η συγκεκριμένη θεραπεία. Πιστεύουμε ότι η ουσιαστική ενημέρωση ενισχύει την εμπιστοσύνη και βοηθά να μειωθούν η αβεβαιότητα και ο φόβος. Κατά τη διάρκεια της θεραπείας, μπορούμε να συμφωνήσουμε ένα απλό σήμα, ώστε να σταματάμε κάθε φορά που χρειάζεστε ένα διάλειμμα. Με ήρεμη προσέγγιση, σωστή αναισθησία και σταδιακή εξοικείωση, στόχος μας είναι να αισθάνεστε ασφάλεια, εμπιστοσύνη και έλεγχο σε κάθε σας επίσκεψη."}}, {"@type": "Question", "name": "Πώς οργανώνεται το σχέδιο θεραπείας και πότε ενημερώνομαι για το κόστος;", "acceptedAnswer": {"@type": "Answer", "text": "Για τις συνήθεις οδοντιατρικές πράξεις, το σχέδιο θεραπείας και το αντίστοιχο κόστος καθορίζονται συνήθως κατά το πρώτο ραντεβού εξέτασης και διάγνωσης. Το ραντεβού αυτό μπορεί να περιλαμβάνει και καθαρισμό των δοντιών, ώστε οι επόμενες εργασίες να πραγματοποιηθούν σε καθαρό περιβάλλον στόματος. Σε πιο σύνθετα περιστατικά, όπως εκτεταμένες προσθετικές αποκαταστάσεις ή στόματα με πολλαπλές θεραπευτικές ανάγκες, πραγματοποιείται αρχικά κλινική εξέταση και ο απαραίτητος ακτινογραφικός έλεγχος. Κατά τη διάρκεια του ραντεβού συζητάμε μαζί σας τις ανάγκες, τις επιθυμίες και τις προτεραιότητές σας. Στη συνέχεια, η ομάδα μας συνεργάζεται και μελετά όλα τα δεδομένα, ώστε να διαμορφώσει το καταλληλότερο σχέδιο θεραπείας, καθώς και πιθανές εναλλακτικές επιλογές. Σε δεύτερο στάδιο, ενημερώνεστε είτε τηλεφωνικά είτε σε ένα νέο ραντεβού στο ιατρείο για τις προτεινόμενες λύσεις, τα στάδια και την εκτιμώμενη διάρκεια της θεραπείας, καθώς και για το αντίστοιχο οικονομικό πλάνο. Έτσι, έχετε μια ολοκληρωμένη εικόνα πριν αποφασίσετε πώς επιθυμείτε να προχωρήσετε."}}, {"@type": "Question", "name": "Ποιοι τρόποι πληρωμής είναι διαθέσιμοι και υπάρχει δυνατότητα τμηματικής εξόφλησης;", "acceptedAnswer": {"@type": "Answer", "text": "Η πληρωμή μπορεί να πραγματοποιηθεί με μετρητά ή με χρεωστική/πιστωτική κάρτα. Μέσω πιστωτικής κάρτας παρέχεται, επίσης, η δυνατότητα εξόφλησης σε έως και έξι άτοκες δόσεις. Για τις μεμονωμένες οδοντιατρικές εργασίες, η εξόφληση πραγματοποιείται συνήθως στο ραντεβού κατά το οποίο ολοκληρώνεται η εργασία. Σε πιο σύνθετα σχέδια θεραπείας ή σε εργασίες που απαιτούν περισσότερα ραντεβού, διαμορφώνουμε μαζί σας από την αρχή ένα σαφές χρονικό και οικονομικό πλάνο. Οι πληρωμές μπορούν να κατανέμονται στα επιμέρους στάδια, με την εξόφληση να ολοκληρώνεται έως το τέλος της θεραπείας. Για κάθε πληρωμή εκδίδεται το αντίστοιχο νόμιμο παραστατικό."}}]}</script>
+</head>
+<body>
+
+
+<div class="site-header" id="siteHeader">
+<div class="utilbar">
+  <div class="wrap">
+    <div class="ub-item"><i class="ti ti-map-pin"></i> <span>Καραολή και Δημητρίου 121, Εύοσμος Θεσσαλονίκη, ΤΚ. 56224</span></div>
+    <div class="ub-item ub-mid"><i class="ti ti-clock-hour-4"></i> Δευ–Παρ 09:00–21:00 · Σάββατο με ραντεβού</div>
+    <a class="ub-item" href="tel:2310769674"><i class="ti ti-phone"></i> 2310 769 674</a>
+  </div>
+</div>
+
+<nav class="topnav" id="topnav">
+  <div class="wrap topnav-bar">
+    <div class="nav-links">
+      <a href="index-v10.html">Αρχική</a>
+      <a href="team.html">Η ομάδα του DrSmile</a>
+      <a href="space.html">Ο χώρος του DrSmile</a>
+      <div class="nav-drop">
+        <a href="index-v10.html#services">Υπηρεσίες <i class="ti ti-chevron-down"></i></a>
+        <div class="nav-sub">
+          <a href="index-v10.html#services">Γενική Οδοντιατρική</a>
+          <a href="index-v10.html#services">Αισθητική Οδοντιατρική</a>
+          <a href="index-v10.html#services">Ορθοδοντική Fastbraces®</a>
+          <a href="index-v10.html#services">Περιοδοντολογία</a>
+          <a href="index-v10.html#services">Εμφυτευματολογία</a>
+          <a href="index-v10.html#services">Παιδοδοντία</a>
+          <a href="index-v10.html#services">Ενδοδοντία</a>
+          <a href="index-v10.html#services">Προσθετική (κινητή, ακίνητη, επί εμφυτευμάτων)</a>
+          <a href="index-v10.html#services">Χειρουργική στόματος</a>
+          <a href="index-v10.html#services">Κατασκευή ναρθήκων</a>
+          <a href="index-v10.html#services">Ψηφιακή ακτινοδιαγνωστική</a>
+          <a href="index-v10.html#services">Λέιζερ (Laser)</a>
+        </div>
+      </div>
+      <div class="nav-drop">
+        <a href="index-v10.html#results">Gallery περιστατικών <i class="ti ti-chevron-down"></i></a>
+        <div class="nav-sub">
+          <a href="index-v10.html#results">Εμφράξεις σύνθετης ρητίνης - Επένθετα</a>
+          <a href="index-v10.html#results">Ορθοδοντική Fastbraces®</a>
+          <a href="index-v10.html#results">Προσθετική (κινητή, ακίνητη, επί εμφυτευμάτων)</a>
+        </div>
+      </div>
+      <a href="faq.html" class="here">FAQs</a>
+      <a href="index-v10.html#contact">Επικοινωνία</a>
+    </div>
+    <button class="burger" aria-label="Άνοιγμα μενού"><i class="ti ti-menu-2"></i></button>
+  </div>
+</nav>
+</div>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="Κλείσιμο μενού"><i class="ti ti-x"></i></button>
+  <nav class="mobile-nav-links">
+    <a href="index-v10.html">Αρχική</a>
+    <a href="team.html">Η ομάδα του DrSmile</a>
+    <a href="space.html">Ο χώρος του DrSmile</a>
+    <div class="mnav-group">
+      <button class="mnav-toggle" aria-expanded="false">Υπηρεσίες <i class="ti ti-chevron-down"></i></button>
+      <div class="mnav-sub">
+        <a href="index-v10.html#services">Γενική Οδοντιατρική</a>
+        <a href="index-v10.html#services">Αισθητική Οδοντιατρική</a>
+        <a href="index-v10.html#services">Ορθοδοντική Fastbraces®</a>
+        <a href="index-v10.html#services">Περιοδοντολογία</a>
+        <a href="index-v10.html#services">Εμφυτευματολογία</a>
+        <a href="index-v10.html#services">Παιδοδοντία</a>
+        <a href="index-v10.html#services">Ενδοδοντία</a>
+        <a href="index-v10.html#services">Προσθετική (κινητή, ακίνητη, επί εμφυτευμάτων)</a>
+        <a href="index-v10.html#services">Χειρουργική στόματος</a>
+        <a href="index-v10.html#services">Κατασκευή ναρθήκων</a>
+        <a href="index-v10.html#services">Ψηφιακή ακτινοδιαγνωστική</a>
+        <a href="index-v10.html#services">Λέιζερ (Laser)</a>
+      </div>
+    </div>
+    <div class="mnav-group">
+      <button class="mnav-toggle" aria-expanded="false">Gallery περιστατικών <i class="ti ti-chevron-down"></i></button>
+      <div class="mnav-sub">
+        <a href="index-v10.html#results">Εμφράξεις σύνθετης ρητίνης - Επένθετα</a>
+        <a href="index-v10.html#results">Ορθοδοντική Fastbraces®</a>
+        <a href="index-v10.html#results">Προσθετική (κινητή, ακίνητη, επί εμφυτευμάτων)</a>
+      </div>
+    </div>
+    <a href="faq.html" class="here">FAQs</a>
+    <a href="index-v10.html#contact">Επικοινωνία</a>
+  </nav>
+  <div class="mobile-nav-contact">
+    <a href="tel:2310769674"><i class="ti ti-phone"></i> 2310 769 674</a>
+    <a href="mailto:info@drsmile.gr"><i class="ti ti-mail"></i> info@drsmile.gr</a>
+  </div>
+</div>
+
+<header class="wrap page-hero">
+  <span class="label">FAQs</span>
+  <h1>Συχνές <em>ερωτήσεις</em></h1>
+  <p>Όσα μας ρωτάτε πιο συχνά για τα ραντεβού, την πρώτη επίσκεψη, το σχέδιο θεραπείας και την πληρωμή.</p>
+</header>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="faqs">
+      <details class="faq" open>
+        <summary><span class="n">01</span><span class="q">Πώς μπορώ να κλείσω, να αλλάξω ή να ακυρώσω ένα ραντεβού;</span><i class="ti ti-plus"></i></summary>
+        <div class="a"><p>Το DrSmile και η γραμματεία λειτουργούν από Δευτέρα έως Παρασκευή, 09:00–21:00.</p><p>Μπορείτε να κλείσετε ή να τροποποιήσετε το ραντεβού σας είτε τηλεφωνικά είτε από κοντά, στη γραμματεία του ιατρείου.</p><p>Εκτός αυτού του ωραρίου, μπορείτε να αφήσετε το μήνυμά σας στον τηλεφωνητή μας και θα επικοινωνήσουμε μαζί σας το συντομότερο.</p><p>Σε περίπτωση αλλαγής ή ακύρωσης, μια όσο το δυνατόν πιο έγκαιρη ενημέρωση μας βοηθά να οργανώνουμε καλύτερα το πρόγραμμά μας και να εξυπηρετούμε όλους τους ασθενείς μας.</p></div>
+      </details>
+      <details class="faq">
+        <summary><span class="n">02</span><span class="q">Τι περιλαμβάνει η πρώτη μου επίσκεψη στο DrSmile;</span><i class="ti ti-plus"></i></summary>
+        <div class="a"><p>Για την καλύτερη εξυπηρέτησή σας, η πρώτη επίσκεψη είναι συνήθως ένα ραντεβού εξέτασης και διάγνωσης.</p><p>Ανάλογα με τις ανάγκες σας, μπορεί να περιλαμβάνει καθαρισμό των δοντιών και, εφόσον κριθεί απαραίτητο, ενδοστοματικές ακτινογραφίες ή/και πανοραμική ακτινογραφία.</p><p>Η αρχική εξέταση είναι χρήσιμη ακόμα και αν επικοινωνείτε μαζί μας για ένα συγκεκριμένο πρόβλημα, όπως ένα σφράγισμα.</p><p>Χωρίς να έχει προηγηθεί έλεγχος, δεν μπορούμε να γνωρίζουμε την έκταση της βλάβης και τον χρόνο που θα χρειαστεί για την αποκατάστασή της.</p><p>Με αυτόν τον τρόπο μπορούμε να προγραμματίσουμε το κατάλληλο ραντεβού, με τον χρόνο που απαιτείται για τη σωστή ολοκλήρωση της θεραπείας.</p><p>Παράλληλα, αποκτούμε μια συνολική εικόνα της στοματικής σας υγείας, οργανώνουμε το σχέδιο θεραπείας και σας ενημερώνουμε αναλυτικά για τον αριθμό και τη διάρκεια των ραντεβού, καθώς και για το αντίστοιχο οικονομικό πλάνο.</p><p>Στη συνέχεια, εφόσον το επιθυμείτε, προγραμματίζουμε μαζί τα κατάλληλα ραντεβού για την έναρξη της θεραπείας σας.</p></div>
+      </details>
+      <details class="faq">
+        <summary><span class="n">03</span><span class="q">Φοβάμαι τον οδοντίατρο. Πώς μπορεί να με βοηθήσει η ομάδα του DrSmile;</span><i class="ti ti-plus"></i></summary>
+        <div class="a"><p>Ο φόβος για τον οδοντίατρο είναι πολύ συχνός και απόλυτα κατανοητός.</p><p>Η ομάδα μας αφιερώνει τον απαραίτητο χρόνο για να σας εξηγήσει κάθε στάδιο της θεραπείας, να απαντήσει στις ερωτήσεις σας και να προχωρήσει με τον ρυθμό που σας κάνει να αισθάνεστε άνετα.</p><p>Όπου χρειάζεται, η ενημέρωση υποστηρίζεται και με ενδοστοματικές φωτογραφίες, ώστε να μπορείτε να δείτε και να κατανοήσετε με σαφήνεια τι συμβαίνει στη στοματική σας υγεία και γιατί προτείνεται η συγκεκριμένη θεραπεία.</p><p>Πιστεύουμε ότι η ουσιαστική ενημέρωση ενισχύει την εμπιστοσύνη και βοηθά να μειωθούν η αβεβαιότητα και ο φόβος.</p><p>Κατά τη διάρκεια της θεραπείας, μπορούμε να συμφωνήσουμε ένα απλό σήμα, ώστε να σταματάμε κάθε φορά που χρειάζεστε ένα διάλειμμα.</p><p>Με ήρεμη προσέγγιση, σωστή αναισθησία και σταδιακή εξοικείωση, στόχος μας είναι να αισθάνεστε ασφάλεια, εμπιστοσύνη και έλεγχο σε κάθε σας επίσκεψη.</p></div>
+      </details>
+      <details class="faq">
+        <summary><span class="n">04</span><span class="q">Πώς οργανώνεται το σχέδιο θεραπείας και πότε ενημερώνομαι για το κόστος;</span><i class="ti ti-plus"></i></summary>
+        <div class="a"><p>Για τις συνήθεις οδοντιατρικές πράξεις, το σχέδιο θεραπείας και το αντίστοιχο κόστος καθορίζονται συνήθως κατά το πρώτο ραντεβού εξέτασης και διάγνωσης.</p><p>Το ραντεβού αυτό μπορεί να περιλαμβάνει και καθαρισμό των δοντιών, ώστε οι επόμενες εργασίες να πραγματοποιηθούν σε καθαρό περιβάλλον στόματος.</p><p>Σε πιο σύνθετα περιστατικά, όπως εκτεταμένες προσθετικές αποκαταστάσεις ή στόματα με πολλαπλές θεραπευτικές ανάγκες, πραγματοποιείται αρχικά κλινική εξέταση και ο απαραίτητος ακτινογραφικός έλεγχος.</p><p>Κατά τη διάρκεια του ραντεβού συζητάμε μαζί σας τις ανάγκες, τις επιθυμίες και τις προτεραιότητές σας.</p><p>Στη συνέχεια, η ομάδα μας συνεργάζεται και μελετά όλα τα δεδομένα, ώστε να διαμορφώσει το καταλληλότερο σχέδιο θεραπείας, καθώς και πιθανές εναλλακτικές επιλογές.</p><p>Σε δεύτερο στάδιο, ενημερώνεστε είτε τηλεφωνικά είτε σε ένα νέο ραντεβού στο ιατρείο για τις προτεινόμενες λύσεις, τα στάδια και την εκτιμώμενη διάρκεια της θεραπείας, καθώς και για το αντίστοιχο οικονομικό πλάνο.</p><p>Έτσι, έχετε μια ολοκληρωμένη εικόνα πριν αποφασίσετε πώς επιθυμείτε να προχωρήσετε.</p></div>
+      </details>
+      <details class="faq">
+        <summary><span class="n">05</span><span class="q">Ποιοι τρόποι πληρωμής είναι διαθέσιμοι και υπάρχει δυνατότητα τμηματικής εξόφλησης;</span><i class="ti ti-plus"></i></summary>
+        <div class="a"><p>Η πληρωμή μπορεί να πραγματοποιηθεί με μετρητά ή με χρεωστική/πιστωτική κάρτα.</p><p>Μέσω πιστωτικής κάρτας παρέχεται, επίσης, η δυνατότητα εξόφλησης σε έως και έξι άτοκες δόσεις.</p><p>Για τις μεμονωμένες οδοντιατρικές εργασίες, η εξόφληση πραγματοποιείται συνήθως στο ραντεβού κατά το οποίο ολοκληρώνεται η εργασία.</p><p>Σε πιο σύνθετα σχέδια θεραπείας ή σε εργασίες που απαιτούν περισσότερα ραντεβού, διαμορφώνουμε μαζί σας από την αρχή ένα σαφές χρονικό και οικονομικό πλάνο.</p><p>Οι πληρωμές μπορούν να κατανέμονται στα επιμέρους στάδια, με την εξόφληση να ολοκληρώνεται έως το τέλος της θεραπείας.</p><p>Για κάθε πληρωμή εκδίδεται το αντίστοιχο νόμιμο παραστατικό.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="ctaband">
+  <div class="wrap">
+    <h2>Έχετε κάποια <em>άλλη ερώτηση;</em></h2>
+    <p>Καλέστε μας ή στείλτε μας μήνυμα και θα σας απαντήσουμε.</p>
+    <a class="btn" href="tel:2310769674"><i class="ti ti-phone"></i> 2310 769 674</a>
+  </div>
+</section>
+
+<div class="fab-stack">
+  <a class="fab" href="tel:2310769674"><i class="ti ti-phone"></i><span>Καλέστε μας</span></a>
+  <a class="fab" href="mailto:info@drsmile.gr"><i class="ti ti-mail"></i><span>Στείλτε μήνυμα</span></a>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fsoc">
+      <a href="https://www.instagram.com/drsmile.anastasia.parcharidou" target="_blank" rel="noopener" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=100054234560376" target="_blank" rel="noopener" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+      <a href="https://www.tiktok.com/@drsmile.parcharidou" target="_blank" rel="noopener" aria-label="TikTok"><i class="ti ti-brand-tiktok"></i></a>
+      <a href="https://www.youtube.com/@drsmile-dentist" target="_blank" rel="noopener" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
+    </div>
+    © 2026 DrSmile — Πολυοδοντιατρείο, Εύοσμος Θεσσαλονίκης ·
+    <a href="index-v10.html">Επιστροφή στην αρχική</a>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.mnav-toggle').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const g=btn.closest('.mnav-group');
+    const open=g.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+});
+const burger=document.querySelector('.burger');
+const mobileNav=document.getElementById('mobileNav');
+const mobileNavClose=document.getElementById('mobileNavClose');
+const close=()=>{mobileNav.classList.remove('open');document.body.classList.remove('nav-open')};
+burger.addEventListener('click',()=>{mobileNav.classList.add('open');document.body.classList.add('nav-open')});
+mobileNavClose.addEventListener('click',close);
+mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
+addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+</script>
+</body>
+</html>
