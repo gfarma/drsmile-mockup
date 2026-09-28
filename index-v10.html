@@ -228,6 +228,26 @@ body.nav-open .fab-stack{display:none}
 .map-nav:hover{background:var(--gold-deep);color:#fff}
 .map-nav:hover i{color:#fff}
 
+.cinfo{display:grid;grid-template-columns:1fr 1.1fr;gap:28px;margin-top:28px;align-items:stretch}
+.cbuild{margin:0;position:relative;border-radius:220px 220px 18px 18px;overflow:hidden;border:1px solid var(--line-soft);min-height:420px}
+.cbuild img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0}
+.cbuild figcaption{position:absolute;left:14px;right:14px;bottom:14px;font-size:11.5px;color:var(--warm-white);background:rgba(20,18,16,.55);backdrop-filter:blur(4px);padding:8px 14px;border-radius:999px;text-align:center}
+.cdetails{display:flex;flex-direction:column;gap:16px}
+.clogo{background:var(--warm-white);border-radius:18px;padding:22px;display:grid;place-items:center}
+.clogo img{height:74px;width:auto}
+.cdetails .cgrid{margin-top:0;grid-template-columns:1fr 1fr}
+.cform-wrap{margin-top:70px;padding-top:56px;border-top:1px solid var(--line-soft);text-align:center}
+.cform-wrap h3{font-family:var(--fs);font-style:italic;font-weight:300;font-size:clamp(24px,3vw,36px);color:var(--ivory);line-height:1.2}
+.cform{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:760px;margin:36px auto 0;text-align:left}
+.cform .full{grid-column:1/-1}
+.cform label>span{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:8px}
+.cform input[type=text],.cform input[type=tel],.cform input[type=email],.cform textarea{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--line-soft);border-radius:14px;padding:14px 16px;color:var(--ivory);font:inherit;font-size:15px;transition:.3s;box-sizing:border-box}
+.cform input:focus,.cform textarea:focus{outline:none;border-color:var(--gold)}
+.cform .chk{display:flex;gap:12px;align-items:flex-start}
+.cform .chk span{font-size:13.5px;letter-spacing:0;text-transform:none;color:var(--muted-d);margin:0}
+.cform .chk input{accent-color:var(--gold-deep);margin-top:3px}
+.cf-actions{text-align:center}
+.cf-ok{text-align:center;color:var(--gold-soft);font-size:14px}
 .soc-cta{margin-top:70px;padding-top:56px;border-top:1px solid var(--line-soft);text-align:center}
 .soc-cta h3{font-family:var(--fs);font-style:italic;font-weight:300;font-size:clamp(24px,3vw,36px);color:var(--ivory);line-height:1.2}
 .soc-row{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:36px;text-align:left}
@@ -299,12 +319,18 @@ footer .fb-logo p{max-width:420px;font-size:14px;line-height:1.7;color:var(--war
   .doc-creds{grid-template-columns:1fr;margin-top:34px;padding-top:26px}
   .contact .wrap{grid-template-columns:1fr}
   .cgrid{grid-template-columns:1fr;gap:12px;margin-top:34px}
+  .cinfo{grid-template-columns:1fr}
+  .cbuild{min-height:0;aspect-ratio:951/830;border-radius:160px 160px 18px 18px}
+  .cdetails .cgrid{grid-template-columns:1fr 1fr}
   .mapwrap{aspect-ratio:16/11}
   .soc-cta{margin-top:50px;padding-top:40px}
   .soc-row{grid-template-columns:1fr;gap:12px}
   .fgrid{justify-content:flex-start}
 }
 @media(max-width:560px){
+  .cdetails .cgrid{grid-template-columns:1fr}
+  .cform{grid-template-columns:1fr}
+  .cbuild{border-radius:120px 120px 16px 16px}
   .btn{white-space:normal;text-align:center;padding:14px 22px;max-width:100%}
   .tb-item h4,.scard h3{font-size:12px}
   .map-nav{left:12px;bottom:12px;font-size:12.5px;padding:10px 16px}
@@ -544,28 +570,34 @@ footer .fb-logo p{max-width:420px;font-size:14px;line-height:1.7;color:var(--war
     <div class="orn reveal" style="transition-delay:.1s"><span class="ln"></span><i class="ti ti-sparkles"></i><span class="ln"></span></div>
     <p class="lead reveal" style="transition-delay:.12s">Κλείστε το ραντεβού σας ή επικοινωνήστε μαζί μας για κάθε ερώτηση. Είμαστε δίπλα σας.</p>
 
-    <div class="cgrid reveal" style="transition-delay:.16s">
-      <a class="ccard" href="tel:2310769674">
-        <div class="ic"><i class="ti ti-phone"></i></div>
-        <div class="k">Τηλέφωνο</div><div class="v">2310 769 674</div>
-      </a>
-      <a class="ccard" href="mailto:info@drsmile.gr">
-        <div class="ic"><i class="ti ti-mail"></i></div>
-        <div class="k">Email</div><div class="v">info@drsmile.gr</div>
-      </a>
-      <a class="ccard" href="https://www.google.com/maps/dir/?api=1&destination=Karaoli+kai+Dimitriou+121,+Evosmos,+Thessaloniki" target="_blank" rel="noopener">
-        <div class="ic"><i class="ti ti-map-pin"></i></div>
-        <div class="k">Διεύθυνση</div><div class="v sm">Καραολή και Δημητρίου 121<br>Εύοσμος Θεσσαλονίκη, ΤΚ. 56224</div>
-      </a>
-      <div class="ccard">
-        <div class="ic"><i class="ti ti-clock-hour-4"></i></div>
-        <div class="k">Ωράριο</div><div class="v sm">Δευτέρα – Παρασκευή · 09:00 – 21:00<br>Σάββατο με ραντεβού</div>
-      </div>
-    </div>
-
-    <div class="mapwrap reveal" style="transition-delay:.2s">
+    <div class="mapwrap reveal" style="transition-delay:.16s">
       <iframe src="https://maps.google.com/maps?q=Karaoli%20kai%20Dimitriou%20121%20Evosmos%20Thessaloniki&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" allowfullscreen></iframe>
       <a class="map-nav" href="https://www.google.com/maps/dir/?api=1&destination=Karaoli+kai+Dimitriou+121,+Evosmos,+Thessaloniki" target="_blank" rel="noopener"><i class="ti ti-navigation"></i> Οδηγίες πλοήγησης</a>
+    </div>
+
+    <div class="cinfo reveal" style="transition-delay:.2s">
+      <figure class="cbuild"><img src="assets/building.webp" alt="Το κτίριο του DrSmile στον Εύοσμο" loading="lazy"><figcaption>Προσωρινή φωτογραφία, μέχρι να ολοκληρωθεί η ανακαίνιση</figcaption></figure>
+      <div class="cdetails">
+        <div class="clogo"><img src="assets/logo.png" alt="DrSmile Πολυοδοντιατρείο"></div>
+      <div class="cgrid">
+        <a class="ccard" href="tel:2310769674">
+          <div class="ic"><i class="ti ti-phone"></i></div>
+          <div class="k">Τηλέφωνο</div><div class="v">2310 769 674</div>
+        </a>
+        <a class="ccard" href="mailto:info@drsmile.gr">
+          <div class="ic"><i class="ti ti-mail"></i></div>
+          <div class="k">Email</div><div class="v">info@drsmile.gr</div>
+        </a>
+        <a class="ccard" href="https://www.google.com/maps/dir/?api=1&destination=Karaoli+kai+Dimitriou+121,+Evosmos,+Thessaloniki" target="_blank" rel="noopener">
+          <div class="ic"><i class="ti ti-map-pin"></i></div>
+          <div class="k">Διεύθυνση</div><div class="v sm">Καραολή και Δημητρίου 121<br>Εύοσμος Θεσσαλονίκη, ΤΚ. 56224</div>
+        </a>
+        <div class="ccard">
+          <div class="ic"><i class="ti ti-clock-hour-4"></i></div>
+          <div class="k">Ωράριο</div><div class="v sm">Δευτέρα – Παρασκευή · 09:00 – 21:00<br>Σάββατο με ραντεβού</div>
+        </div>
+      </div>
+      </div>
     </div>
 
     <div class="soc-cta reveal" style="transition-delay:.24s">
@@ -577,6 +609,19 @@ footer .fb-logo p{max-width:420px;font-size:14px;line-height:1.7;color:var(--war
         <a href="https://www.tiktok.com/@drsmile.parcharidou" target="_blank" rel="noopener"><span class="ic"><i class="ti ti-brand-tiktok"></i></span><span><span class="nm">TikTok</span><br><span class="hd">@drsmile.parcharidou</span></span></a>
         <a href="https://www.youtube.com/@drsmile-dentist" target="_blank" rel="noopener"><span class="ic"><i class="ti ti-brand-youtube"></i></span><span><span class="nm">YouTube</span><br><span class="hd">@drsmile-dentist</span></span></a>
       </div>
+    </div>
+    <div class="cform-wrap reveal">
+      <div class="sec-label" style="justify-content:center"><span class="ln"></span><span class="label">Φόρμα επικοινωνίας</span><span class="ln"></span></div>
+      <h3>Στείλτε μας μήνυμα</h3>
+      <form class="cform" onsubmit="event.preventDefault();this.querySelector('.cf-ok').hidden=false">
+        <label><span>Ονοματεπώνυμο *</span><input type="text" name="name" required autocomplete="name"></label>
+        <label><span>Τηλέφωνο *</span><input type="tel" name="phone" required autocomplete="tel"></label>
+        <label class="full"><span>Email</span><input type="email" name="email" autocomplete="email"></label>
+        <label class="full"><span>Μήνυμα *</span><textarea name="msg" rows="5" required></textarea></label>
+        <label class="full chk"><input type="checkbox" required><span>Συμφωνώ με την επεξεργασία των στοιχείων μου για να επικοινωνήσετε μαζί μου.</span></label>
+        <div class="full cf-actions"><button class="btn btn-gold" type="submit">Αποστολή <i class="ti ti-send"></i></button></div>
+        <p class="full cf-ok" hidden>Δοκιμαστική φόρμα: στο τελικό site το μήνυμα θα φτάνει στο info@drsmile.gr.</p>
+      </form>
     </div>
   </div>
 </section>
