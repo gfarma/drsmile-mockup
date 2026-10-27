@@ -286,7 +286,7 @@ for f in pages: fix_menu(f)
 print("σελίδες υπηρεσιών:", count, "· με κείμενο:", len(CONTENT))
 
 # ---- μενού «Υπηρεσίες»: drill-down όπως το «Κατηγορίες» του fshome.gr. Πατάς κατηγορία,
-# το ίδιο panel περνά στις υποκατηγορίες της (με «Πίσω» και «Όλη η κατηγορία»). Ίδιο σε desktop και κινητό.
+# το ίδιο panel περνά στις υποκατηγορίες της (με «Πίσω»). Ίδιο σε desktop και κινητό.
 MENU_CSS = """<style id="svc-menu-css">
 .nav-sub:has(.dd){width:340px;padding:0}
 .nav-sub .dd{border-radius:14px;overflow:hidden}
@@ -322,7 +322,7 @@ def dd_menu():
                     items += ['<a class="dd-sub" href="%s"><span>%s</span><i class="ti ti-chevron-right"></i></a>' % (sub_url(c, s), E(t)) for s, t in x[1]]
                 else:
                     items.append('<a class="dd-sub" href="%s"><span>%s</span><i class="ti ti-chevron-right"></i></a>' % (sub_url(c, x[0]), E(x[1])))
-            views.append('<div class="dd-view" data-v="%s"><button type="button" class="dd-back" data-back><i class="ti ti-chevron-left"></i><span>%s</span></button><a class="dd-all" href="%s"><span>Όλη η κατηγορία</span><i class="ti ti-arrow-right"></i></a>%s</div>' % (c[0], E(c[1]), cat_url(c), ''.join(items)))
+            views.append('<div class="dd-view" data-v="%s"><button type="button" class="dd-back" data-back><i class="ti ti-chevron-left"></i><span>%s</span></button>%s</div>' % (c[0], E(c[1]), ''.join(items)))
         else:
             root.append('<a class="dd-row" href="%s"><span>%s</span></a>' % (cat_url(c), E(c[1])))
     return '<div class="dd"><div class="dd-view on" data-v="root">%s</div>%s</div>' % (''.join(root), ''.join(views))
