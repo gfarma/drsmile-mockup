@@ -284,3 +284,71 @@ def fix_menu(f):
 pages = ["index-v10.html", "team.html", "space.html", "faq.html"] + [f for f in os.listdir(".") if f.startswith("yp-")]
 for f in pages: fix_menu(f)
 print("σελίδες υπηρεσιών:", count, "· με κείμενο:", len(CONTENT))
+
+# ---- μενού «Υπηρεσίες» με υποκατηγορίες (desktop: flyout δεξιά, κινητό: ανάπτυξη ανά κατηγορία)
+MENU_CSS = """<style id="svc-menu-css">
+.nav-sub .nsi{position:relative}
+.nav-sub .nsi>a{display:flex;justify-content:space-between;align-items:center;gap:14px}
+.nav-sub .nsi>a i{font-size:13px;color:var(--gold-deep)}
+.nav-fly{position:absolute;left:100%;top:-12px;margin-left:6px;width:330px;padding:12px 0;background:var(--warm-white);border:1px solid var(--line);border-radius:14px;box-shadow:0 26px 54px -28px rgba(120,96,50,.4);opacity:0;visibility:hidden;transform:translateX(-6px);transition:.22s}
+.nav-fly::before{content:"";position:absolute;top:0;bottom:0;left:-10px;width:10px}
+.nav-fly .fh{display:block;padding:4px 22px 6px;font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep)}
+.nav-fly a{white-space:normal!important;line-height:1.4}
+.nav-sub .nsi:hover>.nav-fly,.nav-sub .nsi:focus-within>.nav-fly{opacity:1;visibility:visible;transform:none}
+.mnav-group.svc.open .mnav-sub{max-height:6000px}
+.mnav-cat{display:flex;flex-direction:column;align-items:center}
+.mnav-cat .mc-row{display:flex;align-items:center;gap:6px}
+.mnav-cat .mc-t{background:none;border:0;color:var(--gold-deep);font-size:16px;cursor:pointer;padding:4px;transition:.3s}
+.mnav-cat.open .mc-t{transform:rotate(180deg)}
+.mnav-cat .mc-list{display:none;flex-direction:column;align-items:center;gap:8px;margin-top:8px;padding:0 10px}
+.mnav-cat.open .mc-list{display:flex}
+.mnav-cat .mc-list a{font-size:13px;color:var(--charcoal-2);text-align:center}
+.mnav-cat .mc-list .fh{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin-top:6px}
+</style>"""
+MENU_JS = """<script id="svc-menu-js">document.querySelectorAll('.mc-t').forEach(b=>b.addEventListener('click',()=>{const c=b.closest('.mnav-cat');b.setAttribute('aria-expanded',c.classList.toggle('open')?'true':'false')}))</script>"""
+
+def menu_items(c, mobile):
+    out = []
+    for x in c[3]:
+        if isinstance(x[1], list):
+            out.append('<span class="fh">%s</span>' % E(x[0]))
+            out += ['<a href="%s">%s</a>' % (sub_url(c, s), E(t)) for s, t in x[1]]
+        else:
+            out.append('<a href="%s">%s</a>' % (sub_url(c, x[0]), E(x[1])))
+    return ''.join(out)
+
+def desktop_menu():
+    h = ''
+    for c in CATS:
+        if subs_flat(c):
+            h += '<div class="nsi"><a href="%s">%s <i class="ti ti-chevron-right"></i></a><div class="nav-fly">%s</div></div>' % (cat_url(c), E(c[1]), menu_items(c, False))
+        else:
+            h += '<a href="%s">%s</a>' % (cat_url(c), E(c[1]))
+    return '<!--svc-menu-->' + h + '<!--/svc-menu-->'
+
+def mobile_menu():
+    h = ''
+    for c in CATS:
+        if subs_flat(c):
+            h += '<div class="mnav-cat"><div class="mc-row"><a href="%s">%s</a><button class="mc-t" aria-expanded="false" aria-label="Υποκατηγορίες"><i class="ti ti-chevron-down"></i></button></div><div class="mc-list">%s</div></div>' % (cat_url(c), E(c[1]), menu_items(c, True))
+        else:
+            h += '<a href="%s">%s</a>' % (cat_url(c), E(c[1]))
+    return '<!--svc-mmenu-->' + h + '<!--/svc-mmenu-->'
+
+DM, MM = desktop_menu(), mobile_menu()
+for f in pages:
+    t = io.open(f, encoding="utf-8").read()
+    if '<!--svc-menu-->' in t:
+        t = re.sub(r'<!--svc-menu-->.*?<!--/svc-menu-->', lambda m: DM, t, flags=re.S)
+    else:
+        t, n = re.subn(r'(Υπηρεσίες <i class="ti ti-chevron-down"></i></a>\s*<div class="nav-sub">)(.*?)(\s*</div>)', lambda m: m.group(1) + DM + m.group(3), t, count=1, flags=re.S)
+        assert n == 1, (f, 'desktop')
+    if '<!--svc-mmenu-->' in t:
+        t = re.sub(r'<!--svc-mmenu-->.*?<!--/svc-mmenu-->', lambda m: MM, t, flags=re.S)
+    else:
+        t, n = re.subn(r'(<div class="mnav-group)(">\s*<button class="mnav-toggle" aria-expanded="false">Υπηρεσίες <i class="ti ti-chevron-down"></i></button>\s*<div class="mnav-sub">)(.*?)(\s*</div>)', lambda m: m.group(1) + ' svc' + m.group(2) + MM + m.group(4), t, count=1, flags=re.S)
+        assert n == 1, (f, 'mobile')
+    if 'id="svc-menu-css"' not in t: t = t.replace('</head>', MENU_CSS + '\n</head>', 1)
+    if 'id="svc-menu-js"' not in t: t = t.replace('</body>', MENU_JS + '\n</body>', 1)
+    io.open(f, "w", encoding="utf-8", newline="").write(t)
+print("μενού με υποκατηγορίες σε", len(pages), "σελίδες")
