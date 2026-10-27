@@ -288,7 +288,8 @@ print("σελίδες υπηρεσιών:", count, "· με κείμενο:", le
 # ---- μενού «Υπηρεσίες»: drill-down όπως το «Κατηγορίες» του fshome.gr. Πατάς κατηγορία,
 # το ίδιο panel περνά στις υποκατηγορίες της (με «Πίσω» και «Όλη η κατηγορία»). Ίδιο σε desktop και κινητό.
 MENU_CSS = """<style id="svc-menu-css">
-.nav-sub:has(.dd){width:340px;padding:0;overflow:hidden}
+.nav-sub:has(.dd){width:340px;padding:0}
+.nav-sub .dd{border-radius:14px;overflow:hidden}
 .dd{position:relative}
 .dd-view{display:none;flex-direction:column;max-height:min(70vh,560px);overflow-y:auto;padding:8px 0;animation:ddIn .22s ease}
 .dd-view.on{display:flex}
