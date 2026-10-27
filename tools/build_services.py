@@ -295,6 +295,7 @@ MENU_CSS = """<style id="svc-menu-css">
 .nav-fly .fh{display:block;padding:4px 22px 6px;font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep)}
 .nav-fly a{white-space:normal!important;line-height:1.4}
 .nav-sub .nsi:hover>.nav-fly,.nav-sub .nsi:focus-within>.nav-fly{opacity:1;visibility:visible;transform:none}
+@media(max-width:1180px){.nav-fly{left:auto;right:100%;margin:0 6px 0 0}.nav-fly::before{left:auto;right:-10px}}
 .mnav-group.svc.open .mnav-sub{max-height:6000px}
 .mnav-cat{display:flex;flex-direction:column;align-items:center}
 .mnav-cat .mc-row{display:flex;align-items:center;gap:6px}
@@ -348,7 +349,8 @@ for f in pages:
     else:
         t, n = re.subn(r'(<div class="mnav-group)(">\s*<button class="mnav-toggle" aria-expanded="false">Υπηρεσίες <i class="ti ti-chevron-down"></i></button>\s*<div class="mnav-sub">)(.*?)(\s*</div>)', lambda m: m.group(1) + ' svc' + m.group(2) + MM + m.group(4), t, count=1, flags=re.S)
         assert n == 1, (f, 'mobile')
-    if 'id="svc-menu-css"' not in t: t = t.replace('</head>', MENU_CSS + '\n</head>', 1)
+    t = re.sub(r'<style id="svc-menu-css">.*?</style>\n?', '', t, flags=re.S)
+    t = t.replace('</head>', MENU_CSS + '\n</head>', 1)
     if 'id="svc-menu-js"' not in t: t = t.replace('</body>', MENU_JS + '\n</body>', 1)
     io.open(f, "w", encoding="utf-8", newline="").write(t)
 print("μενού με υποκατηγορίες σε", len(pages), "σελίδες")
