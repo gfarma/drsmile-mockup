@@ -285,58 +285,49 @@ pages = ["index-v10.html", "team.html", "space.html", "faq.html"] + [f for f in 
 for f in pages: fix_menu(f)
 print("σελίδες υπηρεσιών:", count, "· με κείμενο:", len(CONTENT))
 
-# ---- μενού «Υπηρεσίες» με υποκατηγορίες (desktop: flyout δεξιά, κινητό: ανάπτυξη ανά κατηγορία)
+# ---- μενού «Υπηρεσίες»: drill-down όπως το «Κατηγορίες» του fshome.gr. Πατάς κατηγορία,
+# το ίδιο panel περνά στις υποκατηγορίες της (με «Πίσω» και «Όλη η κατηγορία»). Ίδιο σε desktop και κινητό.
 MENU_CSS = """<style id="svc-menu-css">
-.nav-sub .nsi{position:relative}
-.nav-sub .nsi>a{display:flex;justify-content:space-between;align-items:center;gap:14px}
-.nav-sub .nsi>a i{font-size:13px;color:var(--gold-deep)}
-.nav-fly{position:absolute;left:100%;top:-12px;margin-left:6px;width:330px;padding:12px 0;background:var(--warm-white);border:1px solid var(--line);border-radius:14px;box-shadow:0 26px 54px -28px rgba(120,96,50,.4);opacity:0;visibility:hidden;transform:translateX(-6px);transition:.22s}
-.nav-fly::before{content:"";position:absolute;top:0;bottom:0;left:-10px;width:10px}
-.nav-fly .fh{display:block;padding:4px 22px 6px;font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep)}
-.nav-fly a{white-space:normal!important;line-height:1.4}
-.nav-sub .nsi:hover>.nav-fly,.nav-sub .nsi:focus-within>.nav-fly{opacity:1;visibility:visible;transform:none}
-@media(max-width:1180px){.nav-fly{left:auto;right:100%;margin:0 6px 0 0;width:290px}.nav-fly::before{left:auto;right:-10px}}
-.mnav-group.svc.open .mnav-sub{max-height:6000px}
-.mnav-cat{display:flex;flex-direction:column;align-items:center}
-.mnav-cat .mc-row{display:flex;align-items:center;gap:6px}
-.mnav-cat .mc-t{background:none;border:0;color:var(--gold-deep);font-size:16px;cursor:pointer;padding:4px;transition:.3s}
-.mnav-cat.open .mc-t{transform:rotate(180deg)}
-.mnav-cat .mc-list{display:none;flex-direction:column;align-items:center;gap:8px;margin-top:8px;padding:0 10px}
-.mnav-cat.open .mc-list{display:flex}
-.mnav-cat .mc-list a{font-size:13px;color:var(--charcoal-2);text-align:center}
-.mnav-cat .mc-list .fh{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin-top:6px}
+.nav-sub:has(.dd){width:340px;padding:0;overflow:hidden}
+.dd{position:relative}
+.dd-view{display:none;flex-direction:column;max-height:min(70vh,560px);overflow-y:auto;padding:8px 0;animation:ddIn .22s ease}
+.dd-view.on{display:flex}
+@keyframes ddIn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+.dd-view.back{animation-name:ddBack}
+@keyframes ddBack{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:none}}
+.dd .dd-row,.dd .dd-all,.dd .dd-sub{display:flex!important;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:11px 20px!important;font-family:var(--sans);font-size:13.5px;font-weight:500;color:var(--charcoal-2);text-align:left;white-space:normal!important;line-height:1.4;background:none;border:0;cursor:pointer;transition:background .2s}
+.dd .dd-row i,.dd .dd-all i,.dd .dd-sub i{font-size:15px;color:var(--muted);flex:none}
+.dd .dd-row:hover,.dd .dd-sub:hover{background:rgba(216,190,142,.16);color:var(--gold-deep);padding-left:20px!important}
+.dd .dd-back{display:flex;align-items:center;gap:10px;width:100%;padding:12px 18px;border:0;border-bottom:1px solid var(--line-soft);background:none;cursor:pointer;font-family:var(--sans);font-size:14px;font-weight:700;color:var(--charcoal);text-align:left}
+.dd .dd-back i{font-size:17px;color:var(--gold-deep)}
+.dd .dd-all{color:var(--gold-deep)!important;font-weight:700!important;border-bottom:1px solid var(--line-soft)}
+.dd .dd-all i{color:var(--gold-deep)}
+.dd .fh{padding:12px 20px 4px;font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep)}
+.mnav-group.svc.open .mnav-sub{max-height:none}
+.mnav-sub .dd{width:min(360px,100%);background:var(--warm-white);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.mnav-sub .dd-view{max-height:none}
 </style>"""
-MENU_JS = """<script id="svc-menu-js">document.querySelectorAll('.mc-t').forEach(b=>b.addEventListener('click',()=>{const c=b.closest('.mnav-cat');b.setAttribute('aria-expanded',c.classList.toggle('open')?'true':'false')}))</script>"""
+MENU_JS = """<script id="svc-menu-js">document.querySelectorAll('.dd').forEach(dd=>{const show=(v,back)=>dd.querySelectorAll('.dd-view').forEach(x=>{const on=x.dataset.v===v;x.classList.toggle('on',on);x.classList.toggle('back',on&&!!back)});dd.addEventListener('click',e=>{const g=e.target.closest('[data-go]'),b=e.target.closest('[data-back]');if(g||b){e.preventDefault();e.stopPropagation();show(g?g.dataset.go:'root',!!b)}});const d=dd.closest('.nav-drop');if(d)d.addEventListener('mouseleave',()=>show('root'))})</script>"""
 
-def menu_items(c, mobile):
-    out = []
-    for x in c[3]:
-        if isinstance(x[1], list):
-            out.append('<span class="fh">%s</span>' % E(x[0]))
-            out += ['<a href="%s">%s</a>' % (sub_url(c, s), E(t)) for s, t in x[1]]
-        else:
-            out.append('<a href="%s">%s</a>' % (sub_url(c, x[0]), E(x[1])))
-    return ''.join(out)
-
-def desktop_menu():
-    h = ''
+def dd_menu():
+    root, views = [], []
     for c in CATS:
         if subs_flat(c):
-            h += '<div class="nsi"><a href="%s">%s <i class="ti ti-chevron-right"></i></a><div class="nav-fly">%s</div></div>' % (cat_url(c), E(c[1]), menu_items(c, False))
+            root.append('<button type="button" class="dd-row" data-go="%s"><span>%s</span><i class="ti ti-chevron-right"></i></button>' % (c[0], E(c[1])))
+            items = []
+            for x in c[3]:
+                if isinstance(x[1], list):
+                    items.append('<span class="fh">%s</span>' % E(x[0]))
+                    items += ['<a class="dd-sub" href="%s"><span>%s</span><i class="ti ti-chevron-right"></i></a>' % (sub_url(c, s), E(t)) for s, t in x[1]]
+                else:
+                    items.append('<a class="dd-sub" href="%s"><span>%s</span><i class="ti ti-chevron-right"></i></a>' % (sub_url(c, x[0]), E(x[1])))
+            views.append('<div class="dd-view" data-v="%s"><button type="button" class="dd-back" data-back><i class="ti ti-chevron-left"></i><span>%s</span></button><a class="dd-all" href="%s"><span>Όλη η κατηγορία</span><i class="ti ti-arrow-right"></i></a>%s</div>' % (c[0], E(c[1]), cat_url(c), ''.join(items)))
         else:
-            h += '<a href="%s">%s</a>' % (cat_url(c), E(c[1]))
-    return '<!--svc-menu-->' + h + '<!--/svc-menu-->'
+            root.append('<a class="dd-row" href="%s"><span>%s</span></a>' % (cat_url(c), E(c[1])))
+    return '<div class="dd"><div class="dd-view on" data-v="root">%s</div>%s</div>' % (''.join(root), ''.join(views))
 
-def mobile_menu():
-    h = ''
-    for c in CATS:
-        if subs_flat(c):
-            h += '<div class="mnav-cat"><div class="mc-row"><a href="%s">%s</a><button class="mc-t" aria-expanded="false" aria-label="Υποκατηγορίες"><i class="ti ti-chevron-down"></i></button></div><div class="mc-list">%s</div></div>' % (cat_url(c), E(c[1]), menu_items(c, True))
-        else:
-            h += '<a href="%s">%s</a>' % (cat_url(c), E(c[1]))
-    return '<!--svc-mmenu-->' + h + '<!--/svc-mmenu-->'
-
-DM, MM = desktop_menu(), mobile_menu()
+DM = '<!--svc-menu-->' + dd_menu() + '<!--/svc-menu-->'
+MM = '<!--svc-mmenu-->' + dd_menu() + '<!--/svc-mmenu-->'
 for f in pages:
     t = io.open(f, encoding="utf-8").read()
     if '<!--svc-menu-->' in t:
@@ -351,6 +342,7 @@ for f in pages:
         assert n == 1, (f, 'mobile')
     t = re.sub(r'<style id="svc-menu-css">.*?</style>\n?', '', t, flags=re.S)
     t = t.replace('</head>', MENU_CSS + '\n</head>', 1)
-    if 'id="svc-menu-js"' not in t: t = t.replace('</body>', MENU_JS + '\n</body>', 1)
+    t = re.sub(r'<script id="svc-menu-js">.*?</script>\n?', '', t, flags=re.S)
+    t = t.replace('</body>', MENU_JS + '\n</body>', 1)
     io.open(f, "w", encoding="utf-8", newline="").write(t)
-print("μενού με υποκατηγορίες σε", len(pages), "σελίδες")
+print("μενού drill-down σε", len(pages), "σελίδες")
